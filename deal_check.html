@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Deal Check — coach workspace</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#162c36;background:#f4f6f5;font-size:16px;line-height:1.45;--ink:#162c36;--muted:#52666e;--line:#c9d6d8;--brand:#125d66;--paper:#fff;--warn:#875414}
+*{box-sizing:border-box}body{margin:0}header{padding:24px 18px;background:#163a44;color:#fff}header .eyebrow{font-size:.8rem;letter-spacing:.11em;text-transform:uppercase;color:#b5d9d9}h1{font-size:1.8rem;line-height:1.15;margin:8px 0}header p{margin:8px 0 0;max-width:42rem;color:#deebed}main{max-width:1060px;margin:auto;padding:18px 14px 56px}h2{font-size:1.25rem;margin:0 0 14px}h3{font-size:1rem;margin:18px 0 10px}p{margin:10px 0}button,input,select,textarea{font:inherit}button{min-height:46px;border:1px solid var(--brand);border-radius:8px;padding:10px 15px;background:var(--paper);color:var(--brand);cursor:pointer}button.primary{background:var(--brand);color:white;font-weight:650}button:disabled{opacity:.6;cursor:default}input,select,textarea{border:1px solid #9caeb5;border-radius:6px;background:#fff;color:var(--ink);padding:10px;width:100%;min-width:0;min-height:46px}input:focus,select:focus,textarea:focus,button:focus{outline:3px solid #91c6d1;outline-offset:2px}input[type=checkbox]{width:22px;min-height:22px;accent-color:var(--brand)}label{display:block;font-size:.9rem;color:#334e58}label input,label select{margin-top:5px}.context,.panel,.result-section,.test-panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:17px;margin-bottom:16px}.context-grid,.sheets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.full{grid-column:1/-1}.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.sheet-head h2{margin:0}.sheet-tag{color:var(--muted);font-size:.8rem}.note{font-size:.85rem;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:14px 0}.actions button{flex:1 1 180px}.list-box{border-top:1px solid var(--line);margin-top:17px;padding-top:4px}.list-none{display:flex;align-items:center;gap:9px;min-height:44px;margin:4px 0}.item-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(90px,.8fr) 44px;gap:7px;margin:9px 0}.item-row button{padding:5px;min-height:46px}.list-box>button{width:100%}details{margin:12px 0}summary{cursor:pointer;min-height:40px;padding:7px 0;color:var(--brand);font-weight:600}.status{padding:12px 0;color:var(--muted)}.flag{border-left:4px solid #b47a2a;background:#fff6e7;padding:11px 13px;margin:12px 0}.flag strong{display:block}.result-section h2{border-bottom:1px solid var(--line);padding-bottom:12px}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{padding:9px 7px;border-bottom:1px solid #dce4e5;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{font-weight:650;color:#34525d}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}td small{display:block;color:var(--muted)}.buyer-line{border-left:3px solid #9dc5c8;padding:5px 0 5px 12px;margin:12px 0}.buyer-line .finding{display:block;font-size:.78rem;color:var(--muted);margin-bottom:3px}.totals{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.total{padding:12px;background:#eef5f4;border-radius:7px}.total span{display:block;font-size:.8rem;color:#405d64}.total strong{display:block;font-size:1.15rem;margin-top:4px;font-variant-numeric:tabular-nums}pre,textarea.report-copy{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;font:13px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;background:#f1f5f5;padding:13px;border-radius:7px}textarea.report-copy{height:210px}.source{font-size:.8rem;color:var(--muted)}[hidden]{display:none!important}.test-result{border-top:1px solid var(--line);padding-top:8px}.test-pass{color:#17613e}.test-fail{color:#a02222}
+@media(max-width:740px){.sheets{grid-template-columns:1fr}.context-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:370px){main{padding:12px 8px 40px}.panel,.context,.result-section{padding:13px}.fields,.context-grid,.totals{grid-template-columns:1fr}.full{grid-column:auto}.item-row{grid-template-columns:minmax(0,1fr) 85px 40px}th,td{padding:8px 4px;font-size:.8rem}}
+@media print{header{background:white;color:black;padding:0}header p,header .eyebrow,#entry,.test-panel,.output-actions,.source-details{display:none!important}main{max-width:none;padding:0}.result-section{border:0;padding:0;break-inside:avoid}table{font-size:10px}.totals{grid-template-columns:repeat(4,1fr)}.flag{background:white}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">Coach workspace · 1.0</div><h1>Deal Check</h1><p>First sheet. New sheet. Every lever visible.</p></header>
+<main>
+<section id="entry">
+<div class="context"><h2>The case</h2><div class="context-grid">
+<label>Buyer / case name<input id="case-name" autocomplete="off" placeholder="Optional"></label>
+<label>Vehicle<input id="vehicle" autocomplete="off" placeholder="Optional"></label>
+<label>My pre-approval APR<input id="benchmark" inputmode="decimal" placeholder="e.g. 4.9%"></label>
+<label>Coaching fee actually paid<input id="coach-fee" inputmode="decimal" placeholder="Unknown until entered"></label>
+</div><p class="note">The service fee on each sheet is the dealer's fee. The coaching fee above is separate. Every field is optional; blank means unknown, not zero.</p>
+<label>Coach notes<textarea id="coach-notes" rows="4" placeholder="Optional"></textarea></label>
+<label>Case ID<input id="case-id" autocomplete="off" maxlength="100" placeholder="Leave blank to create an ID, or enter an ID to load"></label>
+<div class="actions"><button id="save-saved-case" type="button">Save case</button><button id="load-saved-case" type="button">Load saved case</button></div>
+<p class="note">Cases are saved in this browser only. Use this same file and browser to load them. Clearing browser storage removes saved cases.</p>
+<p id="persistence-status" class="note" role="status" aria-live="polite">No saved case loaded.</p>
+<details id="stored-record-details" hidden><summary>Exact saved record</summary><pre id="stored-record"></pre></details>
+<details><summary>Load one of the eight required test cases</summary><label>Constructed test case<select id="case-select"></select></label><div class="actions"><button id="load-case" type="button">Load test case</button><button id="clear-case" type="button">Clear inputs</button></div></details>
+</div>
+<div class="sheets" id="sheets"></div>
+<div class="actions"><button id="compare" type="button" class="primary">Run Deal Check</button><button id="copy-first" type="button">Copy First into New</button></div>
+<p class="note">A package entered as one name and price stays <strong>not itemized</strong>. Enter each disclosed item separately when you have the breakdown. This file makes no network requests.</p>
+</section>
+<div id="status" class="status" role="status" aria-live="polite">Enter the figures you have, or load a test case.</div>
+<div id="output"></div>
+<div class="output-actions" id="output-actions" hidden><div class="actions"><button id="copy-report" type="button">Copy report</button><button id="print-report" type="button">Print / save report</button></div><textarea id="copy-fallback" class="report-copy" aria-label="Report text for copying" readonly hidden></textarea></div>
+<section class="test-panel"><h2>Runs now, output pasted</h2><p class="note">These checks execute this file's own calculation code. The cases are constructed examples, not customer results.</p><button id="run-tests" type="button">Run all eight tests and paste output</button><div id="test-output" aria-live="polite"></div><h3>Designed only</h3><ul><li>Reading photos or PDFs automatically. This version uses the coach's typed fields.</li><li>Automatic state tax rules and outside trade-offer valuation. The Scorecard shows missing evidence instead.</li></ul></section>
+<details class="source-details"><summary>Definitions and calculation notes</summary><div class="source">
+<p>Scorecard bucket names: <em>Car Buyer Project Package</em>, September 11, 2026, §6, page 6. Deal Check labels and format: §5, pages 5–6. Add-on wording: §4 and Clip 7. The coach's current instructions supply the response mappings, the $5 reconciliation tolerance and the $2 payment tolerance. A separately titled “twelve lines” table was not located in the available package.</p>
+<p>OTD = selling price + dealer add-ons + service fee + tax + title/plate fees − rebates. Net trade = trade allowance − trade payoff. Expected amount financed = OTD − net trade − cash down + products. Do not enter an add-on twice: selling price must exclude the separately entered add-on list.</p>
+<p>Payment estimates use an equal monthly amortizing loan with APR as the model rate. Implied APR uses the entered principal, term and payment under that same assumption. A mismatch is a question, not proof of a lender buy rate or markup.</p>
+<p>Payment attribution uses this fixed order: selling price, add-ons, service fee, tax, title/plate fees, rebates, trade allowance, payoff, cash down, products, any accepted reconciliation difference, APR, then term. The allocation depends on this order. A final unexplained-payment line preserves a difference in the printed payments.</p>
+<p>Cash savings exclude extra cash down and changes in an old debt payoff. Fees corrected includes dealer service fee and title/plate fees. Entered tax and rebate changes reconcile the cash total separately, without creating new Scorecard buckets. The trade-after-tax-versus-cash-offer row is a separate benchmark, not an extra amount added to trade allowance. No state tax credit or product split is guessed.</p>
+<p>Net = cash transaction changes + projected interest changes − coaching fee paid. Cash net is also shown separately. Projections assume all scheduled payments with no early payoff or refinancing. When a payment does not reconcile, the interest projection stays labeled as the stated-APR model. A coach chooses the final verdict; the calculations do not establish that the documents are authentic or complete.</p>
+</div></details>
+</main>
+<script id="deal-core">
+(function(root){
+'use strict';
+const MONEY_FIELDS=['price','serviceFee','tax','titleFees','rebates','trade','payoff','down','financed','payment'];
+const LABELS={price:'Selling price',addons:'Dealer add-ons',serviceFee:'Service fee',tax:'Tax',titleFees:'Title/plate fees',rebates:'Rebates',trade:'Trade allowance',payoff:'Trade payoff',down:'Cash down',financed:'Amount financed',apr:'APR',term:'Term',payment:'Payment',products:'Products',state:'State'};
+const BUCKETS=['Selling price','Dealer add-ons removed','Fees corrected','Trade allowance','Trade after tax credit (vs. cash offer)','Service contract price','GAP price','Other products removed','APR','Term','Amount financed','Total interest over the term'];
+const AMOUNT_LEVERS=[['price',1],['addons',1],['serviceFee',1],['tax',1],['titleFees',1],['rebates',-1],['trade',-1],['payoff',1],['down',-1],['products',1]];
+const ROUND=x=>Math.round((x+Number.EPSILON)*100)/100;
+const cents=x=>Math.round(x*100);
+const amount=x=>x==null?'unknown':('$'+(x/100).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}));
+const signed=x=>x==null?'unknown':((x>0?'+':x<0?'−':'')+amount(Math.abs(x)));
+const percent=x=>x==null?'unknown':(ROUND(x).toFixed(2)+'%');
+function parse(raw,kind){
+ if(raw==null||String(raw).trim()==='')return {value:null};
+ let s=String(raw).trim().replace(/\u00a0/g,' ');
+ if(kind==='state')return {value:s.toUpperCase()};
+ if(kind==='term')s=s.replace(/\s*(?:mo\.?|mos\.?|months?)\s*$/i,'').trim();
+ if(kind==='apr')s=s.replace(/\s*%\s*$/,'').trim();
+ if(kind==='money')s=s.replace(/^\$\s*/,'').replace(/\s*USD$/i,'').trim();
+ const regex=kind==='term'?/^\d+$/:kind==='money'?/^(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d{1,2})?$/:/^\d+(?:\.\d+)?$/;
+ if(!regex.test(s))return {value:null,error:'Use a nonnegative '+(kind==='term'?'number of months':kind==='apr'?'APR':'dollar amount')+'.'};
+ const n=Number(s.replace(/,/g,''));
+ if(!Number.isFinite(n)||(kind==='term'&&(n<1||n>1200))||(kind==='apr'&&n>1000))return {value:null,error:'Value is outside the supported calculation range.'};
+ const value=kind==='money'?Math.round(n*100):n;
+ if(!Number.isSafeInteger(kind==='money'?value:Math.trunc(value)))return {value:null,error:'Value is too large.'};
+ return {value};
+}
+function list(raw,label,errors){
+ if(raw==null)return {items:null,total:null,unitemized:false};
+ if(!Array.isArray(raw)){errors.push(label+': enter a list of names and prices.');return {items:null,total:null,unitemized:false};}
+ let valid=true,total=0,unitemized=false;
+ const items=raw.map((item,i)=>{
+  const name=String(item.name||'').trim(),p=parse(item.price,'money');
+  if(!name||p.value==null||p.error){valid=false;errors.push(label+' item '+(i+1)+': provide '+(!name?'the name':p.error?'a valid price':'the price')+'.');}
+  if(p.value!=null)total+=p.value;
+  const bundled=/\b(package|bundle)\b/i.test(name);unitemized=unitemized||bundled;
+  return {name,price:p.value,unitemized:bundled};
+ });
+ return {items,total:valid?total:null,unitemized};
+}
+function normalize(raw,name){
+ const values={},errors=[];raw=raw||{};
+ MONEY_FIELDS.concat(['apr','term','state']).forEach(key=>{const p=parse(raw[key],MONEY_FIELDS.includes(key)?'money':key);values[key]=p.value;if(p.error)errors.push(name+' · '+LABELS[key]+': '+p.error);});
+ const addons=list(raw.addons,name+' · Dealer add-ons',errors),products=list(raw.products,name+' · Products',errors);
+ values.addons=addons.total;values.products=products.total;
+ return {name,values,addons,products,errors};
+}
+function payment(principal,apr,term){
+ if(principal==null||apr==null||term==null||principal<0)return null;
+ if(principal===0)return 0;
+ const r=apr/1200;
+ return r===0?principal/100/term:principal/100*r/(-Math.expm1(-term*Math.log1p(r)));
+}
+function impliedAPR(principal,term,monthly){
+ if(principal==null||term==null||monthly==null||principal<=0||monthly<=0)return null;
+ const target=monthly/100,min=principal/100/term;
+ if(target<min-.005)return null;
+ if(Math.abs(target-min)<=.005)return 0;
+ let lo=0,hi=10;
+ while(hi<1000&&payment(principal,hi,term)<target)hi=Math.min(1000,hi*2);
+ if(payment(principal,hi,term)<target)return null;
+ for(let i=0;i<100;i++){const mid=(lo+hi)/2;if(payment(principal,mid,term)<target)lo=mid;else hi=mid;}
+ return (lo+hi)/2;
+}
+function reconcile(sheet){
+ const v=sheet.values;
+ const required=['price','addons','serviceFee','tax','titleFees','rebates','trade','payoff','down','products'];
+ const missing=required.filter(k=>v[k]==null);
+ const otdFields=['price','addons','serviceFee','tax','titleFees','rebates'];
+ const otd=otdFields.every(k=>v[k]!=null)?v.price+v.addons+v.serviceFee+v.tax+v.titleFees-v.rebates:null;
+ const netTrade=v.trade!=null&&v.payoff!=null?v.trade-v.payoff:null;
+ const expected=otd!=null&&netTrade!=null&&v.down!=null&&v.products!=null?otd-netTrade-v.down+v.products:null;
+ const discrepancy=expected!=null&&v.financed!=null?v.financed-expected:null;
+ const questions=missing.map(key=>({key,line:sheet.name+': what is the '+LABELS[key].toLowerCase()+'? It is missing; enter the sheet value, or an explicit zero.'}));
+ if(v.financed==null)questions.push({key:'financed',line:sheet.name+': what amount financed is printed on the sheet?'});
+ if(expected!=null&&expected<0)questions.push({key:'financed',line:sheet.name+': the itemized amount financed is negative. Check the entered trade, payoff, cash down and credits.'});
+ if(discrepancy!=null&&Math.abs(discrepancy)>500)questions.push({key:'reconcile',line:sheet.name+': the itemized amount financed is '+amount(expected)+', but the sheet says '+amount(v.financed)+' ('+signed(discrepancy)+'). Which itemized field is missing or wrong? The totals alone do not identify one.'});
+ const implied=impliedAPR(v.financed,v.term,v.payment);
+ const effectiveAPR=v.apr!=null?v.apr:implied;
+ const modeled=payment(v.financed,effectiveAPR,v.term);
+ const gap=modeled!=null&&v.payment!=null?v.payment-cents(modeled):null;
+ const paymentFlag=gap!=null&&Math.abs(gap)>200;
+ const missingRate=v.apr==null&&implied==null;
+ const blocked=sheet.errors.length>0||questions.length>0;
+ return {otd,netTrade,expected,discrepancy,questions,impliedAPR:implied,effectiveAPR,aprInferred:v.apr==null&&implied!=null,modeledPayment:modeled,paymentGap:gap,paymentFlag,blocked,
+  interest:modeled!=null?cents(modeled*v.term-v.financed/100):null,
+  totalPaid:modeled!=null&&v.down!=null?cents(modeled*v.term)+v.down:null,
+  printedTotalPaid:v.payment!=null&&v.term!=null&&v.down!=null?v.payment*v.term+v.down:null,
+  missingRate};
+}
+function delta(a,b){return a!=null&&b!=null?b-a:null;}
+function category(item){if(item.unitemized)return 'unitemized';if(/\bgap\b/i.test(item.name))return 'gap';if(/service\s*contract|\bvsc\b|warranty/i.test(item.name))return 'service';return 'other';}
+function categoryTotal(collection,name){if(collection.total==null||collection.unitemized)return null;return collection.items.reduce((s,i)=>s+(category(i)===name?i.price:0),0);}
+function listChanges(first,next){
+ if(first.items==null||next.items==null)return [];
+ const map=items=>{const out={};items.forEach(i=>{const key=i.name.toLowerCase();if(!out[key])out[key]={name:i.name,price:0};if(i.price==null)out[key].price=null;else if(out[key].price!=null)out[key].price+=i.price;});return out;};
+ const a=map(first.items),b=map(next.items),keys=Array.from(new Set(Object.keys(a).concat(Object.keys(b))));
+ return keys.map(key=>({name:(b[key]||a[key]).name,first:a[key]?a[key].price:0,next:b[key]?b[key].price:0,added:!a[key]&&!!b[key],removed:!!a[key]&&!b[key]})).map(x=>({...x,change:delta(x.first,x.next)}));
+}
+function addonLine(name,value){
+ if(/nitrogen/i.test(name))return "I don't want nitrogen, I'm not paying for it.";
+ if(/protection|package|bundle/i.test(name))return "I'm not paying "+amount(value)+". Do you have one coming in without it? I'd prefer that. I'll wait for it, or you can locate one.";
+ return "I'm not paying for that. Do you have one coming in without it?";
+}
+function explain(a,b,ra,rb){
+ if(ra.blocked||rb.blocked||ra.effectiveAPR==null||rb.effectiveAPR==null||a.values.term==null||b.values.term==null)return {steps:[],reason:'Payment attribution waits for reconciled amounts, APR (entered or implied), and term on both sheets.'};
+ let p=a.values.financed,apr=ra.effectiveAPR,term=a.values.term,current=payment(p,apr,term);
+ const steps=[];
+ function apply(label,nextP,nextAPR,nextTerm){const q=payment(nextP,nextAPR,nextTerm);if(q==null)return false;steps.push({label,monthlyChange:q-current});p=nextP;apr=nextAPR;term=nextTerm;current=q;return true;}
+ for(const [key,sign] of AMOUNT_LEVERS){const change=b.values[key]-a.values[key];if(change!==0&&!apply(LABELS[key],p+sign*change,apr,term))return {steps:[],reason:'This comparison crosses a negative intermediate principal; no per-lever allocation is claimed.'};}
+ const difference=b.values.financed-p;
+ if(difference!==0)apply('Reconciliation difference (within $5)',b.values.financed,apr,term);
+ if(rb.effectiveAPR!==ra.effectiveAPR)apply('APR'+(rb.aprInferred?' (implied)':''),p,rb.effectiveAPR,term);
+ if(b.values.term!==a.values.term)apply('Term',p,apr,b.values.term);
+ const firstPrinted=a.values.payment!=null?a.values.payment/100:ra.modeledPayment;
+ const newPrinted=b.values.payment!=null?b.values.payment/100:rb.modeledPayment;
+ const observedChange=newPrinted-firstPrinted;
+ const modelChange=rb.modeledPayment-ra.modeledPayment;
+ const residual=observedChange-modelChange;
+ if(Math.abs(residual)>=.005)steps.push({label:(ra.paymentFlag||rb.paymentFlag)?'Unexplained printed-payment difference':'Printed-payment rounding difference',monthlyChange:residual});
+ return {steps,observedChange,modelChange,reason:null};
+}
+function analyze(input){
+ const a=normalize(input.first,'First'),b=normalize(input.new,'New'),ra=reconcile(a),rb=reconcile(b);
+ const options=input.options||{},benchmark=parse(options.preapprovalAPR,'apr'),fee=parse(options.feePaid,'money');
+ const optionErrors=[];if(benchmark.error)optionErrors.push('Pre-approval APR: '+benchmark.error);if(fee.error)optionErrors.push('Coaching fee paid: '+fee.error);
+ const errors=a.errors.concat(b.errors,optionErrors),blocked=ra.blocked||rb.blocked||errors.length>0;
+ const d={};Object.keys(LABELS).forEach(k=>{d[k]=k==='state'?(a.values.state===b.values.state?0:null):delta(a.values[k],b.values[k]);});
+ const productChanges=listChanges(a.products,b.products),addonChanges=listChanges(a.addons,b.addons);
+ const lines=[];const addLine=(finding,text)=>{if(!lines.some(x=>x.finding===finding&&x.text===text))lines.push({finding,text});};
+ errors.forEach(x=>addLine('Correct input',x));
+ ra.questions.concat(rb.questions).forEach(q=>addLine(q.key==='reconcile'?'Totals do not reconcile':'Missing '+(LABELS[q.key]||q.key),q.line));
+ if(d.term>0)addLine('Term increased','At what term? Show both at the same term and rate.');
+ if(d.trade>0&&d.price>0)addLine('Trade and price both increased','Show me the selling price and the trade allowance separately. Did the price change?');
+ productChanges.filter(x=>x.added).forEach(x=>addLine(x.name+' added',"I didn't say yes to that. Print it without it."));
+ addonChanges.filter(x=>x.added).forEach(x=>addLine(x.name+' added',addonLine(x.name,x.next)));
+ if(d.down>0)addLine('Cash down increased',"I didn't add money down. Put it back.");
+ if(d.titleFees>0)addLine('Title/plate fees increased','Plate and title went up '+amount(d.titleFees)+'. Why?');
+ if(d.serviceFee>0||d.tax>0)addLine('Other fee or tax increased','Reprint it.');
+ [a,b].forEach(sheet=>{[['addons',sheet.addons],['products',sheet.products]].forEach(([key,collection])=>{if(collection.unitemized)addLine(sheet.name+' '+LABELS[key]+': not itemized','Show me the individual cash price.');});});
+ const newRateForLine=rb.impliedAPR!=null?rb.impliedAPR:rb.effectiveAPR;
+ const benchmarkGap=benchmark.value!=null&&newRateForLine!=null?newRateForLine-benchmark.value:null;
+ if(d.apr>0||rb.paymentFlag||(benchmarkGap!=null&&benchmarkGap>.005))addLine(rb.paymentFlag?'Payment implies a different APR':'APR versus pre-approval','I qualify for '+(benchmark.value==null?'[my pre-approval APR]':percent(benchmark.value))+'. Your payment is figured at '+(newRateForLine==null?'[implied rate not available]':percent(newRateForLine))+'.');
+ const knownLeverKeys=['price','addons','serviceFee','tax','titleFees','rebates','trade','payoff','down','apr','term','products'];
+ const noLeverMoved=knownLeverKeys.every(k=>d[k]===0)&&productChanges.every(x=>x.change===0)&&addonChanges.every(x=>x.change===0);
+ if(noLeverMoved)addLine('No lever moved','What changed? Nothing moved.');
+ const firstPayment=a.values.payment!=null?a.values.payment:(ra.modeledPayment!=null?cents(ra.modeledPayment):null);
+ const newPayment=b.values.payment!=null?b.values.payment:(rb.modeledPayment!=null?cents(rb.modeledPayment):null);
+ const firstTotal=ra.printedTotalPaid!=null?ra.printedTotalPaid:ra.totalPaid,newTotal=rb.printedTotalPaid!=null?rb.printedTotalPaid:rb.totalPaid;
+ const termWarning=!blocked&&d.term>0&&firstPayment!=null&&newPayment<firstPayment&&firstTotal!=null&&newTotal>firstTotal;
+ const known=(...values)=>values.every(x=>x!=null),sum=(...values)=>known(...values)?values.reduce((x,y)=>x+y,0):null;
+ function row(bucket,first,next,type,direction=1,note=''){return {bucket,first,next,change:known(first,next)?direction*(first-next):null,type,note};}
+ const rows=[row(BUCKETS[0],a.values.price,b.values.price,'Cash'),row(BUCKETS[1],a.values.addons,b.values.addons,'Cash',1,b.addons.unitemized?'not itemized':''),
+ row(BUCKETS[2],sum(a.values.serviceFee,a.values.titleFees),sum(b.values.serviceFee,b.values.titleFees),'Cash',1,'Service fee + title/plate fees'),
+ row(BUCKETS[3],a.values.trade,b.values.trade,'Cash',-1),row(BUCKETS[4],null,null,'Cash',1,'Outside cash offer and trade tax-credit amounts not entered; not added twice.'),
+ row(BUCKETS[5],categoryTotal(a.products,'service'),categoryTotal(b.products,'service'),'Cash'),row(BUCKETS[6],categoryTotal(a.products,'gap'),categoryTotal(b.products,'gap'),'Cash'),row(BUCKETS[7],categoryTotal(a.products,'other'),categoryTotal(b.products,'other'),'Cash'),
+ row(BUCKETS[8],ra.effectiveAPR,rb.effectiveAPR,'APR',1,(ra.aprInferred||rb.aprInferred)?'Includes implied APR':'Stated APR'),row(BUCKETS[9],a.values.term,b.values.term,'Months'),row(BUCKETS[10],a.values.financed,b.values.financed,'Balance'),row(BUCKETS[11],blocked?null:ra.interest,blocked?null:rb.interest,'Projected',1,(ra.paymentFlag||rb.paymentFlag)?'Stated-APR model; printed payment does not match':'Full-term model')];
+ let cashSavings=null,interestSavings=null,cashNet=null,net=null;
+ if(!blocked&&known(ra.otd,rb.otd,a.values.trade,b.values.trade,a.values.products,b.values.products))cashSavings=ra.otd-rb.otd+b.values.trade-a.values.trade+a.values.products-b.values.products;
+ if(!blocked&&known(ra.interest,rb.interest))interestSavings=ra.interest-rb.interest;
+ if(known(cashSavings,fee.value))cashNet=cashSavings-fee.value;
+ if(known(cashSavings,interestSavings,fee.value))net=cashSavings+interestSavings-fee.value;
+ const explanation=explain(a,b,ra,rb);
+ const stateChanged=a.values.state!=null&&b.values.state!=null&&a.values.state!==b.values.state;
+ return {version:'1.0',a,b,ra,rb,errors,blocked,d,productChanges,addonChanges,lines,termWarning,benchmark:benchmark.value,benchmarkGap,feePaid:fee.value,noLeverMoved,explanation,stateChanged,scorecard:{rows,cashSavings,interestSavings,cashNet,net,taxAdjustment:delta(b.values.tax,a.values.tax),rebateAdjustment:delta(a.values.rebates,b.values.rebates),extraDown:d.down,payoffChange:d.payoff},options};
+}
+function formatValue(key,value){if(value==null)return key==='payment'?'Unknown':'unknown';if(key==='apr')return percent(value);if(key==='term')return value+' mo';if(key==='state')return value;return amount(value);}
+function paymentChangeLabel(first,next){return first==null||next==null?'Unknown':signed(next-first);}
+const ATTRIBUTION_TOLERANCE_DOLLARS=0.01;
+function attributionCheck(explanation){
+ if(explanation.reason)return null;
+ const allocated=explanation.steps.reduce((sum,step)=>sum+step.monthlyChange,0);
+ const residual=explanation.observedChange-allocated;
+ return {residual,tolerance:ATTRIBUTION_TOLERANCE_DOLLARS,pass:Number.isFinite(residual)&&Math.abs(residual)<=ATTRIBUTION_TOLERANCE_DOLLARS};
+}
+function attributionStatus(explanation){
+ const check=attributionCheck(explanation);
+ if(!check)return 'Payment-attribution residual: unavailable until the inputs reconcile.';
+ const value=Number.isFinite(check.residual)?(check.residual>0?'+':check.residual<0?'−':'')+'$'+Math.abs(check.residual).toFixed(8):'unknown';
+ return 'Unallocated payment-attribution residual: '+value+'/mo; tolerance $0.01; '+(check.pass?'within tolerance.':'FAIL — the residual is invalid or exceeds one cent.');
+}
+function report(r,compact=false){
+ const out=['WHAT CHANGED'];
+ const keys=['price','addons','serviceFee','tax','titleFees','rebates','trade','payoff','down','apr','term','products','financed','payment','state'];
+ keys.forEach(k=>{const av=r.a.values[k],bv=r.b.values[k],change=r.d[k];if(compact&&change===0)return;out.push(LABELS[k]+': '+formatValue(k,av)+' -> '+formatValue(k,bv)+(k==='state'?'':'; change '+(k==='payment'?paymentChangeLabel(av,bv):k==='apr'?(change==null?'unknown':ROUND(change).toFixed(2)+' pp'):k==='term'?(change==null?'unknown':change+' mo'):signed(change))));});
+ r.addonChanges.concat(r.productChanges).filter(x=>x.change!==0).forEach(x=>out.push(x.name+': '+amount(x.first)+' -> '+amount(x.next)+'; '+signed(x.change)));
+ [r.a,r.b].forEach((s,i)=>{const x=i?r.rb:r.ra;out.push(s.name+': OTD '+amount(x.otd)+'; net trade '+amount(x.netTrade)+'; expected financed '+amount(x.expected)+'; sheet difference '+signed(x.discrepancy)+'.');if(x.modeledPayment!=null)out.push(s.name+': modeled payment '+amount(cents(x.modeledPayment))+'; projected interest '+amount(x.interest)+'; total paid incl. down '+amount(x.totalPaid)+'.');if(x.paymentFlag)out.push('FLAG '+s.name+': payment differs by '+signed(x.paymentGap)+'; payment implies '+percent(x.impliedAPR)+' versus stated '+percent(s.values.apr)+'.');if(x.aprInferred)out.push(s.name+': APR missing; implied APR '+percent(x.impliedAPR)+'.');if(s.addons.unitemized||s.products.unitemized)out.push(s.name+': package not itemized.');});
+ if(r.blocked)out.push('STOP: reconcile missing or wrong fields before scoring totals.');
+ if(r.termWarning)out.push('**the payment is lower because the term is longer.**');
+ out.push('Extra cash down is never savings. Change in cash down: '+signed(r.d.down)+'.');
+ if(r.benchmarkGap!=null)out.push('Pre-approval benchmark '+percent(r.benchmark)+'; new rate/payment-implied difference '+ROUND(r.benchmarkGap).toFixed(2)+' pp. No markup estimate.');
+ if(r.explanation.reason)out.push(r.explanation.reason);else {out.push('Payment change by lever (amounts, then APR, then term):');if(!r.explanation.steps.length)out.push('No modeled payment change: $0.00/mo.');r.explanation.steps.forEach(x=>out.push('  '+x.label+': '+signed(cents(x.monthlyChange))+'/mo'));out.push('Total printed/model payment change: '+signed(cents(r.explanation.observedChange))+'/mo.');out.push(attributionStatus(r.explanation));}
+ out.push('','BUYER\'S LINES');if(!r.lines.length)out.push('No mapped response triggered.');r.lines.forEach(x=>out.push(x.finding+': "'+x.text+'"'));
+ out.push('','SCORECARD (positive change = reduction/benefit)');
+ r.scorecard.rows.forEach(x=>{const fmt=v=>x.type==='APR'?percent(v):x.type==='Months'?(v==null?'unknown':v+' mo'):amount(v);out.push(x.bucket+': '+fmt(x.first)+' -> '+fmt(x.next)+'; change '+(x.type==='APR'?(x.change==null?'unknown':ROUND(x.change).toFixed(2)+' pp'):x.type==='Months'?(x.change==null?'unknown':x.change+' mo'):signed(x.change))+' ['+x.type+']'+(x.note?' — '+x.note:''));});
+ out.push('Tax adjustment '+signed(r.scorecard.taxAdjustment)+'; rebate adjustment '+signed(r.scorecard.rebateAdjustment)+' (cash total only).');
+ out.push('Transaction savings (cash): '+amount(r.scorecard.cashSavings));out.push('Projected interest savings: '+amount(r.scorecard.interestSavings));out.push('Fee paid: '+amount(r.feePaid));out.push('Net cash after fee: '+amount(r.scorecard.cashNet));out.push('Net (cash + projected − fee): '+amount(r.scorecard.net));
+ if(r.d.payoff)out.push('Payoff changed '+signed(r.d.payoff)+': tracked separately from transaction savings.');
+ out.push('Projection: all scheduled payments, no early payoff or refinance.','Verdict: coach decision; numbers alone do not establish SIGN.');
+ return out.join('\n');
+}
+function clone(value){return JSON.parse(JSON.stringify(value));}
+function base(){return {price:'30000',addons:[],serviceFee:'500',tax:'1500',titleFees:'300',rebates:'0',trade:'10000',payoff:'5000',down:'2000',financed:'25300',apr:'4.9',term:'60',payment:payment(2530000,4.9,60).toFixed(2),products:[],state:'WI'};}
+function tests(){
+ const out=[];function add(name,edit,options){let first=base(),next=clone(first);edit(first,next);out.push({name,input:{first,new:next,options:{preapprovalAPR:'4.9%',feePaid:'0',...(options||{})}}});}
+ add('1 · Term switch only, 60 → 72',(a,b)=>{b.term='72';b.payment=payment(2530000,4.9,72).toFixed(2);});
+ add('2 · Trade +$1,000 and price +$1,000',(a,b)=>{b.price='31000';b.trade='11000';});
+ add('3 · GAP added, APR down a quarter point',(a,b)=>{b.products=[{name:'GAP',price:'850'}];b.financed='26150';b.apr='4.65';b.payment=payment(2615000,4.65,60).toFixed(2);});
+ add('4 · Trade payoff missing',(a,b)=>{b.payoff='';});
+ add('5 · Stated 4.9%, payment implies 8.9%',(a,b)=>{b.payment=payment(2530000,8.9,60).toFixed(2);});
+ add('6 · Extra $2,000 down lowers payment',(a,b)=>{b.down='4000';b.financed='23300';b.payment=payment(2330000,4.9,60).toFixed(2);});
+ add('7 · Title fees increase $150',(a,b)=>{b.titleFees='450';b.financed='25450';b.payment=payment(2545000,4.9,60).toFixed(2);});
+ add('8 · Every field uses messy formatting',(a,b)=>{const messy={price:' $30,000.00 ',addons:[{name:' Etch ',price:' $299.00 '}],serviceFee:' $500.00 ',tax:' $1,500.00 ',titleFees:' $300.00 ',rebates:' $250.00 ',trade:' $10,000.00 ',payoff:' $5,000.00 ',down:' $2,000.00 ',financed:' $26,199.00 ',apr:' 4.9% ',term:' 72 mo ',payment:' $'+payment(2619900,4.9,72).toFixed(2)+' ',products:[{name:' GAP ',price:' $850.00 '}],state:' wi '};Object.assign(a,clone(messy));Object.assign(b,clone(messy));},{preapprovalAPR:' 4.9% ',feePaid:' $50.00 '});
+ return out;
+}
+function runTests(){
+ const results=tests().map((test,i)=>{const r=analyze(test.input),fails=[];const assert=(ok,label)=>{if(!ok)fails.push(label);};
+  if(i!==3)assert(!r.blocked,'reconciliation');
+  if(i===0){assert(r.termWarning,'term warning');assert(r.scorecard.cashSavings===0,'zero cash savings');assert(r.scorecard.interestSavings<0,'higher projected interest');assert(r.lines.some(l=>l.text==='At what term? Show both at the same term and rate.'),'term line');}
+  if(i===1){assert(r.ra.expected===r.rb.expected,'same principal');assert(r.scorecard.cashSavings===0,'trade-price offset');assert(r.lines.some(l=>l.text==='Show me the selling price and the trade allowance separately. Did the price change?'),'trade line');}
+  if(i===2){assert(r.scorecard.cashSavings===-85000,'GAP cost');assert(Math.abs(r.d.apr+.25)<1e-9,'quarter point');assert(r.lines.some(l=>l.text==="I didn't say yes to that. Print it without it."),'product line');}
+  if(i===3){assert(r.blocked,'missing payoff blocks');assert(r.rb.expected===null,'payoff not zero');assert(r.scorecard.cashSavings===null,'no scored savings');assert(r.lines.some(l=>l.text.includes('trade payoff')),'exact missing field');}
+  if(i===4){assert(r.rb.paymentFlag,'payment mismatch');assert(Math.abs(r.rb.impliedAPR-8.9)<.001,'implied APR');assert(r.lines.some(l=>l.text==='I qualify for 4.90%. Your payment is figured at 8.90%.'),'APR line');}
+  if(i===5){assert(r.scorecard.cashSavings===0,'cash down not savings');assert(r.d.down===200000,'cash down increase');assert(r.lines.some(l=>l.text==="I didn't add money down. Put it back."),'cash line');}
+  if(i===6){assert(r.scorecard.cashSavings===-15000,'fee cost');assert(r.lines.some(l=>l.text==='Plate and title went up $150.00. Why?'),'fee line');}
+  if(i===7){assert(r.rb.expected===2619900,'messy total');assert(r.b.values.term===72&&r.b.values.apr===4.9&&r.b.values.state==='WI','typed formats');assert(r.scorecard.cashSavings===0&&r.scorecard.interestSavings===0&&r.scorecard.net===-5000,'zero changes and fee');assert(r.lines.some(l=>l.text==='What changed? Nothing moved.'),'nothing moved line');}
+  if(!r.blocked&&!r.explanation.reason)assert(attributionCheck(r.explanation).pass,'payment attribution reconciles within $0.01');
+  return {name:test.name,pass:!fails.length,failures:fails,result:r,input:test.input,output:report(r,true)};
+ });return results;
+}
+root.DealCheck={MONEY_FIELDS,LABELS,BUCKETS,parse,payment,impliedAPR,normalize,reconcile,analyze,report,tests,runTests,amount,signed,percent,cents,formatValue,paymentChangeLabel,attributionCheck,attributionStatus};
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script>
+<script id="deal-ui">
+(function(){
+'use strict';const C=DealCheck;
+const $=id=>document.getElementById(id);let current=null;
+const fields=['price','serviceFee','tax','titleFees','rebates','trade','payoff','down','financed','apr','term','payment','state'];
+function el(tag,text,cls){const x=document.createElement(tag);if(text!=null)x.textContent=text;if(cls)x.className=cls;return x;}
+function addItem(sheet,key,item){const rows=$(sheet+'-'+key+'-rows'),row=el('div',null,'item-row');const name=el('input'),price=el('input'),remove=el('button','×');name.placeholder='Name';name.setAttribute('aria-label',sheet+' '+key+' name');price.placeholder='Price';price.inputMode='decimal';price.setAttribute('aria-label',sheet+' '+key+' price');name.value=item?item.name:'';price.value=item?item.price:'';remove.type='button';remove.setAttribute('aria-label','Remove item');remove.addEventListener('click',()=>{row.remove();markChanged();});row.append(name,price,remove);rows.append(row);$(sheet+'-'+key+'-none').checked=false;rows.hidden=false;}
+function buildSheet(id,title){const panel=el('section',null,'panel'),head=el('div',null,'sheet-head');head.append(el('h2',title),el('span','All fields optional','sheet-tag'));panel.append(head);const grid=el('div',null,'fields');fields.forEach(key=>{const label=el('label',C.LABELS[key]),input=el('input');input.id=id+'-'+key;input.name=id+'-'+key;input.autocomplete='off';input.placeholder=key==='term'?'72 mo':key==='apr'?'4.9%':key==='state'?'WI':'Unknown';if(key!=='state')input.inputMode='decimal';label.append(input);grid.append(label);});panel.append(grid);
+ ['addons','products'].forEach(key=>{const box=el('div',null,'list-box');box.append(el('h3',C.LABELS[key]));const label=el('label',null,'list-none'),none=el('input');none.type='checkbox';none.id=id+'-'+key+'-none';label.append(none,el('span','None shown — confirmed $0'));const rows=el('div');rows.id=id+'-'+key+'-rows';const button=el('button','Add '+(key==='addons'?'dealer add-on':'product'));button.type='button';button.addEventListener('click',()=>{addItem(id,key);markChanged();});none.addEventListener('change',()=>{rows.hidden=none.checked;markChanged();});box.append(label,rows,button);panel.append(box);});$('sheets').append(panel);}
+buildSheet('first','First sheet');buildSheet('new','New sheet');
+function readSheet(id){const result={};fields.forEach(k=>result[k]=$(id+'-'+k).value);['addons','products'].forEach(k=>{const rows=Array.from($(id+'-'+k+'-rows').children);result[k]=$(id+'-'+k+'-none').checked?[]:rows.length?rows.map(row=>({name:row.children[0].value,price:row.children[1].value})):null;});return result;}
+function writeSheet(id,data){fields.forEach(k=>$(id+'-'+k).value=data[k]==null?'':data[k]);['addons','products'].forEach(k=>{$(id+'-'+k+'-rows').replaceChildren();$(id+'-'+k+'-none').checked=Array.isArray(data[k])&&!data[k].length;$(id+'-'+k+'-rows').hidden=$(id+'-'+k+'-none').checked;(data[k]||[]).forEach(item=>addItem(id,k,item));});}
+function input(){return {first:readSheet('first'),new:readSheet('new'),options:{preapprovalAPR:$('benchmark').value,feePaid:$('coach-fee').value,caseName:$('case-name').value,vehicle:$('vehicle').value}};}
+function markChanged(){if(current){$('status').textContent='Inputs changed. Run Deal Check again to update the report.';$('output').hidden=true;$('output-actions').hidden=true;current=null;}$('persistence-status').textContent='Unsaved changes. Save case to keep them after reload.';$('stored-record-details').hidden=true;}
+$('entry').addEventListener('input',markChanged);
+const STORAGE_PREFIX='dealcheck.case.';
+function validSavedSheet(sheet){return sheet&&typeof sheet==='object'&&!Array.isArray(sheet)&&fields.every(k=>typeof sheet[k]==='string')&&['addons','products'].every(k=>sheet[k]===null||(Array.isArray(sheet[k])&&sheet[k].every(item=>item&&typeof item.name==='string'&&typeof item.price==='string')));}
+function showStoredRecord(raw,message){$('stored-record').textContent=raw;$('stored-record-details').hidden=false;$('stored-record-details').open=true;$('persistence-status').textContent=message;}
+function storageFailed(action,error){$('stored-record-details').hidden=true;$('persistence-status').textContent=action+' failed: '+error.message;}
+$('save-saved-case').addEventListener('click',()=>{
+ try{
+  let caseId=$('case-id').value.trim();
+  if(!caseId){do{caseId='case-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,10);}while(localStorage.getItem(STORAGE_PREFIX+caseId)!==null);}
+  const snapshot=input();
+  const record={caseId,first:snapshot.first,new:snapshot.new,options:snapshot.options,coachNotes:$('coach-notes').value};
+  const raw=JSON.stringify(record,null,2),key=STORAGE_PREFIX+caseId;
+  localStorage.setItem(key,raw);
+  const stored=localStorage.getItem(key);
+  if(stored!==raw)throw new Error('Browser storage did not return the saved record. Saving is not confirmed.');
+  $('case-id').value=caseId;
+  showStoredRecord(stored,'Saved case '+caseId+'. Storage key: '+key);
+ }catch(error){storageFailed('Save',error);}
+});
+$('load-saved-case').addEventListener('click',()=>{
+ try{
+  const caseId=$('case-id').value.trim();
+  if(!caseId)throw new Error('Enter the case ID to load.');
+  let key=STORAGE_PREFIX+caseId,raw=localStorage.getItem(key);
+  if(raw===null){
+   const olderKeys=[];
+   for(let i=0;i<localStorage.length;i++){const candidate=localStorage.key(i);if(candidate&&candidate.endsWith('.'+key))olderKeys.push(candidate);}
+   if(olderKeys.length>1)throw new Error('More than one older record has this case ID. No record was loaded or changed.');
+   if(olderKeys.length===1){key=olderKeys[0];raw=localStorage.getItem(key);}
+  }
+  if(raw===null)throw new Error('No saved record exists for case ID '+caseId+' in this browser.');
+  const record=JSON.parse(raw);
+  if(!record||record.caseId!==caseId||!validSavedSheet(record.first)||!validSavedSheet(record.new)||typeof record.coachNotes!=='string'||!record.options||!['preapprovalAPR','feePaid','caseName','vehicle'].every(k=>typeof record.options[k]==='string'))throw new Error('The saved record is incomplete or has an unsupported format. Current inputs were kept.');
+  writeSheet('first',record.first);writeSheet('new',record.new);
+  $('benchmark').value=record.options.preapprovalAPR;$('coach-fee').value=record.options.feePaid;$('case-name').value=record.options.caseName;$('vehicle').value=record.options.vehicle;
+  $('case-id').value=record.caseId;$('coach-notes').value=record.coachNotes;
+  markChanged();showStoredRecord(raw,'Loaded case '+caseId+'. Storage key: '+key);
+  $('status').textContent='Saved inputs and coach notes loaded. Tap Run Deal Check.';
+ }catch(error){storageFailed('Load',error);}
+});
+function table(headers,rows){const wrap=el('div',null,'table-wrap'),t=el('table'),head=el('thead'),tr=el('tr');headers.forEach((h,i)=>{const th=el('th',h,i?'num':'');th.scope='col';tr.append(th);});head.append(tr);t.append(head);const body=el('tbody');rows.forEach(row=>{const tr=el('tr');row.forEach((value,i)=>{const td=el('td',value,i?'num':'');tr.append(td);});body.append(tr);});t.append(body);wrap.append(t);return wrap;}
+function section(title){const x=el('section',null,'result-section');x.append(el('h2',title));return x;}
+function render(r){$('output').replaceChildren();$('output').hidden=false;const one=section('1 · What changed');
+ if(r.options.caseName||r.options.vehicle)one.append(el('p',[r.options.caseName,r.options.vehicle].filter(Boolean).join(' · '),'note'));
+ const order=['price','addons','serviceFee','tax','titleFees','rebates','trade','payoff','down','apr','term','products','financed','payment','state'];
+ one.append(table(['Lever','First','New','Change'],order.map(k=>{const x=r.d[k];const change=k==='payment'?C.paymentChangeLabel(r.a.values.payment,r.b.values.payment):k==='state'?(x===0?'Same':'Check'):k==='apr'?(x==null?'unknown':x.toFixed(2)+' pp'):k==='term'?(x==null?'unknown':x+' mo'):C.signed(x);return [C.LABELS[k],C.formatValue(k,r.a.values[k]),C.formatValue(k,r.b.values[k]),change];})));
+ const itemChanges=r.addonChanges.concat(r.productChanges).filter(x=>x.change!==0);if(itemChanges.length){one.append(el('h3','Individual items'));one.append(table(['Item','First','New','Change'],itemChanges.map(x=>[x.name,C.amount(x.first),C.amount(x.next),C.signed(x.change)])));}
+ one.append(el('h3','Reconcile the sheets'));one.append(table(['Check','First','New'],[['Out-the-door total',C.amount(r.ra.otd),C.amount(r.rb.otd)],['Net trade',C.amount(r.ra.netTrade),C.amount(r.rb.netTrade)],['Expected amount financed',C.amount(r.ra.expected),C.amount(r.rb.expected)],['Sheet minus expected',C.signed(r.ra.discrepancy),C.signed(r.rb.discrepancy)],['Recomputed payment',C.amount(r.ra.modeledPayment==null?null:C.cents(r.ra.modeledPayment)),C.amount(r.rb.modeledPayment==null?null:C.cents(r.rb.modeledPayment))],['Payment-implied APR',C.percent(r.ra.impliedAPR),C.percent(r.rb.impliedAPR)],['Cash + projected payments',C.amount(r.ra.totalPaid),C.amount(r.rb.totalPaid)]]));
+ if(r.blocked){const x=el('div',null,'flag');x.append(el('strong','STOP — reconcile the missing or wrong fields.'));r.errors.concat(r.ra.questions.concat(r.rb.questions).map(q=>q.line)).forEach(s=>x.append(el('p',s)));one.append(x);}
+ if(r.termWarning){const x=el('div',null,'flag');x.append(el('strong','the payment is lower because the term is longer.'));one.append(x);}
+ [r.ra,r.rb].forEach((x,i)=>{if(x.paymentFlag)one.append(el('p',(i?'New':'First')+' payment differs by '+C.signed(x.paymentGap)+'. It implies '+C.percent(x.impliedAPR)+'; check the stated APR and payment.','flag'));if(x.aprInferred)one.append(el('p',(i?'New':'First')+' APR is missing. The payment implies '+C.percent(x.impliedAPR)+' under the monthly-loan model.','note'));});
+ if(r.a.addons.unitemized||r.a.products.unitemized||r.b.addons.unitemized||r.b.products.unitemized)one.append(el('p','Package: not itemized. No split estimated.','flag'));
+ one.append(el('p','Extra cash down is never savings. Cash down changed '+C.signed(r.d.down)+'.','flag'));
+ if(r.benchmarkGap!=null)one.append(el('p','Pre-approval '+C.percent(r.benchmark)+'; new offered/payment-implied rate differs by '+r.benchmarkGap.toFixed(2)+' percentage points. This is a benchmark comparison, not a markup estimate.','note'));
+ if(r.stateChanged)one.append(el('p','State changed. Verify the entered tax and title figures; no automatic state rules are applied.','note'));
+ one.append(el('h3','Explain the payment change'));
+ if(r.explanation.reason)one.append(el('p',r.explanation.reason));else{one.append(table(['Lever','Monthly effect'],r.explanation.steps.length?r.explanation.steps.map(s=>[s.label,C.signed(C.cents(s.monthlyChange))]):[['Nothing moved','$0.00']]));one.append(el('p','Order: itemized amounts → APR → term. Total payment change: '+C.signed(C.cents(r.explanation.observedChange))+'/mo. Rounding may move a cent between displayed rows.','note'));one.append(el('p',C.attributionStatus(r.explanation),C.attributionCheck(r.explanation).pass?'note':'flag'));}
+ $('output').append(one);
+ const two=section("2 · The buyer's lines");if(!r.lines.length)two.append(el('p','No mapped response triggered.'));r.lines.forEach(l=>{const p=el('div',null,'buyer-line');p.append(el('span',l.finding,'finding'),el('span',l.text));two.append(p);});$('output').append(two);
+ const three=section('3 · Scorecard');three.append(el('p','Package buckets. Positive change = reduction or benefit; zeros stay visible.','note'));
+ three.append(table(['Bucket','First','New','Change'],r.scorecard.rows.map(x=>{const fmt=v=>x.type==='APR'?C.percent(v):x.type==='Months'?(v==null?'unknown':v+' mo'):C.amount(v);const change=x.type==='APR'?(x.change==null?'unknown':x.change.toFixed(2)+' pp'):x.type==='Months'?(x.change==null?'unknown':x.change+' mo'):C.signed(x.change);return [x.bucket+' · '+x.type,fmt(x.first),fmt(x.next),change];})));
+ const totals=el('div',null,'totals');[['Transaction savings · cash',r.scorecard.cashSavings],['Interest savings · projected',r.scorecard.interestSavings],['Coaching fee paid',r.feePaid],['Net cash after fee',r.scorecard.cashNet],['Net · cash + projected − fee',r.scorecard.net]].forEach(([label,value])=>{const x=el('div',null,'total');x.append(el('span',label),el('strong',C.amount(value)));totals.append(x);});three.append(totals);
+ three.append(el('p','Tax adjustment '+C.signed(r.scorecard.taxAdjustment)+' and rebate adjustment '+C.signed(r.scorecard.rebateAdjustment)+' reconcile the cash total. They are not added again to a trade tax-credit estimate.','note'));
+ if(r.d.payoff)three.append(el('p','Payoff changed '+C.signed(r.d.payoff)+'. An old debt balance change is kept outside transaction savings.','note'));
+ three.append(el('p','Trade after tax credit (vs. cash offer): supporting cash-offer and tax-credit figures are not entered. Unknown is not zero.','note'));
+ if(r.a.products.unitemized||r.b.products.unitemized)three.append(el('p','Product buckets: not itemized. The known package total stays in the transaction calculation; no allocation to GAP, service contract or other products is invented.','note'));
+ three.append(el('p','Projected interest assumes every scheduled payment, no early payoff or refinance.'+(r.ra.paymentFlag||r.rb.paymentFlag?' These figures use stated APR; a printed payment does not match.':''),'note'));
+ const verdict=el('label','Coach verdict'),select=el('select');['Not selected','SIGN','SIGN AFTER CHANGES',"DON'T SIGN"].forEach(v=>{const op=el('option',v);op.value=v;select.append(op);});verdict.append(select);three.append(verdict);three.append(el('p',"Buyer sign-off: “These are the numbers from my paperwork.”",'note'));$('output').append(three);
+ $('status').textContent=r.blocked?'Stopped for missing or inconsistent figures.':(r.ra.paymentFlag||r.rb.paymentFlag)?'Calculated with a payment discrepancy flagged.':'Calculated. Check the lever changes, buyer lines and Scorecard.';$('output-actions').hidden=false;
+}
+$('compare').addEventListener('click',()=>{current=C.analyze(input());render(current);$('output').scrollIntoView({behavior:'smooth',block:'start'});});
+$('copy-first').addEventListener('click',()=>{writeSheet('new',readSheet('first'));markChanged();$('status').textContent='First copied into New. Change the revised figures, then run the check.';});
+const examples=C.tests();examples.forEach((t,i)=>{const o=el('option',t.name);o.value=String(i);$('case-select').append(o);});
+$('load-case').addEventListener('click',()=>{const t=examples[Number($('case-select').value)];writeSheet('first',t.input.first);writeSheet('new',t.input.new);$('benchmark').value=t.input.options.preapprovalAPR;$('coach-fee').value=t.input.options.feePaid;$('case-name').value=t.name;$('vehicle').value='Constructed example';$('case-id').value='';$('coach-notes').value='';markChanged();$('status').textContent='Test figures loaded. Tap Run Deal Check.';});
+$('clear-case').addEventListener('click',()=>{writeSheet('first',{});writeSheet('new',{});['benchmark','coach-fee','case-name','vehicle','case-id','coach-notes'].forEach(id=>$(id).value='');markChanged();$('status').textContent='Inputs cleared. Blank fields are unknown.';});
+$('copy-report').addEventListener('click',async()=>{if(!current)return;const text=C.report(current);try{if(!navigator.clipboard)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(text);$('status').textContent='Report copied.';}catch(e){$('copy-fallback').value=text;$('copy-fallback').hidden=false;$('copy-fallback').focus();$('copy-fallback').select();$('status').textContent='Select and copy the report text below.';}});
+$('print-report').addEventListener('click',()=>window.print());
+$('run-tests').addEventListener('click',()=>{const results=C.runTests();$('test-output').replaceChildren();const summary=el('pre',results.filter(x=>x.pass).length+'/8 required tests passed\n'+results.map(x=>(x.pass?'PASS ':'FAIL ')+x.name+(x.failures.length?': '+x.failures.join(', '):'')).join('\n'));$('test-output').append(summary);results.forEach(t=>{const d=el('details',null,'test-result');d.append(el('summary',(t.pass?'PASS · ':'FAIL · ')+t.name,t.pass?'test-pass':'test-fail'),el('pre',t.output));$('test-output').append(d);});});
+})();
+</script>
+</body>
+</html>
