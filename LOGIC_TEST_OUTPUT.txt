@@ -1,0 +1,718 @@
+Node calculation tests only. Browser and persistence verification: NOT RUN.
+Locked calculation source unchanged: PASS
+Locked engine SHA-256: d81a964579480019dddd7948c73fb512eaa04d157d3c2d9568243f4b8a307ee9
+JavaScript syntax: PASS (core and UI; UI not executed)
+Payment-attribution tolerance: $0.01; residuals are not discarded.
+
+PASS 1 · Term switch only, 60 → 72
+  Unallocated payment-attribution residual: +$0.00170304/mo; tolerance $0.01; within tolerance.
+PASS 2 · Trade +$1,000 and price +$1,000
+  Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+PASS 3 · GAP added, APR down a quarter point
+  Unallocated payment-attribution residual: +$0.00339067/mo; tolerance $0.01; within tolerance.
+PASS 4 · Trade payoff missing
+  Payment-attribution residual: unavailable until the inputs reconcile.
+PASS 5 · Stated 4.9%, payment implies 8.9%
+  Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+PASS 6 · Extra $2,000 down lowers payment
+  Unallocated payment-attribution residual: +$0.00090706/mo; tolerance $0.01; within tolerance.
+PASS 7 · Title fees increase $150
+  Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+PASS 8 · Every field uses messy formatting
+  Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+8/8 required cases passed
+
+PASS guard: +$0.01000000 is within tolerance
+PASS guard: -$0.01000000 is within tolerance
+PASS guard: +$0.01010000 is rejected
+PASS guard: -$0.01010000 is rejected
+PASS guard: +$25.00000000 is rejected
+PASS guard: Nonfinite residual is rejected
+
+ACTUAL REPORT OUTPUT FROM EACH CONSTRUCTED CASE
+
+1 · Term switch only, 60 → 72
+INPUT:
+{
+  "first": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "476.28",
+    "products": [],
+    "state": "WI"
+  },
+  "new": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "72",
+    "payment": "406.28",
+    "products": [],
+    "state": "WI"
+  },
+  "options": {
+    "preapprovalAPR": "4.9%",
+    "feePaid": "0"
+  }
+}
+OUTPUT:
+WHAT CHANGED
+Term: 60 mo -> 72 mo; change 12 mo
+Payment: $476.28 -> $406.28; change −$70.00
+First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+New: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+New: modeled payment $406.28; projected interest $3,952.32; total paid incl. down $31,252.32.
+**the payment is lower because the term is longer.**
+Extra cash down is never savings. Change in cash down: $0.00.
+Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
+Payment change by lever (amounts, then APR, then term):
+  Term: −$70.00/mo
+Total printed/model payment change: −$70.00/mo.
+Unallocated payment-attribution residual: +$0.00170304/mo; tolerance $0.01; within tolerance.
+
+BUYER'S LINES
+Term increased: "At what term? Show both at the same term and rate."
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
+Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $0.00 -> $0.00; change $0.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+Term: 60 mo -> 72 mo; change -12 mo [Months]
+Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
+Total interest over the term: $3,277.04 -> $3,952.32; change −$675.28 [Projected] — Full-term model
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): $0.00
+Projected interest savings: $-675.28
+Fee paid: $0.00
+Net cash after fee: $0.00
+Net (cash + projected − fee): $-675.28
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.
+
+2 · Trade +$1,000 and price +$1,000
+INPUT:
+{
+  "first": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "476.28",
+    "products": [],
+    "state": "WI"
+  },
+  "new": {
+    "price": "31000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "11000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "476.28",
+    "products": [],
+    "state": "WI"
+  },
+  "options": {
+    "preapprovalAPR": "4.9%",
+    "feePaid": "0"
+  }
+}
+OUTPUT:
+WHAT CHANGED
+Selling price: $30,000.00 -> $31,000.00; change +$1,000.00
+Trade allowance: $10,000.00 -> $11,000.00; change +$1,000.00
+First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+New: OTD $33,300.00; net trade $6,000.00; expected financed $25,300.00; sheet difference $0.00.
+New: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+Extra cash down is never savings. Change in cash down: $0.00.
+Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
+Payment change by lever (amounts, then APR, then term):
+  Selling price: +$18.83/mo
+  Trade allowance: −$18.83/mo
+Total printed/model payment change: $0.00/mo.
+Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+
+BUYER'S LINES
+Trade and price both increased: "Show me the selling price and the trade allowance separately. Did the price change?"
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $31,000.00; change −$1,000.00 [Cash]
+Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Trade allowance: $10,000.00 -> $11,000.00; change +$1,000.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $0.00 -> $0.00; change $0.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+Term: 60 mo -> 60 mo; change 0 mo [Months]
+Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
+Total interest over the term: $3,277.04 -> $3,277.04; change $0.00 [Projected] — Full-term model
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): $0.00
+Projected interest savings: $0.00
+Fee paid: $0.00
+Net cash after fee: $0.00
+Net (cash + projected − fee): $0.00
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.
+
+3 · GAP added, APR down a quarter point
+INPUT:
+{
+  "first": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "476.28",
+    "products": [],
+    "state": "WI"
+  },
+  "new": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "26150",
+    "apr": "4.65",
+    "term": "60",
+    "payment": "489.30",
+    "products": [
+      {
+        "name": "GAP",
+        "price": "850"
+      }
+    ],
+    "state": "WI"
+  },
+  "options": {
+    "preapprovalAPR": "4.9%",
+    "feePaid": "0"
+  }
+}
+OUTPUT:
+WHAT CHANGED
+APR: 4.90% -> 4.65%; change -0.25 pp
+Products: $0.00 -> $850.00; change +$850.00
+Amount financed: $25,300.00 -> $26,150.00; change +$850.00
+Payment: $476.28 -> $489.30; change +$13.02
+GAP: $0.00 -> $850.00; +$850.00
+First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+New: OTD $32,300.00; net trade $5,000.00; expected financed $26,150.00; sheet difference $0.00.
+New: modeled payment $489.30; projected interest $3,208.04; total paid incl. down $31,358.04.
+Extra cash down is never savings. Change in cash down: $0.00.
+Pre-approval benchmark 4.90%; new rate/payment-implied difference -0.25 pp. No markup estimate.
+Payment change by lever (amounts, then APR, then term):
+  Products: +$16.00/mo
+  APR: −$2.99/mo
+Total printed/model payment change: +$13.02/mo.
+Unallocated payment-attribution residual: +$0.00339067/mo; tolerance $0.01; within tolerance.
+
+BUYER'S LINES
+GAP added: "I didn't say yes to that. Print it without it."
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
+Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $0.00 -> $850.00; change −$850.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 4.90% -> 4.65%; change 0.25 pp [APR] — Stated APR
+Term: 60 mo -> 60 mo; change 0 mo [Months]
+Amount financed: $25,300.00 -> $26,150.00; change −$850.00 [Balance]
+Total interest over the term: $3,277.04 -> $3,208.04; change +$69.00 [Projected] — Full-term model
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): $-850.00
+Projected interest savings: $69.00
+Fee paid: $0.00
+Net cash after fee: $-850.00
+Net (cash + projected − fee): $-781.00
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.
+
+4 · Trade payoff missing
+INPUT:
+{
+  "first": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "476.28",
+    "products": [],
+    "state": "WI"
+  },
+  "new": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "476.28",
+    "products": [],
+    "state": "WI"
+  },
+  "options": {
+    "preapprovalAPR": "4.9%",
+    "feePaid": "0"
+  }
+}
+OUTPUT:
+WHAT CHANGED
+Trade payoff: $5,000.00 -> unknown; change unknown
+First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+New: OTD $32,300.00; net trade unknown; expected financed unknown; sheet difference unknown.
+New: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+STOP: reconcile missing or wrong fields before scoring totals.
+Extra cash down is never savings. Change in cash down: $0.00.
+Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
+Payment attribution waits for reconciled amounts, APR (entered or implied), and term on both sheets.
+
+BUYER'S LINES
+Missing Trade payoff: "New: what is the trade payoff? It is missing; enter the sheet value, or an explicit zero."
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
+Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $0.00 -> $0.00; change $0.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+Term: 60 mo -> 60 mo; change 0 mo [Months]
+Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
+Total interest over the term: unknown -> unknown; change unknown [Projected] — Full-term model
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): unknown
+Projected interest savings: unknown
+Fee paid: $0.00
+Net cash after fee: unknown
+Net (cash + projected − fee): unknown
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.
+
+5 · Stated 4.9%, payment implies 8.9%
+INPUT:
+{
+  "first": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "476.28",
+    "products": [],
+    "state": "WI"
+  },
+  "new": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "523.96",
+    "products": [],
+    "state": "WI"
+  },
+  "options": {
+    "preapprovalAPR": "4.9%",
+    "feePaid": "0"
+  }
+}
+OUTPUT:
+WHAT CHANGED
+Payment: $476.28 -> $523.96; change +$47.68
+First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+New: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+New: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+FLAG New: payment differs by +$47.68; payment implies 8.90% versus stated 4.90%.
+Extra cash down is never savings. Change in cash down: $0.00.
+Pre-approval benchmark 4.90%; new rate/payment-implied difference 4.00 pp. No markup estimate.
+Payment change by lever (amounts, then APR, then term):
+  Unexplained printed-payment difference: +$47.68/mo
+Total printed/model payment change: +$47.68/mo.
+Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+
+BUYER'S LINES
+Payment implies a different APR: "I qualify for 4.90%. Your payment is figured at 8.90%."
+No lever moved: "What changed? Nothing moved."
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
+Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $0.00 -> $0.00; change $0.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+Term: 60 mo -> 60 mo; change 0 mo [Months]
+Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
+Total interest over the term: $3,277.04 -> $3,277.04; change $0.00 [Projected] — Stated-APR model; printed payment does not match
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): $0.00
+Projected interest savings: $0.00
+Fee paid: $0.00
+Net cash after fee: $0.00
+Net (cash + projected − fee): $0.00
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.
+
+6 · Extra $2,000 down lowers payment
+INPUT:
+{
+  "first": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "476.28",
+    "products": [],
+    "state": "WI"
+  },
+  "new": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "4000",
+    "financed": "23300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "438.63",
+    "products": [],
+    "state": "WI"
+  },
+  "options": {
+    "preapprovalAPR": "4.9%",
+    "feePaid": "0"
+  }
+}
+OUTPUT:
+WHAT CHANGED
+Cash down: $2,000.00 -> $4,000.00; change +$2,000.00
+Amount financed: $25,300.00 -> $23,300.00; change −$2,000.00
+Payment: $476.28 -> $438.63; change −$37.65
+First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+New: OTD $32,300.00; net trade $5,000.00; expected financed $23,300.00; sheet difference $0.00.
+New: modeled payment $438.63; projected interest $3,017.98; total paid incl. down $30,317.98.
+Extra cash down is never savings. Change in cash down: +$2,000.00.
+Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
+Payment change by lever (amounts, then APR, then term):
+  Cash down: −$37.65/mo
+Total printed/model payment change: −$37.65/mo.
+Unallocated payment-attribution residual: +$0.00090706/mo; tolerance $0.01; within tolerance.
+
+BUYER'S LINES
+Cash down increased: "I didn't add money down. Put it back."
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
+Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $0.00 -> $0.00; change $0.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+Term: 60 mo -> 60 mo; change 0 mo [Months]
+Amount financed: $25,300.00 -> $23,300.00; change +$2,000.00 [Balance]
+Total interest over the term: $3,277.04 -> $3,017.98; change +$259.06 [Projected] — Full-term model
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): $0.00
+Projected interest savings: $259.06
+Fee paid: $0.00
+Net cash after fee: $0.00
+Net (cash + projected − fee): $259.06
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.
+
+7 · Title fees increase $150
+INPUT:
+{
+  "first": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "476.28",
+    "products": [],
+    "state": "WI"
+  },
+  "new": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "450",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25450",
+    "apr": "4.9",
+    "term": "60",
+    "payment": "479.11",
+    "products": [],
+    "state": "WI"
+  },
+  "options": {
+    "preapprovalAPR": "4.9%",
+    "feePaid": "0"
+  }
+}
+OUTPUT:
+WHAT CHANGED
+Title/plate fees: $300.00 -> $450.00; change +$150.00
+Amount financed: $25,300.00 -> $25,450.00; change +$150.00
+Payment: $476.28 -> $479.11; change +$2.83
+First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+New: OTD $32,450.00; net trade $5,000.00; expected financed $25,450.00; sheet difference $0.00.
+New: modeled payment $479.11; projected interest $3,296.47; total paid incl. down $30,746.47.
+Extra cash down is never savings. Change in cash down: $0.00.
+Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
+Payment change by lever (amounts, then APR, then term):
+  Title/plate fees: +$2.82/mo
+  Printed-payment rounding difference: +$0.01/mo
+Total printed/model payment change: +$2.83/mo.
+Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+
+BUYER'S LINES
+Title/plate fees increased: "Plate and title went up $150.00. Why?"
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
+Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $950.00; change −$150.00 [Cash] — Service fee + title/plate fees
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $0.00 -> $0.00; change $0.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+Term: 60 mo -> 60 mo; change 0 mo [Months]
+Amount financed: $25,300.00 -> $25,450.00; change −$150.00 [Balance]
+Total interest over the term: $3,277.04 -> $3,296.47; change −$19.43 [Projected] — Full-term model
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): $-150.00
+Projected interest savings: $-19.43
+Fee paid: $0.00
+Net cash after fee: $-150.00
+Net (cash + projected − fee): $-169.43
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.
+
+8 · Every field uses messy formatting
+INPUT:
+{
+  "first": {
+    "price": " $30,000.00 ",
+    "addons": [
+      {
+        "name": " Etch ",
+        "price": " $299.00 "
+      }
+    ],
+    "serviceFee": " $500.00 ",
+    "tax": " $1,500.00 ",
+    "titleFees": " $300.00 ",
+    "rebates": " $250.00 ",
+    "trade": " $10,000.00 ",
+    "payoff": " $5,000.00 ",
+    "down": " $2,000.00 ",
+    "financed": " $26,199.00 ",
+    "apr": " 4.9% ",
+    "term": " 72 mo ",
+    "payment": " $420.72 ",
+    "products": [
+      {
+        "name": " GAP ",
+        "price": " $850.00 "
+      }
+    ],
+    "state": " wi "
+  },
+  "new": {
+    "price": " $30,000.00 ",
+    "addons": [
+      {
+        "name": " Etch ",
+        "price": " $299.00 "
+      }
+    ],
+    "serviceFee": " $500.00 ",
+    "tax": " $1,500.00 ",
+    "titleFees": " $300.00 ",
+    "rebates": " $250.00 ",
+    "trade": " $10,000.00 ",
+    "payoff": " $5,000.00 ",
+    "down": " $2,000.00 ",
+    "financed": " $26,199.00 ",
+    "apr": " 4.9% ",
+    "term": " 72 mo ",
+    "payment": " $420.72 ",
+    "products": [
+      {
+        "name": " GAP ",
+        "price": " $850.00 "
+      }
+    ],
+    "state": " wi "
+  },
+  "options": {
+    "preapprovalAPR": " 4.9% ",
+    "feePaid": " $50.00 "
+  }
+}
+OUTPUT:
+WHAT CHANGED
+First: OTD $32,349.00; net trade $5,000.00; expected financed $26,199.00; sheet difference $0.00.
+First: modeled payment $420.72; projected interest $4,092.76; total paid incl. down $32,291.76.
+New: OTD $32,349.00; net trade $5,000.00; expected financed $26,199.00; sheet difference $0.00.
+New: modeled payment $420.72; projected interest $4,092.76; total paid incl. down $32,291.76.
+Extra cash down is never savings. Change in cash down: $0.00.
+Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
+Payment change by lever (amounts, then APR, then term):
+No modeled payment change: $0.00/mo.
+Total printed/model payment change: $0.00/mo.
+Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+
+BUYER'S LINES
+No lever moved: "What changed? Nothing moved."
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
+Dealer add-ons removed: $299.00 -> $299.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $850.00 -> $850.00; change $0.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+Term: 72 mo -> 72 mo; change 0 mo [Months]
+Amount financed: $26,199.00 -> $26,199.00; change $0.00 [Balance]
+Total interest over the term: $4,092.76 -> $4,092.76; change $0.00 [Projected] — Full-term model
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): $0.00
+Projected interest savings: $0.00
+Fee paid: $50.00
+Net cash after fee: $-50.00
+Net (cash + projected − fee): $-50.00
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.
