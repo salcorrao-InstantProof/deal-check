@@ -91,3 +91,11 @@ No older record is automatically deleted or rewritten.
 
 Do not build a dependent screen until the owner supplies successful browser
 save/load evidence.
+
+## Customer-facing $59 pilot
+
+`index.html` adds an independent customer request page for a personal paperwork
+review by Sonny. See `PILOT.md` for the offer, setup, and manual delivery flow,
+`VALIDATION.md` for current checks, and `MANUAL_CHECKS.md` for owner browser
+checks. Intake is closed pending a chosen customer inbox. The original coach
+app and calculation source above are unchanged.
