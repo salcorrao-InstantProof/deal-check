@@ -20,7 +20,9 @@ PASS 7 · Title fees increase $150
   Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
 PASS 8 · Every field uses messy formatting
   Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
-8/8 required cases passed
+PASS 9 · Zero APR, first payment 30 → 120 days
+  Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+9/9 required cases passed
 
 PASS guard: +$0.01000000 is within tolerance
 PASS guard: -$0.01000000 is within tolerance
@@ -81,10 +83,12 @@ First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet 
 First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
 New: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
 New: modeled payment $406.28; projected interest $3,952.32; total paid incl. down $31,252.32.
+First: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+New: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
 **the payment is lower because the term is longer.**
 Extra cash down is never savings. Change in cash down: $0.00.
 Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
-Payment change by lever (amounts, then APR, then term):
+Payment change by lever (amounts, then APR, term and first-payment timing):
   Term: −$70.00/mo
 Total printed/model payment change: −$70.00/mo.
 Unallocated payment-attribution residual: +$0.00170304/mo; tolerance $0.01; within tolerance.
@@ -95,16 +99,20 @@ Term increased: "At what term? Show both at the same term and rate."
 SCORECARD (positive change = reduction/benefit)
 Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
 Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
-Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Dealer service fee + title, license and registration fees.
 Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
 Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
 Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
 GAP price: $0.00 -> $0.00; change $0.00 [Cash]
 Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
-APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
 Term: 60 mo -> 72 mo; change -12 mo [Months]
 Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
-Total interest over the term: $3,277.04 -> $3,952.32; change −$675.28 [Projected] — Full-term model
+Days to first payment: 30 days -> 30 days; change 0 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $0.00; change $0.00 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $0.00; change $0.00 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: $3,277.04 -> $3,952.32; change −$675.28 [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
 Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
 Transaction savings (cash): $0.00
 Projected interest savings: $-675.28
@@ -164,9 +172,11 @@ First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet 
 First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
 New: OTD $33,300.00; net trade $6,000.00; expected financed $25,300.00; sheet difference $0.00.
 New: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+First: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+New: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
 Extra cash down is never savings. Change in cash down: $0.00.
 Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
-Payment change by lever (amounts, then APR, then term):
+Payment change by lever (amounts, then APR, term and first-payment timing):
   Selling price: +$18.83/mo
   Trade allowance: −$18.83/mo
 Total printed/model payment change: $0.00/mo.
@@ -178,16 +188,20 @@ Trade and price both increased: "Show me the selling price and the trade allowan
 SCORECARD (positive change = reduction/benefit)
 Selling price: $30,000.00 -> $31,000.00; change −$1,000.00 [Cash]
 Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
-Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Dealer service fee + title, license and registration fees.
 Trade allowance: $10,000.00 -> $11,000.00; change +$1,000.00 [Cash]
 Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
 Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
 GAP price: $0.00 -> $0.00; change $0.00 [Cash]
 Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
-APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
 Term: 60 mo -> 60 mo; change 0 mo [Months]
 Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
-Total interest over the term: $3,277.04 -> $3,277.04; change $0.00 [Projected] — Full-term model
+Days to first payment: 30 days -> 30 days; change 0 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $0.00; change $0.00 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $0.00; change $0.00 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: $3,277.04 -> $3,277.04; change $0.00 [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
 Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
 Transaction savings (cash): $0.00
 Projected interest savings: $0.00
@@ -255,9 +269,11 @@ First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet 
 First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
 New: OTD $32,300.00; net trade $5,000.00; expected financed $26,150.00; sheet difference $0.00.
 New: modeled payment $489.30; projected interest $3,208.04; total paid incl. down $31,358.04.
+First: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+New: printed amount financed $26,150.00; calculated amount financed $26,150.00; printed minus calculated $0.00.
 Extra cash down is never savings. Change in cash down: $0.00.
 Pre-approval benchmark 4.90%; new rate/payment-implied difference -0.25 pp. No markup estimate.
-Payment change by lever (amounts, then APR, then term):
+Payment change by lever (amounts, then APR, term and first-payment timing):
   Products: +$16.00/mo
   APR: −$2.99/mo
 Total printed/model payment change: +$13.02/mo.
@@ -269,16 +285,20 @@ GAP added: "I didn't say yes to that. Print it without it."
 SCORECARD (positive change = reduction/benefit)
 Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
 Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
-Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Dealer service fee + title, license and registration fees.
 Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
 Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
 Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
 GAP price: $0.00 -> $850.00; change −$850.00 [Cash]
 Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
-APR: 4.90% -> 4.65%; change 0.25 pp [APR] — Stated APR
+APR: 4.90% -> 4.65%; change 0.25 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
 Term: 60 mo -> 60 mo; change 0 mo [Months]
 Amount financed: $25,300.00 -> $26,150.00; change −$850.00 [Balance]
-Total interest over the term: $3,277.04 -> $3,208.04; change +$69.00 [Projected] — Full-term model
+Days to first payment: 30 days -> 30 days; change 0 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $0.00; change $0.00 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $0.00; change $0.00 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: $3,277.04 -> $3,208.04; change +$69.00 [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
 Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
 Transaction savings (cash): $-850.00
 Projected interest savings: $69.00
@@ -337,6 +357,8 @@ First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet 
 First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
 New: OTD $32,300.00; net trade unknown; expected financed unknown; sheet difference unknown.
 New: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+First: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+New: printed amount financed $25,300.00; calculated amount financed unknown; printed minus calculated unknown.
 STOP: reconcile missing or wrong fields before scoring totals.
 Extra cash down is never savings. Change in cash down: $0.00.
 Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
@@ -348,16 +370,20 @@ Missing Trade payoff: "New: what is the trade payoff? It is missing; enter the s
 SCORECARD (positive change = reduction/benefit)
 Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
 Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
-Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Dealer service fee + title, license and registration fees.
 Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
 Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
 Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
 GAP price: $0.00 -> $0.00; change $0.00 [Cash]
 Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
-APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
 Term: 60 mo -> 60 mo; change 0 mo [Months]
 Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
-Total interest over the term: unknown -> unknown; change unknown [Projected] — Full-term model
+Days to first payment: 30 days -> 30 days; change 0 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $0.00; change $0.00 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $0.00; change $0.00 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: unknown -> unknown; change unknown [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
 Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
 Transaction savings (cash): unknown
 Projected interest savings: unknown
@@ -417,30 +443,36 @@ First: modeled payment $476.28; projected interest $3,277.04; total paid incl. d
 New: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
 New: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
 FLAG New: payment differs by +$47.68; payment implies 8.90% versus stated 4.90%.
+First: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+New: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
 Extra cash down is never savings. Change in cash down: $0.00.
 Pre-approval benchmark 4.90%; new rate/payment-implied difference 4.00 pp. No markup estimate.
-Payment change by lever (amounts, then APR, then term):
+Payment change by lever (amounts, then APR, term and first-payment timing):
   Unexplained printed-payment difference: +$47.68/mo
 Total printed/model payment change: +$47.68/mo.
 Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
 
 BUYER'S LINES
-Payment implies a different APR: "I qualify for 4.90%. Your payment is figured at 8.90%."
 No lever moved: "What changed? Nothing moved."
+Payment implies a different APR: "I qualify for 4.90%. Your payment is figured at 8.90%."
 
 SCORECARD (positive change = reduction/benefit)
 Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
 Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
-Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Dealer service fee + title, license and registration fees.
 Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
 Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
 Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
 GAP price: $0.00 -> $0.00; change $0.00 [Cash]
 Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
-APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
 Term: 60 mo -> 60 mo; change 0 mo [Months]
 Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
-Total interest over the term: $3,277.04 -> $3,277.04; change $0.00 [Projected] — Stated-APR model; printed payment does not match
+Days to first payment: 30 days -> 30 days; change 0 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $0.00; change $0.00 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $0.00; change $0.00 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: $3,277.04 -> $3,277.04; change $0.00 [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
 Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
 Transaction savings (cash): $0.00
 Projected interest savings: $0.00
@@ -501,9 +533,11 @@ First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet 
 First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
 New: OTD $32,300.00; net trade $5,000.00; expected financed $23,300.00; sheet difference $0.00.
 New: modeled payment $438.63; projected interest $3,017.98; total paid incl. down $30,317.98.
+First: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+New: printed amount financed $23,300.00; calculated amount financed $23,300.00; printed minus calculated $0.00.
 Extra cash down is never savings. Change in cash down: +$2,000.00.
 Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
-Payment change by lever (amounts, then APR, then term):
+Payment change by lever (amounts, then APR, term and first-payment timing):
   Cash down: −$37.65/mo
 Total printed/model payment change: −$37.65/mo.
 Unallocated payment-attribution residual: +$0.00090706/mo; tolerance $0.01; within tolerance.
@@ -514,16 +548,20 @@ Cash down increased: "I didn't add money down. Put it back."
 SCORECARD (positive change = reduction/benefit)
 Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
 Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
-Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Dealer service fee + title, license and registration fees.
 Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
 Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
 Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
 GAP price: $0.00 -> $0.00; change $0.00 [Cash]
 Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
-APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
 Term: 60 mo -> 60 mo; change 0 mo [Months]
 Amount financed: $25,300.00 -> $23,300.00; change +$2,000.00 [Balance]
-Total interest over the term: $3,277.04 -> $3,017.98; change +$259.06 [Projected] — Full-term model
+Days to first payment: 30 days -> 30 days; change 0 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $0.00; change $0.00 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $0.00; change $0.00 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: $3,277.04 -> $3,017.98; change +$259.06 [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
 Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
 Transaction savings (cash): $0.00
 Projected interest savings: $259.06
@@ -577,17 +615,19 @@ INPUT:
 }
 OUTPUT:
 WHAT CHANGED
-Title/plate fees: $300.00 -> $450.00; change +$150.00
+Title / license / registration total: $300.00 -> $450.00; change +$150.00
 Amount financed: $25,300.00 -> $25,450.00; change +$150.00
 Payment: $476.28 -> $479.11; change +$2.83
 First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
 First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
 New: OTD $32,450.00; net trade $5,000.00; expected financed $25,450.00; sheet difference $0.00.
 New: modeled payment $479.11; projected interest $3,296.47; total paid incl. down $30,746.47.
+First: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+New: printed amount financed $25,450.00; calculated amount financed $25,450.00; printed minus calculated $0.00.
 Extra cash down is never savings. Change in cash down: $0.00.
 Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
-Payment change by lever (amounts, then APR, then term):
-  Title/plate fees: +$2.82/mo
+Payment change by lever (amounts, then APR, term and first-payment timing):
+  Title / license / registration total: +$2.82/mo
   Printed-payment rounding difference: +$0.01/mo
 Total printed/model payment change: +$2.83/mo.
 Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
@@ -598,16 +638,20 @@ Title/plate fees increased: "Plate and title went up $150.00. Why?"
 SCORECARD (positive change = reduction/benefit)
 Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
 Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
-Fees corrected: $800.00 -> $950.00; change −$150.00 [Cash] — Service fee + title/plate fees
+Fees corrected: $800.00 -> $950.00; change −$150.00 [Cash] — Dealer service fee + title, license and registration fees.
 Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
 Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
 Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
 GAP price: $0.00 -> $0.00; change $0.00 [Cash]
 Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
-APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
 Term: 60 mo -> 60 mo; change 0 mo [Months]
 Amount financed: $25,300.00 -> $25,450.00; change −$150.00 [Balance]
-Total interest over the term: $3,277.04 -> $3,296.47; change −$19.43 [Projected] — Full-term model
+Days to first payment: 30 days -> 30 days; change 0 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $0.00; change $0.00 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $0.00; change $0.00 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: $3,277.04 -> $3,296.47; change −$19.43 [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
 Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
 Transaction savings (cash): $-150.00
 Projected interest savings: $-19.43
@@ -685,9 +729,11 @@ First: OTD $32,349.00; net trade $5,000.00; expected financed $26,199.00; sheet 
 First: modeled payment $420.72; projected interest $4,092.76; total paid incl. down $32,291.76.
 New: OTD $32,349.00; net trade $5,000.00; expected financed $26,199.00; sheet difference $0.00.
 New: modeled payment $420.72; projected interest $4,092.76; total paid incl. down $32,291.76.
+First: printed amount financed $26,199.00; calculated amount financed $26,199.00; printed minus calculated $0.00.
+New: printed amount financed $26,199.00; calculated amount financed $26,199.00; printed minus calculated $0.00.
 Extra cash down is never savings. Change in cash down: $0.00.
 Pre-approval benchmark 4.90%; new rate/payment-implied difference 0.00 pp. No markup estimate.
-Payment change by lever (amounts, then APR, then term):
+Payment change by lever (amounts, then APR, term and first-payment timing):
 No modeled payment change: $0.00/mo.
 Total printed/model payment change: $0.00/mo.
 Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
@@ -698,21 +744,115 @@ No lever moved: "What changed? Nothing moved."
 SCORECARD (positive change = reduction/benefit)
 Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
 Dealer add-ons removed: $299.00 -> $299.00; change $0.00 [Cash]
-Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Service fee + title/plate fees
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Dealer service fee + title, license and registration fees.
 Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
 Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
 Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
 GAP price: $850.00 -> $850.00; change $0.00 [Cash]
 Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
-APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated APR
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
 Term: 72 mo -> 72 mo; change 0 mo [Months]
 Amount financed: $26,199.00 -> $26,199.00; change $0.00 [Balance]
-Total interest over the term: $4,092.76 -> $4,092.76; change $0.00 [Projected] — Full-term model
+Days to first payment: 30 days -> 30 days; change 0 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $0.00; change $0.00 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $0.00; change $0.00 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: $4,092.76 -> $4,092.76; change $0.00 [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
 Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
 Transaction savings (cash): $0.00
 Projected interest savings: $0.00
 Fee paid: $50.00
 Net cash after fee: $-50.00
 Net (cash + projected − fee): $-50.00
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.
+
+9 · Zero APR, first payment 30 → 120 days
+INPUT:
+{
+  "first": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "0",
+    "term": "60",
+    "payment": "421.67",
+    "products": [],
+    "state": "WI",
+    "daysToFirstPayment": "30"
+  },
+  "new": {
+    "price": "30000",
+    "addons": [],
+    "serviceFee": "500",
+    "tax": "1500",
+    "titleFees": "300",
+    "rebates": "0",
+    "trade": "10000",
+    "payoff": "5000",
+    "down": "2000",
+    "financed": "25300",
+    "apr": "0",
+    "term": "60",
+    "payment": "421.67",
+    "products": [],
+    "state": "WI",
+    "daysToFirstPayment": "120"
+  },
+  "options": {
+    "preapprovalAPR": "0",
+    "feePaid": "0"
+  }
+}
+OUTPUT:
+WHAT CHANGED
+First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+First: modeled payment $421.67; projected interest $0.00; total paid incl. down $27,300.00.
+New: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+New: modeled payment $421.67; projected interest $0.00; total paid incl. down $27,300.00.
+First: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+New: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+Extra cash down is never savings. Change in cash down: $0.00.
+Pre-approval benchmark 0.00%; new rate/payment-implied difference 0.00 pp. No markup estimate.
+Payment change by lever (amounts, then APR, term and first-payment timing):
+  Days to first payment: $0.00/mo
+Total printed/model payment change: $0.00/mo.
+Unallocated payment-attribution residual: $0.00000000/mo; tolerance $0.01; within tolerance.
+
+BUYER'S LINES
+New · First-payment timing review: "First payment is 120 days away — review starts above 45 days. This is more than 21 days beyond the regular 30-day period; the first-period variation cannot be disregarded under Reg Z §1026.17(c)(4)(ii). This flag alone does not establish a violation."
+First-payment change · isolated estimate: "Moving first payment from 30 to 120 days changes the due date with no projected payment or interest saving."
+Available room · first payment: "Moving first payment from 120 to 30 days changes the due date with no projected payment or interest saving. Ask for a revised quote; this available room is not added to Scorecard savings."
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
+Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Dealer service fee + title, license and registration fees.
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $0.00 -> $0.00; change $0.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 0.00% -> 0.00%; change 0.00 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
+Term: 60 mo -> 60 mo; change 0 mo [Months]
+Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
+Days to first payment: 30 days -> 120 days; change -90 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $0.00; change $0.00 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $0.00; change $0.00 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: $0.00 -> $0.00; change $0.00 [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): $0.00
+Projected interest savings: $0.00
+Fee paid: $0.00
+Net cash after fee: $0.00
+Net (cash + projected − fee): $0.00
 Projection: all scheduled payments, no early payoff or refinance.
 Verdict: coach decision; numbers alone do not establish SIGN.
