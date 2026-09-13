@@ -1,0 +1,740 @@
+Financing matrix: Node numerical verification only. Browser: NOT RUN.
+720 combinations: 6 trade/down profiles × 5 rates × 6 terms × 4 first-payment timings.
+Itemization: $30,000 + $300 + $1,200 + $500 + $1,800 + $100 + $75 + $125 − $600 = $33,500 before trade/payoff/cash down.
+Oracle uses an independent discounted-payment sum. Estimates assume normalized 30-day periods.
+Total payments and cash-plus-payments below are derived checks; not new UI fields or a full TILA total-sale-price calculation.
+Projected interest excludes any reclassification of prepaid finance charges.
+
+PASS No trade / 0% / 24 months / 30 days
+PASS No trade / 0% / 24 months / 45 days
+PASS No trade / 0% / 24 months / 90 days
+PASS No trade / 0% / 24 months / 120 days
+PASS No trade / 0% / 36 months / 30 days
+PASS No trade / 0% / 36 months / 45 days
+PASS No trade / 0% / 36 months / 90 days
+PASS No trade / 0% / 36 months / 120 days
+PASS No trade / 0% / 48 months / 30 days
+PASS No trade / 0% / 48 months / 45 days
+PASS No trade / 0% / 48 months / 90 days
+PASS No trade / 0% / 48 months / 120 days
+PASS No trade / 0% / 60 months / 30 days
+PASS No trade / 0% / 60 months / 45 days
+PASS No trade / 0% / 60 months / 90 days
+PASS No trade / 0% / 60 months / 120 days
+PASS No trade / 0% / 72 months / 30 days
+PASS No trade / 0% / 72 months / 45 days
+PASS No trade / 0% / 72 months / 90 days
+PASS No trade / 0% / 72 months / 120 days
+PASS No trade / 0% / 84 months / 30 days
+PASS No trade / 0% / 84 months / 45 days
+PASS No trade / 0% / 84 months / 90 days
+PASS No trade / 0% / 84 months / 120 days
+PASS No trade / 4.9% / 24 months / 30 days
+PASS No trade / 4.9% / 24 months / 45 days
+PASS No trade / 4.9% / 24 months / 90 days
+PASS No trade / 4.9% / 24 months / 120 days
+PASS No trade / 4.9% / 36 months / 30 days
+PASS No trade / 4.9% / 36 months / 45 days
+PASS No trade / 4.9% / 36 months / 90 days
+PASS No trade / 4.9% / 36 months / 120 days
+PASS No trade / 4.9% / 48 months / 30 days
+PASS No trade / 4.9% / 48 months / 45 days
+PASS No trade / 4.9% / 48 months / 90 days
+PASS No trade / 4.9% / 48 months / 120 days
+PASS No trade / 4.9% / 60 months / 30 days
+PASS No trade / 4.9% / 60 months / 45 days
+PASS No trade / 4.9% / 60 months / 90 days
+PASS No trade / 4.9% / 60 months / 120 days
+PASS No trade / 4.9% / 72 months / 30 days
+PASS No trade / 4.9% / 72 months / 45 days
+PASS No trade / 4.9% / 72 months / 90 days
+PASS No trade / 4.9% / 72 months / 120 days
+PASS No trade / 4.9% / 84 months / 30 days
+PASS No trade / 4.9% / 84 months / 45 days
+PASS No trade / 4.9% / 84 months / 90 days
+PASS No trade / 4.9% / 84 months / 120 days
+PASS No trade / 7.95% / 24 months / 30 days
+PASS No trade / 7.95% / 24 months / 45 days
+PASS No trade / 7.95% / 24 months / 90 days
+PASS No trade / 7.95% / 24 months / 120 days
+PASS No trade / 7.95% / 36 months / 30 days
+PASS No trade / 7.95% / 36 months / 45 days
+PASS No trade / 7.95% / 36 months / 90 days
+PASS No trade / 7.95% / 36 months / 120 days
+PASS No trade / 7.95% / 48 months / 30 days
+PASS No trade / 7.95% / 48 months / 45 days
+PASS No trade / 7.95% / 48 months / 90 days
+PASS No trade / 7.95% / 48 months / 120 days
+PASS No trade / 7.95% / 60 months / 30 days
+PASS No trade / 7.95% / 60 months / 45 days
+PASS No trade / 7.95% / 60 months / 90 days
+PASS No trade / 7.95% / 60 months / 120 days
+PASS No trade / 7.95% / 72 months / 30 days
+PASS No trade / 7.95% / 72 months / 45 days
+PASS No trade / 7.95% / 72 months / 90 days
+PASS No trade / 7.95% / 72 months / 120 days
+PASS No trade / 7.95% / 84 months / 30 days
+PASS No trade / 7.95% / 84 months / 45 days
+PASS No trade / 7.95% / 84 months / 90 days
+PASS No trade / 7.95% / 84 months / 120 days
+PASS No trade / 12% / 24 months / 30 days
+PASS No trade / 12% / 24 months / 45 days
+PASS No trade / 12% / 24 months / 90 days
+PASS No trade / 12% / 24 months / 120 days
+PASS No trade / 12% / 36 months / 30 days
+PASS No trade / 12% / 36 months / 45 days
+PASS No trade / 12% / 36 months / 90 days
+PASS No trade / 12% / 36 months / 120 days
+PASS No trade / 12% / 48 months / 30 days
+PASS No trade / 12% / 48 months / 45 days
+PASS No trade / 12% / 48 months / 90 days
+PASS No trade / 12% / 48 months / 120 days
+PASS No trade / 12% / 60 months / 30 days
+PASS No trade / 12% / 60 months / 45 days
+PASS No trade / 12% / 60 months / 90 days
+PASS No trade / 12% / 60 months / 120 days
+PASS No trade / 12% / 72 months / 30 days
+PASS No trade / 12% / 72 months / 45 days
+PASS No trade / 12% / 72 months / 90 days
+PASS No trade / 12% / 72 months / 120 days
+PASS No trade / 12% / 84 months / 30 days
+PASS No trade / 12% / 84 months / 45 days
+PASS No trade / 12% / 84 months / 90 days
+PASS No trade / 12% / 84 months / 120 days
+PASS No trade / 21.533% / 24 months / 30 days
+PASS No trade / 21.533% / 24 months / 45 days
+PASS No trade / 21.533% / 24 months / 90 days
+PASS No trade / 21.533% / 24 months / 120 days
+PASS No trade / 21.533% / 36 months / 30 days
+PASS No trade / 21.533% / 36 months / 45 days
+PASS No trade / 21.533% / 36 months / 90 days
+PASS No trade / 21.533% / 36 months / 120 days
+PASS No trade / 21.533% / 48 months / 30 days
+PASS No trade / 21.533% / 48 months / 45 days
+PASS No trade / 21.533% / 48 months / 90 days
+PASS No trade / 21.533% / 48 months / 120 days
+PASS No trade / 21.533% / 60 months / 30 days
+PASS No trade / 21.533% / 60 months / 45 days
+PASS No trade / 21.533% / 60 months / 90 days
+PASS No trade / 21.533% / 60 months / 120 days
+PASS No trade / 21.533% / 72 months / 30 days
+PASS No trade / 21.533% / 72 months / 45 days
+PASS No trade / 21.533% / 72 months / 90 days
+PASS No trade / 21.533% / 72 months / 120 days
+PASS No trade / 21.533% / 84 months / 30 days
+PASS No trade / 21.533% / 84 months / 45 days
+PASS No trade / 21.533% / 84 months / 90 days
+PASS No trade / 21.533% / 84 months / 120 days
+PASS Positive equity / 0% / 24 months / 30 days
+PASS Positive equity / 0% / 24 months / 45 days
+PASS Positive equity / 0% / 24 months / 90 days
+PASS Positive equity / 0% / 24 months / 120 days
+PASS Positive equity / 0% / 36 months / 30 days
+PASS Positive equity / 0% / 36 months / 45 days
+PASS Positive equity / 0% / 36 months / 90 days
+PASS Positive equity / 0% / 36 months / 120 days
+PASS Positive equity / 0% / 48 months / 30 days
+PASS Positive equity / 0% / 48 months / 45 days
+PASS Positive equity / 0% / 48 months / 90 days
+PASS Positive equity / 0% / 48 months / 120 days
+PASS Positive equity / 0% / 60 months / 30 days
+PASS Positive equity / 0% / 60 months / 45 days
+PASS Positive equity / 0% / 60 months / 90 days
+PASS Positive equity / 0% / 60 months / 120 days
+PASS Positive equity / 0% / 72 months / 30 days
+PASS Positive equity / 0% / 72 months / 45 days
+PASS Positive equity / 0% / 72 months / 90 days
+PASS Positive equity / 0% / 72 months / 120 days
+PASS Positive equity / 0% / 84 months / 30 days
+PASS Positive equity / 0% / 84 months / 45 days
+PASS Positive equity / 0% / 84 months / 90 days
+PASS Positive equity / 0% / 84 months / 120 days
+PASS Positive equity / 4.9% / 24 months / 30 days
+PASS Positive equity / 4.9% / 24 months / 45 days
+PASS Positive equity / 4.9% / 24 months / 90 days
+PASS Positive equity / 4.9% / 24 months / 120 days
+PASS Positive equity / 4.9% / 36 months / 30 days
+PASS Positive equity / 4.9% / 36 months / 45 days
+PASS Positive equity / 4.9% / 36 months / 90 days
+PASS Positive equity / 4.9% / 36 months / 120 days
+PASS Positive equity / 4.9% / 48 months / 30 days
+PASS Positive equity / 4.9% / 48 months / 45 days
+PASS Positive equity / 4.9% / 48 months / 90 days
+PASS Positive equity / 4.9% / 48 months / 120 days
+PASS Positive equity / 4.9% / 60 months / 30 days
+PASS Positive equity / 4.9% / 60 months / 45 days
+PASS Positive equity / 4.9% / 60 months / 90 days
+PASS Positive equity / 4.9% / 60 months / 120 days
+PASS Positive equity / 4.9% / 72 months / 30 days
+PASS Positive equity / 4.9% / 72 months / 45 days
+PASS Positive equity / 4.9% / 72 months / 90 days
+PASS Positive equity / 4.9% / 72 months / 120 days
+PASS Positive equity / 4.9% / 84 months / 30 days
+PASS Positive equity / 4.9% / 84 months / 45 days
+PASS Positive equity / 4.9% / 84 months / 90 days
+PASS Positive equity / 4.9% / 84 months / 120 days
+PASS Positive equity / 7.95% / 24 months / 30 days
+PASS Positive equity / 7.95% / 24 months / 45 days
+PASS Positive equity / 7.95% / 24 months / 90 days
+PASS Positive equity / 7.95% / 24 months / 120 days
+PASS Positive equity / 7.95% / 36 months / 30 days
+PASS Positive equity / 7.95% / 36 months / 45 days
+PASS Positive equity / 7.95% / 36 months / 90 days
+PASS Positive equity / 7.95% / 36 months / 120 days
+PASS Positive equity / 7.95% / 48 months / 30 days
+PASS Positive equity / 7.95% / 48 months / 45 days
+PASS Positive equity / 7.95% / 48 months / 90 days
+PASS Positive equity / 7.95% / 48 months / 120 days
+PASS Positive equity / 7.95% / 60 months / 30 days
+PASS Positive equity / 7.95% / 60 months / 45 days
+PASS Positive equity / 7.95% / 60 months / 90 days
+PASS Positive equity / 7.95% / 60 months / 120 days
+PASS Positive equity / 7.95% / 72 months / 30 days
+PASS Positive equity / 7.95% / 72 months / 45 days
+PASS Positive equity / 7.95% / 72 months / 90 days
+PASS Positive equity / 7.95% / 72 months / 120 days
+PASS Positive equity / 7.95% / 84 months / 30 days
+PASS Positive equity / 7.95% / 84 months / 45 days
+PASS Positive equity / 7.95% / 84 months / 90 days
+PASS Positive equity / 7.95% / 84 months / 120 days
+PASS Positive equity / 12% / 24 months / 30 days
+PASS Positive equity / 12% / 24 months / 45 days
+PASS Positive equity / 12% / 24 months / 90 days
+PASS Positive equity / 12% / 24 months / 120 days
+PASS Positive equity / 12% / 36 months / 30 days
+PASS Positive equity / 12% / 36 months / 45 days
+PASS Positive equity / 12% / 36 months / 90 days
+PASS Positive equity / 12% / 36 months / 120 days
+PASS Positive equity / 12% / 48 months / 30 days
+PASS Positive equity / 12% / 48 months / 45 days
+PASS Positive equity / 12% / 48 months / 90 days
+PASS Positive equity / 12% / 48 months / 120 days
+PASS Positive equity / 12% / 60 months / 30 days
+PASS Positive equity / 12% / 60 months / 45 days
+PASS Positive equity / 12% / 60 months / 90 days
+PASS Positive equity / 12% / 60 months / 120 days
+PASS Positive equity / 12% / 72 months / 30 days
+PASS Positive equity / 12% / 72 months / 45 days
+PASS Positive equity / 12% / 72 months / 90 days
+PASS Positive equity / 12% / 72 months / 120 days
+PASS Positive equity / 12% / 84 months / 30 days
+PASS Positive equity / 12% / 84 months / 45 days
+PASS Positive equity / 12% / 84 months / 90 days
+PASS Positive equity / 12% / 84 months / 120 days
+PASS Positive equity / 21.533% / 24 months / 30 days
+PASS Positive equity / 21.533% / 24 months / 45 days
+PASS Positive equity / 21.533% / 24 months / 90 days
+PASS Positive equity / 21.533% / 24 months / 120 days
+PASS Positive equity / 21.533% / 36 months / 30 days
+PASS Positive equity / 21.533% / 36 months / 45 days
+PASS Positive equity / 21.533% / 36 months / 90 days
+PASS Positive equity / 21.533% / 36 months / 120 days
+PASS Positive equity / 21.533% / 48 months / 30 days
+PASS Positive equity / 21.533% / 48 months / 45 days
+PASS Positive equity / 21.533% / 48 months / 90 days
+PASS Positive equity / 21.533% / 48 months / 120 days
+PASS Positive equity / 21.533% / 60 months / 30 days
+PASS Positive equity / 21.533% / 60 months / 45 days
+PASS Positive equity / 21.533% / 60 months / 90 days
+PASS Positive equity / 21.533% / 60 months / 120 days
+PASS Positive equity / 21.533% / 72 months / 30 days
+PASS Positive equity / 21.533% / 72 months / 45 days
+PASS Positive equity / 21.533% / 72 months / 90 days
+PASS Positive equity / 21.533% / 72 months / 120 days
+PASS Positive equity / 21.533% / 84 months / 30 days
+PASS Positive equity / 21.533% / 84 months / 45 days
+PASS Positive equity / 21.533% / 84 months / 90 days
+PASS Positive equity / 21.533% / 84 months / 120 days
+PASS Even trade / 0% / 24 months / 30 days
+PASS Even trade / 0% / 24 months / 45 days
+PASS Even trade / 0% / 24 months / 90 days
+PASS Even trade / 0% / 24 months / 120 days
+PASS Even trade / 0% / 36 months / 30 days
+PASS Even trade / 0% / 36 months / 45 days
+PASS Even trade / 0% / 36 months / 90 days
+PASS Even trade / 0% / 36 months / 120 days
+PASS Even trade / 0% / 48 months / 30 days
+PASS Even trade / 0% / 48 months / 45 days
+PASS Even trade / 0% / 48 months / 90 days
+PASS Even trade / 0% / 48 months / 120 days
+PASS Even trade / 0% / 60 months / 30 days
+PASS Even trade / 0% / 60 months / 45 days
+PASS Even trade / 0% / 60 months / 90 days
+PASS Even trade / 0% / 60 months / 120 days
+PASS Even trade / 0% / 72 months / 30 days
+PASS Even trade / 0% / 72 months / 45 days
+PASS Even trade / 0% / 72 months / 90 days
+PASS Even trade / 0% / 72 months / 120 days
+PASS Even trade / 0% / 84 months / 30 days
+PASS Even trade / 0% / 84 months / 45 days
+PASS Even trade / 0% / 84 months / 90 days
+PASS Even trade / 0% / 84 months / 120 days
+PASS Even trade / 4.9% / 24 months / 30 days
+PASS Even trade / 4.9% / 24 months / 45 days
+PASS Even trade / 4.9% / 24 months / 90 days
+PASS Even trade / 4.9% / 24 months / 120 days
+PASS Even trade / 4.9% / 36 months / 30 days
+PASS Even trade / 4.9% / 36 months / 45 days
+PASS Even trade / 4.9% / 36 months / 90 days
+PASS Even trade / 4.9% / 36 months / 120 days
+PASS Even trade / 4.9% / 48 months / 30 days
+PASS Even trade / 4.9% / 48 months / 45 days
+PASS Even trade / 4.9% / 48 months / 90 days
+PASS Even trade / 4.9% / 48 months / 120 days
+PASS Even trade / 4.9% / 60 months / 30 days
+PASS Even trade / 4.9% / 60 months / 45 days
+PASS Even trade / 4.9% / 60 months / 90 days
+PASS Even trade / 4.9% / 60 months / 120 days
+PASS Even trade / 4.9% / 72 months / 30 days
+PASS Even trade / 4.9% / 72 months / 45 days
+PASS Even trade / 4.9% / 72 months / 90 days
+PASS Even trade / 4.9% / 72 months / 120 days
+PASS Even trade / 4.9% / 84 months / 30 days
+PASS Even trade / 4.9% / 84 months / 45 days
+PASS Even trade / 4.9% / 84 months / 90 days
+PASS Even trade / 4.9% / 84 months / 120 days
+PASS Even trade / 7.95% / 24 months / 30 days
+PASS Even trade / 7.95% / 24 months / 45 days
+PASS Even trade / 7.95% / 24 months / 90 days
+PASS Even trade / 7.95% / 24 months / 120 days
+PASS Even trade / 7.95% / 36 months / 30 days
+PASS Even trade / 7.95% / 36 months / 45 days
+PASS Even trade / 7.95% / 36 months / 90 days
+PASS Even trade / 7.95% / 36 months / 120 days
+PASS Even trade / 7.95% / 48 months / 30 days
+PASS Even trade / 7.95% / 48 months / 45 days
+PASS Even trade / 7.95% / 48 months / 90 days
+PASS Even trade / 7.95% / 48 months / 120 days
+PASS Even trade / 7.95% / 60 months / 30 days
+PASS Even trade / 7.95% / 60 months / 45 days
+PASS Even trade / 7.95% / 60 months / 90 days
+PASS Even trade / 7.95% / 60 months / 120 days
+PASS Even trade / 7.95% / 72 months / 30 days
+PASS Even trade / 7.95% / 72 months / 45 days
+PASS Even trade / 7.95% / 72 months / 90 days
+PASS Even trade / 7.95% / 72 months / 120 days
+PASS Even trade / 7.95% / 84 months / 30 days
+PASS Even trade / 7.95% / 84 months / 45 days
+PASS Even trade / 7.95% / 84 months / 90 days
+PASS Even trade / 7.95% / 84 months / 120 days
+PASS Even trade / 12% / 24 months / 30 days
+PASS Even trade / 12% / 24 months / 45 days
+PASS Even trade / 12% / 24 months / 90 days
+PASS Even trade / 12% / 24 months / 120 days
+PASS Even trade / 12% / 36 months / 30 days
+PASS Even trade / 12% / 36 months / 45 days
+PASS Even trade / 12% / 36 months / 90 days
+PASS Even trade / 12% / 36 months / 120 days
+PASS Even trade / 12% / 48 months / 30 days
+PASS Even trade / 12% / 48 months / 45 days
+PASS Even trade / 12% / 48 months / 90 days
+PASS Even trade / 12% / 48 months / 120 days
+PASS Even trade / 12% / 60 months / 30 days
+PASS Even trade / 12% / 60 months / 45 days
+PASS Even trade / 12% / 60 months / 90 days
+PASS Even trade / 12% / 60 months / 120 days
+PASS Even trade / 12% / 72 months / 30 days
+PASS Even trade / 12% / 72 months / 45 days
+PASS Even trade / 12% / 72 months / 90 days
+PASS Even trade / 12% / 72 months / 120 days
+PASS Even trade / 12% / 84 months / 30 days
+PASS Even trade / 12% / 84 months / 45 days
+PASS Even trade / 12% / 84 months / 90 days
+PASS Even trade / 12% / 84 months / 120 days
+PASS Even trade / 21.533% / 24 months / 30 days
+PASS Even trade / 21.533% / 24 months / 45 days
+PASS Even trade / 21.533% / 24 months / 90 days
+PASS Even trade / 21.533% / 24 months / 120 days
+PASS Even trade / 21.533% / 36 months / 30 days
+PASS Even trade / 21.533% / 36 months / 45 days
+PASS Even trade / 21.533% / 36 months / 90 days
+PASS Even trade / 21.533% / 36 months / 120 days
+PASS Even trade / 21.533% / 48 months / 30 days
+PASS Even trade / 21.533% / 48 months / 45 days
+PASS Even trade / 21.533% / 48 months / 90 days
+PASS Even trade / 21.533% / 48 months / 120 days
+PASS Even trade / 21.533% / 60 months / 30 days
+PASS Even trade / 21.533% / 60 months / 45 days
+PASS Even trade / 21.533% / 60 months / 90 days
+PASS Even trade / 21.533% / 60 months / 120 days
+PASS Even trade / 21.533% / 72 months / 30 days
+PASS Even trade / 21.533% / 72 months / 45 days
+PASS Even trade / 21.533% / 72 months / 90 days
+PASS Even trade / 21.533% / 72 months / 120 days
+PASS Even trade / 21.533% / 84 months / 30 days
+PASS Even trade / 21.533% / 84 months / 45 days
+PASS Even trade / 21.533% / 84 months / 90 days
+PASS Even trade / 21.533% / 84 months / 120 days
+PASS Negative equity / 0% / 24 months / 30 days
+PASS Negative equity / 0% / 24 months / 45 days
+PASS Negative equity / 0% / 24 months / 90 days
+PASS Negative equity / 0% / 24 months / 120 days
+PASS Negative equity / 0% / 36 months / 30 days
+PASS Negative equity / 0% / 36 months / 45 days
+PASS Negative equity / 0% / 36 months / 90 days
+PASS Negative equity / 0% / 36 months / 120 days
+PASS Negative equity / 0% / 48 months / 30 days
+PASS Negative equity / 0% / 48 months / 45 days
+PASS Negative equity / 0% / 48 months / 90 days
+PASS Negative equity / 0% / 48 months / 120 days
+PASS Negative equity / 0% / 60 months / 30 days
+PASS Negative equity / 0% / 60 months / 45 days
+PASS Negative equity / 0% / 60 months / 90 days
+PASS Negative equity / 0% / 60 months / 120 days
+PASS Negative equity / 0% / 72 months / 30 days
+PASS Negative equity / 0% / 72 months / 45 days
+PASS Negative equity / 0% / 72 months / 90 days
+PASS Negative equity / 0% / 72 months / 120 days
+PASS Negative equity / 0% / 84 months / 30 days
+PASS Negative equity / 0% / 84 months / 45 days
+PASS Negative equity / 0% / 84 months / 90 days
+PASS Negative equity / 0% / 84 months / 120 days
+PASS Negative equity / 4.9% / 24 months / 30 days
+PASS Negative equity / 4.9% / 24 months / 45 days
+PASS Negative equity / 4.9% / 24 months / 90 days
+PASS Negative equity / 4.9% / 24 months / 120 days
+PASS Negative equity / 4.9% / 36 months / 30 days
+PASS Negative equity / 4.9% / 36 months / 45 days
+PASS Negative equity / 4.9% / 36 months / 90 days
+PASS Negative equity / 4.9% / 36 months / 120 days
+PASS Negative equity / 4.9% / 48 months / 30 days
+PASS Negative equity / 4.9% / 48 months / 45 days
+PASS Negative equity / 4.9% / 48 months / 90 days
+PASS Negative equity / 4.9% / 48 months / 120 days
+PASS Negative equity / 4.9% / 60 months / 30 days
+PASS Negative equity / 4.9% / 60 months / 45 days
+PASS Negative equity / 4.9% / 60 months / 90 days
+PASS Negative equity / 4.9% / 60 months / 120 days
+PASS Negative equity / 4.9% / 72 months / 30 days
+PASS Negative equity / 4.9% / 72 months / 45 days
+PASS Negative equity / 4.9% / 72 months / 90 days
+PASS Negative equity / 4.9% / 72 months / 120 days
+PASS Negative equity / 4.9% / 84 months / 30 days
+PASS Negative equity / 4.9% / 84 months / 45 days
+PASS Negative equity / 4.9% / 84 months / 90 days
+PASS Negative equity / 4.9% / 84 months / 120 days
+PASS Negative equity / 7.95% / 24 months / 30 days
+PASS Negative equity / 7.95% / 24 months / 45 days
+PASS Negative equity / 7.95% / 24 months / 90 days
+PASS Negative equity / 7.95% / 24 months / 120 days
+PASS Negative equity / 7.95% / 36 months / 30 days
+PASS Negative equity / 7.95% / 36 months / 45 days
+PASS Negative equity / 7.95% / 36 months / 90 days
+PASS Negative equity / 7.95% / 36 months / 120 days
+PASS Negative equity / 7.95% / 48 months / 30 days
+PASS Negative equity / 7.95% / 48 months / 45 days
+PASS Negative equity / 7.95% / 48 months / 90 days
+PASS Negative equity / 7.95% / 48 months / 120 days
+PASS Negative equity / 7.95% / 60 months / 30 days
+PASS Negative equity / 7.95% / 60 months / 45 days
+PASS Negative equity / 7.95% / 60 months / 90 days
+PASS Negative equity / 7.95% / 60 months / 120 days
+PASS Negative equity / 7.95% / 72 months / 30 days
+PASS Negative equity / 7.95% / 72 months / 45 days
+PASS Negative equity / 7.95% / 72 months / 90 days
+PASS Negative equity / 7.95% / 72 months / 120 days
+PASS Negative equity / 7.95% / 84 months / 30 days
+PASS Negative equity / 7.95% / 84 months / 45 days
+PASS Negative equity / 7.95% / 84 months / 90 days
+PASS Negative equity / 7.95% / 84 months / 120 days
+PASS Negative equity / 12% / 24 months / 30 days
+PASS Negative equity / 12% / 24 months / 45 days
+PASS Negative equity / 12% / 24 months / 90 days
+PASS Negative equity / 12% / 24 months / 120 days
+PASS Negative equity / 12% / 36 months / 30 days
+PASS Negative equity / 12% / 36 months / 45 days
+PASS Negative equity / 12% / 36 months / 90 days
+PASS Negative equity / 12% / 36 months / 120 days
+PASS Negative equity / 12% / 48 months / 30 days
+PASS Negative equity / 12% / 48 months / 45 days
+PASS Negative equity / 12% / 48 months / 90 days
+PASS Negative equity / 12% / 48 months / 120 days
+PASS Negative equity / 12% / 60 months / 30 days
+PASS Negative equity / 12% / 60 months / 45 days
+PASS Negative equity / 12% / 60 months / 90 days
+PASS Negative equity / 12% / 60 months / 120 days
+PASS Negative equity / 12% / 72 months / 30 days
+PASS Negative equity / 12% / 72 months / 45 days
+PASS Negative equity / 12% / 72 months / 90 days
+PASS Negative equity / 12% / 72 months / 120 days
+PASS Negative equity / 12% / 84 months / 30 days
+PASS Negative equity / 12% / 84 months / 45 days
+PASS Negative equity / 12% / 84 months / 90 days
+PASS Negative equity / 12% / 84 months / 120 days
+PASS Negative equity / 21.533% / 24 months / 30 days
+PASS Negative equity / 21.533% / 24 months / 45 days
+PASS Negative equity / 21.533% / 24 months / 90 days
+PASS Negative equity / 21.533% / 24 months / 120 days
+PASS Negative equity / 21.533% / 36 months / 30 days
+PASS Negative equity / 21.533% / 36 months / 45 days
+PASS Negative equity / 21.533% / 36 months / 90 days
+PASS Negative equity / 21.533% / 36 months / 120 days
+PASS Negative equity / 21.533% / 48 months / 30 days
+PASS Negative equity / 21.533% / 48 months / 45 days
+PASS Negative equity / 21.533% / 48 months / 90 days
+PASS Negative equity / 21.533% / 48 months / 120 days
+PASS Negative equity / 21.533% / 60 months / 30 days
+PASS Negative equity / 21.533% / 60 months / 45 days
+PASS Negative equity / 21.533% / 60 months / 90 days
+PASS Negative equity / 21.533% / 60 months / 120 days
+PASS Negative equity / 21.533% / 72 months / 30 days
+PASS Negative equity / 21.533% / 72 months / 45 days
+PASS Negative equity / 21.533% / 72 months / 90 days
+PASS Negative equity / 21.533% / 72 months / 120 days
+PASS Negative equity / 21.533% / 84 months / 30 days
+PASS Negative equity / 21.533% / 84 months / 45 days
+PASS Negative equity / 21.533% / 84 months / 90 days
+PASS Negative equity / 21.533% / 84 months / 120 days
+PASS Paid-off trade / 0% / 24 months / 30 days
+PASS Paid-off trade / 0% / 24 months / 45 days
+PASS Paid-off trade / 0% / 24 months / 90 days
+PASS Paid-off trade / 0% / 24 months / 120 days
+PASS Paid-off trade / 0% / 36 months / 30 days
+PASS Paid-off trade / 0% / 36 months / 45 days
+PASS Paid-off trade / 0% / 36 months / 90 days
+PASS Paid-off trade / 0% / 36 months / 120 days
+PASS Paid-off trade / 0% / 48 months / 30 days
+PASS Paid-off trade / 0% / 48 months / 45 days
+PASS Paid-off trade / 0% / 48 months / 90 days
+PASS Paid-off trade / 0% / 48 months / 120 days
+PASS Paid-off trade / 0% / 60 months / 30 days
+PASS Paid-off trade / 0% / 60 months / 45 days
+PASS Paid-off trade / 0% / 60 months / 90 days
+PASS Paid-off trade / 0% / 60 months / 120 days
+PASS Paid-off trade / 0% / 72 months / 30 days
+PASS Paid-off trade / 0% / 72 months / 45 days
+PASS Paid-off trade / 0% / 72 months / 90 days
+PASS Paid-off trade / 0% / 72 months / 120 days
+PASS Paid-off trade / 0% / 84 months / 30 days
+PASS Paid-off trade / 0% / 84 months / 45 days
+PASS Paid-off trade / 0% / 84 months / 90 days
+PASS Paid-off trade / 0% / 84 months / 120 days
+PASS Paid-off trade / 4.9% / 24 months / 30 days
+PASS Paid-off trade / 4.9% / 24 months / 45 days
+PASS Paid-off trade / 4.9% / 24 months / 90 days
+PASS Paid-off trade / 4.9% / 24 months / 120 days
+PASS Paid-off trade / 4.9% / 36 months / 30 days
+PASS Paid-off trade / 4.9% / 36 months / 45 days
+PASS Paid-off trade / 4.9% / 36 months / 90 days
+PASS Paid-off trade / 4.9% / 36 months / 120 days
+PASS Paid-off trade / 4.9% / 48 months / 30 days
+PASS Paid-off trade / 4.9% / 48 months / 45 days
+PASS Paid-off trade / 4.9% / 48 months / 90 days
+PASS Paid-off trade / 4.9% / 48 months / 120 days
+PASS Paid-off trade / 4.9% / 60 months / 30 days
+PASS Paid-off trade / 4.9% / 60 months / 45 days
+PASS Paid-off trade / 4.9% / 60 months / 90 days
+PASS Paid-off trade / 4.9% / 60 months / 120 days
+PASS Paid-off trade / 4.9% / 72 months / 30 days
+PASS Paid-off trade / 4.9% / 72 months / 45 days
+PASS Paid-off trade / 4.9% / 72 months / 90 days
+PASS Paid-off trade / 4.9% / 72 months / 120 days
+PASS Paid-off trade / 4.9% / 84 months / 30 days
+PASS Paid-off trade / 4.9% / 84 months / 45 days
+PASS Paid-off trade / 4.9% / 84 months / 90 days
+PASS Paid-off trade / 4.9% / 84 months / 120 days
+PASS Paid-off trade / 7.95% / 24 months / 30 days
+PASS Paid-off trade / 7.95% / 24 months / 45 days
+PASS Paid-off trade / 7.95% / 24 months / 90 days
+PASS Paid-off trade / 7.95% / 24 months / 120 days
+PASS Paid-off trade / 7.95% / 36 months / 30 days
+PASS Paid-off trade / 7.95% / 36 months / 45 days
+PASS Paid-off trade / 7.95% / 36 months / 90 days
+PASS Paid-off trade / 7.95% / 36 months / 120 days
+PASS Paid-off trade / 7.95% / 48 months / 30 days
+PASS Paid-off trade / 7.95% / 48 months / 45 days
+PASS Paid-off trade / 7.95% / 48 months / 90 days
+PASS Paid-off trade / 7.95% / 48 months / 120 days
+PASS Paid-off trade / 7.95% / 60 months / 30 days
+PASS Paid-off trade / 7.95% / 60 months / 45 days
+PASS Paid-off trade / 7.95% / 60 months / 90 days
+PASS Paid-off trade / 7.95% / 60 months / 120 days
+PASS Paid-off trade / 7.95% / 72 months / 30 days
+PASS Paid-off trade / 7.95% / 72 months / 45 days
+PASS Paid-off trade / 7.95% / 72 months / 90 days
+PASS Paid-off trade / 7.95% / 72 months / 120 days
+PASS Paid-off trade / 7.95% / 84 months / 30 days
+PASS Paid-off trade / 7.95% / 84 months / 45 days
+PASS Paid-off trade / 7.95% / 84 months / 90 days
+PASS Paid-off trade / 7.95% / 84 months / 120 days
+PASS Paid-off trade / 12% / 24 months / 30 days
+PASS Paid-off trade / 12% / 24 months / 45 days
+PASS Paid-off trade / 12% / 24 months / 90 days
+PASS Paid-off trade / 12% / 24 months / 120 days
+PASS Paid-off trade / 12% / 36 months / 30 days
+PASS Paid-off trade / 12% / 36 months / 45 days
+PASS Paid-off trade / 12% / 36 months / 90 days
+PASS Paid-off trade / 12% / 36 months / 120 days
+PASS Paid-off trade / 12% / 48 months / 30 days
+PASS Paid-off trade / 12% / 48 months / 45 days
+PASS Paid-off trade / 12% / 48 months / 90 days
+PASS Paid-off trade / 12% / 48 months / 120 days
+PASS Paid-off trade / 12% / 60 months / 30 days
+PASS Paid-off trade / 12% / 60 months / 45 days
+PASS Paid-off trade / 12% / 60 months / 90 days
+PASS Paid-off trade / 12% / 60 months / 120 days
+PASS Paid-off trade / 12% / 72 months / 30 days
+PASS Paid-off trade / 12% / 72 months / 45 days
+PASS Paid-off trade / 12% / 72 months / 90 days
+PASS Paid-off trade / 12% / 72 months / 120 days
+PASS Paid-off trade / 12% / 84 months / 30 days
+PASS Paid-off trade / 12% / 84 months / 45 days
+PASS Paid-off trade / 12% / 84 months / 90 days
+PASS Paid-off trade / 12% / 84 months / 120 days
+PASS Paid-off trade / 21.533% / 24 months / 30 days
+PASS Paid-off trade / 21.533% / 24 months / 45 days
+PASS Paid-off trade / 21.533% / 24 months / 90 days
+PASS Paid-off trade / 21.533% / 24 months / 120 days
+PASS Paid-off trade / 21.533% / 36 months / 30 days
+PASS Paid-off trade / 21.533% / 36 months / 45 days
+PASS Paid-off trade / 21.533% / 36 months / 90 days
+PASS Paid-off trade / 21.533% / 36 months / 120 days
+PASS Paid-off trade / 21.533% / 48 months / 30 days
+PASS Paid-off trade / 21.533% / 48 months / 45 days
+PASS Paid-off trade / 21.533% / 48 months / 90 days
+PASS Paid-off trade / 21.533% / 48 months / 120 days
+PASS Paid-off trade / 21.533% / 60 months / 30 days
+PASS Paid-off trade / 21.533% / 60 months / 45 days
+PASS Paid-off trade / 21.533% / 60 months / 90 days
+PASS Paid-off trade / 21.533% / 60 months / 120 days
+PASS Paid-off trade / 21.533% / 72 months / 30 days
+PASS Paid-off trade / 21.533% / 72 months / 45 days
+PASS Paid-off trade / 21.533% / 72 months / 90 days
+PASS Paid-off trade / 21.533% / 72 months / 120 days
+PASS Paid-off trade / 21.533% / 84 months / 30 days
+PASS Paid-off trade / 21.533% / 84 months / 45 days
+PASS Paid-off trade / 21.533% / 84 months / 90 days
+PASS Paid-off trade / 21.533% / 84 months / 120 days
+PASS More cash down / 0% / 24 months / 30 days
+PASS More cash down / 0% / 24 months / 45 days
+PASS More cash down / 0% / 24 months / 90 days
+PASS More cash down / 0% / 24 months / 120 days
+PASS More cash down / 0% / 36 months / 30 days
+PASS More cash down / 0% / 36 months / 45 days
+PASS More cash down / 0% / 36 months / 90 days
+PASS More cash down / 0% / 36 months / 120 days
+PASS More cash down / 0% / 48 months / 30 days
+PASS More cash down / 0% / 48 months / 45 days
+PASS More cash down / 0% / 48 months / 90 days
+PASS More cash down / 0% / 48 months / 120 days
+PASS More cash down / 0% / 60 months / 30 days
+PASS More cash down / 0% / 60 months / 45 days
+PASS More cash down / 0% / 60 months / 90 days
+PASS More cash down / 0% / 60 months / 120 days
+PASS More cash down / 0% / 72 months / 30 days
+PASS More cash down / 0% / 72 months / 45 days
+PASS More cash down / 0% / 72 months / 90 days
+PASS More cash down / 0% / 72 months / 120 days
+PASS More cash down / 0% / 84 months / 30 days
+PASS More cash down / 0% / 84 months / 45 days
+PASS More cash down / 0% / 84 months / 90 days
+PASS More cash down / 0% / 84 months / 120 days
+PASS More cash down / 4.9% / 24 months / 30 days
+PASS More cash down / 4.9% / 24 months / 45 days
+PASS More cash down / 4.9% / 24 months / 90 days
+PASS More cash down / 4.9% / 24 months / 120 days
+PASS More cash down / 4.9% / 36 months / 30 days
+PASS More cash down / 4.9% / 36 months / 45 days
+PASS More cash down / 4.9% / 36 months / 90 days
+PASS More cash down / 4.9% / 36 months / 120 days
+PASS More cash down / 4.9% / 48 months / 30 days
+PASS More cash down / 4.9% / 48 months / 45 days
+PASS More cash down / 4.9% / 48 months / 90 days
+PASS More cash down / 4.9% / 48 months / 120 days
+PASS More cash down / 4.9% / 60 months / 30 days
+PASS More cash down / 4.9% / 60 months / 45 days
+PASS More cash down / 4.9% / 60 months / 90 days
+PASS More cash down / 4.9% / 60 months / 120 days
+PASS More cash down / 4.9% / 72 months / 30 days
+PASS More cash down / 4.9% / 72 months / 45 days
+PASS More cash down / 4.9% / 72 months / 90 days
+PASS More cash down / 4.9% / 72 months / 120 days
+PASS More cash down / 4.9% / 84 months / 30 days
+PASS More cash down / 4.9% / 84 months / 45 days
+PASS More cash down / 4.9% / 84 months / 90 days
+PASS More cash down / 4.9% / 84 months / 120 days
+PASS More cash down / 7.95% / 24 months / 30 days
+PASS More cash down / 7.95% / 24 months / 45 days
+PASS More cash down / 7.95% / 24 months / 90 days
+PASS More cash down / 7.95% / 24 months / 120 days
+PASS More cash down / 7.95% / 36 months / 30 days
+PASS More cash down / 7.95% / 36 months / 45 days
+PASS More cash down / 7.95% / 36 months / 90 days
+PASS More cash down / 7.95% / 36 months / 120 days
+PASS More cash down / 7.95% / 48 months / 30 days
+PASS More cash down / 7.95% / 48 months / 45 days
+PASS More cash down / 7.95% / 48 months / 90 days
+PASS More cash down / 7.95% / 48 months / 120 days
+PASS More cash down / 7.95% / 60 months / 30 days
+PASS More cash down / 7.95% / 60 months / 45 days
+PASS More cash down / 7.95% / 60 months / 90 days
+PASS More cash down / 7.95% / 60 months / 120 days
+PASS More cash down / 7.95% / 72 months / 30 days
+PASS More cash down / 7.95% / 72 months / 45 days
+PASS More cash down / 7.95% / 72 months / 90 days
+PASS More cash down / 7.95% / 72 months / 120 days
+PASS More cash down / 7.95% / 84 months / 30 days
+PASS More cash down / 7.95% / 84 months / 45 days
+PASS More cash down / 7.95% / 84 months / 90 days
+PASS More cash down / 7.95% / 84 months / 120 days
+PASS More cash down / 12% / 24 months / 30 days
+PASS More cash down / 12% / 24 months / 45 days
+PASS More cash down / 12% / 24 months / 90 days
+PASS More cash down / 12% / 24 months / 120 days
+PASS More cash down / 12% / 36 months / 30 days
+PASS More cash down / 12% / 36 months / 45 days
+PASS More cash down / 12% / 36 months / 90 days
+PASS More cash down / 12% / 36 months / 120 days
+PASS More cash down / 12% / 48 months / 30 days
+PASS More cash down / 12% / 48 months / 45 days
+PASS More cash down / 12% / 48 months / 90 days
+PASS More cash down / 12% / 48 months / 120 days
+PASS More cash down / 12% / 60 months / 30 days
+PASS More cash down / 12% / 60 months / 45 days
+PASS More cash down / 12% / 60 months / 90 days
+PASS More cash down / 12% / 60 months / 120 days
+PASS More cash down / 12% / 72 months / 30 days
+PASS More cash down / 12% / 72 months / 45 days
+PASS More cash down / 12% / 72 months / 90 days
+PASS More cash down / 12% / 72 months / 120 days
+PASS More cash down / 12% / 84 months / 30 days
+PASS More cash down / 12% / 84 months / 45 days
+PASS More cash down / 12% / 84 months / 90 days
+PASS More cash down / 12% / 84 months / 120 days
+PASS More cash down / 21.533% / 24 months / 30 days
+PASS More cash down / 21.533% / 24 months / 45 days
+PASS More cash down / 21.533% / 24 months / 90 days
+PASS More cash down / 21.533% / 24 months / 120 days
+PASS More cash down / 21.533% / 36 months / 30 days
+PASS More cash down / 21.533% / 36 months / 45 days
+PASS More cash down / 21.533% / 36 months / 90 days
+PASS More cash down / 21.533% / 36 months / 120 days
+PASS More cash down / 21.533% / 48 months / 30 days
+PASS More cash down / 21.533% / 48 months / 45 days
+PASS More cash down / 21.533% / 48 months / 90 days
+PASS More cash down / 21.533% / 48 months / 120 days
+PASS More cash down / 21.533% / 60 months / 30 days
+PASS More cash down / 21.533% / 60 months / 45 days
+PASS More cash down / 21.533% / 60 months / 90 days
+PASS More cash down / 21.533% / 60 months / 120 days
+PASS More cash down / 21.533% / 72 months / 30 days
+PASS More cash down / 21.533% / 72 months / 45 days
+PASS More cash down / 21.533% / 72 months / 90 days
+PASS More cash down / 21.533% / 72 months / 120 days
+PASS More cash down / 21.533% / 84 months / 30 days
+PASS More cash down / 21.533% / 84 months / 45 days
+PASS More cash down / 21.533% / 84 months / 90 days
+PASS More cash down / 21.533% / 84 months / 120 days
+
+720/720 financing combinations passed
+Maximum payment difference from independent oracle: $0.0000000000
+Maximum unrounded amortization residual: $0.0000000004
+Printed payments are rounded to cents; a real final installment can differ. No actual-date or irregular-schedule compliance claim.
+
+EXAMPLES: 7.95%, 60 months, first payment 30 days
+No trade | trade $0 | payoff $0 | down $0 | financed $33500.00 | payment $678.46 | interest $7207.47 | total payments $40707.47
+Positive equity | trade $12000 | payoff $7000 | down $2000 | financed $26500.00 | payment $536.69 | interest $5701.43 | total payments $32201.43
+Even trade | trade $12000 | payoff $12000 | down $2000 | financed $31500.00 | payment $637.95 | interest $6777.17 | total payments $38277.17
+Negative equity | trade $12000 | payoff $17000 | down $2000 | financed $36500.00 | payment $739.22 | interest $7852.92 | total payments $44352.92
+Paid-off trade | trade $12000 | payoff $0 | down $2000 | financed $19500.00 | payment $394.92 | interest $4195.39 | total payments $23695.39
+More cash down | trade $12000 | payoff $7000 | down $8000 | financed $20500.00 | payment $415.18 | interest $4410.54 | total payments $24910.54
