@@ -210,6 +210,22 @@ check('LTV leaves input and deal calculations untouched and requires no network'
  assert(!/\b(?:fetch|XMLHttpRequest|WebSocket)\s*\(/.test(html));
  assert(html.includes("connect-src 'none'"));
 });
+check('Amount-financed calculator works without APR or dealer total; every charge and credit moves it correctly',()=>{
+ const raw={...base(),apr:'',term:'',payment:'',financed:''};
+ const before=JSON.stringify(raw),initial=C.calculateSheet(raw);
+ assert.equal(initial.amountFinanced,2530000);assert.equal(initial.printedAmountFinanced,null);assert.equal(initial.firstPayment,null);
+ for(const key of ['price','serviceFee','tax','titleFees','licenseFees','registrationFees','payoff']){
+  const next={...raw,[key]:String(Number(raw[key]||0)+100)};
+  assert.equal(C.calculateSheet(next).amountFinanced,2540000,key+' must add $100');
+ }
+ for(const key of ['trade','down','rebates']){
+  const next={...raw,[key]:String(Number(raw[key]||0)+100)};
+  assert.equal(C.calculateSheet(next).amountFinanced,2520000,key+' must subtract $100');
+ }
+ assert.equal(JSON.stringify(raw),before);
+ const compared=C.calculateSheet({...raw,financed:'25500'});
+ assert.equal(compared.amountFinanced,2530000);assert.equal(compared.printedAmountFinanced,2550000);assert.equal(compared.difference,20000);
+});
 output.push(`${count-failures}/${count} additions checks passed.`, '', 'ACTUAL CONSTRUCTED-CASE OUTPUT (First 30 / New 90 days):',C.report(delayed));
 const text=output.join('\n')+'\n';if(process.argv.includes('--capture'))fs.writeFileSync(path.join(__dirname,'ADDITIONS_TEST_OUTPUT.txt'),text);
 process.stdout.write(text);if(failures)process.exitCode=1;

@@ -41,7 +41,7 @@ emulate localStorage, or count as browser verification.
 ```
 Locked calculation source unchanged: PASS
 9/9 required cases passed
-40/40 additions checks passed
+41/41 additions checks passed
 Browser/UI execution and save/load persistence: NOT RUN
 ```
 
@@ -99,15 +99,17 @@ References:
 ### Calculated financing and the Calculate buttons
 
 Each calculator adds selling price, dealer add-ons, products, dealer fee, tax,
-title/plate, license and registration fees; subtracts rebates, money down and
-positive trade equity; and adds negative equity. Trade equity is allowance less
-payoff. Combined title/license/registration fees must be entered only once.
+title/plate, license and registration fees; subtracts rebates, cash down and
+trade allowance; and adds trade payoff. The visible breakdown shows allowance
+and payoff separately. Combined title/license/registration fees must be entered only once.
 Separate license and registration default to zero for older records.
 
 Calculated financing sits beside the editable printed amount. The signed
 printed-minus-calculated difference remains visible even for a one-cent
 mismatch; the existing $5 comparison stop is unchanged. Missing fields remain
-unknown. Each Calculate button can estimate payment and interest from itemized
+unknown. Each sheet has a **Calculate amount financed** button. APR, term and
+dealer totals are not required to calculate the itemized financing total.
+Enter APR and term for optional payment and interest estimates from itemized
 financing without a printed principal or payment. The comparison model uses
 printed principal and continues to flag reconciliation differences.
 
