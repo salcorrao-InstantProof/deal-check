@@ -9,13 +9,14 @@
 <style>
 :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#162c36;background:#f4f6f5;font-size:16px;line-height:1.45;--ink:#162c36;--muted:#52666e;--line:#c9d6d8;--brand:#125d66;--paper:#fff;--warn:#875414}
 *{box-sizing:border-box}body{margin:0}header{padding:24px 18px;background:#163a44;color:#fff}header .eyebrow{font-size:.8rem;letter-spacing:.11em;text-transform:uppercase;color:#b5d9d9}h1{font-size:1.8rem;line-height:1.15;margin:8px 0}header p{margin:8px 0 0;max-width:42rem;color:#deebed}main{max-width:1060px;margin:auto;padding:18px 14px 56px}h2{font-size:1.25rem;margin:0 0 14px}h3{font-size:1rem;margin:18px 0 10px}p{margin:10px 0}button,input,select,textarea{font:inherit}button{min-height:46px;border:1px solid var(--brand);border-radius:8px;padding:10px 15px;background:var(--paper);color:var(--brand);cursor:pointer}button.primary{background:var(--brand);color:white;font-weight:650}button:disabled{opacity:.6;cursor:default}input,select,textarea{border:1px solid #9caeb5;border-radius:6px;background:#fff;color:var(--ink);padding:10px;width:100%;min-width:0;min-height:46px}input:focus,select:focus,textarea:focus,button:focus{outline:3px solid #91c6d1;outline-offset:2px}input[type=checkbox]{width:22px;min-height:22px;accent-color:var(--brand)}label{display:block;font-size:.9rem;color:#334e58}label input,label select{margin-top:5px}.context,.panel,.result-section,.test-panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:17px;margin-bottom:16px}.context-grid,.sheets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.full{grid-column:1/-1}.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.sheet-head h2{margin:0}.sheet-tag{color:var(--muted);font-size:.8rem}.note{font-size:.85rem;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:14px 0}.actions button{flex:1 1 180px}.list-box{border-top:1px solid var(--line);margin-top:17px;padding-top:4px}.list-none{display:flex;align-items:center;gap:9px;min-height:44px;margin:4px 0}.item-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(90px,.8fr) 44px;gap:7px;margin:9px 0}.item-row button{padding:5px;min-height:46px}.list-box>button{width:100%}details{margin:12px 0}summary{cursor:pointer;min-height:40px;padding:7px 0;color:var(--brand);font-weight:600}.status{padding:12px 0;color:var(--muted)}.flag{border-left:4px solid #b47a2a;background:#fff6e7;padding:11px 13px;margin:12px 0}.flag strong{display:block}.result-section h2{border-bottom:1px solid var(--line);padding-bottom:12px}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{padding:9px 7px;border-bottom:1px solid #dce4e5;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{font-weight:650;color:#34525d}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}td small{display:block;color:var(--muted)}.buyer-line{border-left:3px solid #9dc5c8;padding:5px 0 5px 12px;margin:12px 0}.buyer-line .finding{display:block;font-size:.78rem;color:var(--muted);margin-bottom:3px}.totals{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.total{padding:12px;background:#eef5f4;border-radius:7px}.total span{display:block;font-size:.8rem;color:#405d64}.total strong{display:block;font-size:1.15rem;margin-top:4px;font-variant-numeric:tabular-nums}pre,textarea.report-copy{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;font:13px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;background:#f1f5f5;padding:13px;border-radius:7px}textarea.report-copy{height:210px}.source{font-size:.8rem;color:var(--muted)}[hidden]{display:none!important}.test-result{border-top:1px solid var(--line);padding-top:8px}.test-pass{color:#17613e}.test-fail{color:#a02222}
+.calculated-value{display:block;margin-top:5px;min-height:46px;padding:10px;border:1px solid var(--line);border-radius:6px;background:#eef5f4;font-variant-numeric:tabular-nums}.fields>p{margin:0}
 @media(max-width:740px){.sheets{grid-template-columns:1fr}.context-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:370px){main{padding:12px 8px 40px}.panel,.context,.result-section{padding:13px}.fields,.context-grid,.totals{grid-template-columns:1fr}.full{grid-column:auto}.item-row{grid-template-columns:minmax(0,1fr) 85px 40px}th,td{padding:8px 4px;font-size:.8rem}}
-@media print{header{background:white;color:black;padding:0}header p,header .eyebrow,#entry,.test-panel,.output-actions,.source-details{display:none!important}main{max-width:none;padding:0}.result-section{border:0;padding:0;break-inside:avoid}table{font-size:10px}.totals{grid-template-columns:repeat(4,1fr)}.flag{background:white}}
+@media print{header{background:white;color:black;padding:0}header p,header .eyebrow,#entry,#ltv-calculator,.test-panel,.output-actions,.source-details{display:none!important}main{max-width:none;padding:0}.result-section{border:0;padding:0;break-inside:avoid}table{font-size:10px}.totals{grid-template-columns:repeat(4,1fr)}.flag{background:white}}
 </style>
 </head>
 <body>
-<header><div class="eyebrow">Coach workspace · 1.0</div><h1>Deal Check</h1><p>First sheet. New sheet. Every lever visible.</p></header>
+<header><div class="eyebrow">Coach workspace · 1.1</div><h1>Deal Check</h1><p>First sheet. New sheet. Every lever visible.</p></header>
 <main>
 <section id="entry">
 <div class="context"><h2>The case</h2><div class="context-grid">
@@ -30,21 +31,34 @@
 <p class="note">Cases are saved in this browser only. Use this same file and browser to load them. Clearing browser storage removes saved cases.</p>
 <p id="persistence-status" class="note" role="status" aria-live="polite">No saved case loaded.</p>
 <details id="stored-record-details" hidden><summary>Exact saved record</summary><pre id="stored-record"></pre></details>
-<details><summary>Load one of the eight required test cases</summary><label>Constructed test case<select id="case-select"></select></label><div class="actions"><button id="load-case" type="button">Load test case</button><button id="clear-case" type="button">Clear inputs</button></div></details>
+<details><summary>Load one of the nine required test cases</summary><label>Constructed test case<select id="case-select"></select></label><div class="actions"><button id="load-case" type="button">Load test case</button><button id="clear-case" type="button">Clear inputs</button></div></details>
 </div>
 <div class="sheets" id="sheets"></div>
 <div class="actions"><button id="compare" type="button" class="primary">Run Deal Check</button><button id="copy-first" type="button">Copy First into New</button></div>
 <p class="note">A package entered as one name and price stays <strong>not itemized</strong>. Enter each disclosed item separately when you have the breakdown. This file makes no network requests.</p>
 </section>
+<section id="ltv-calculator" class="panel" aria-labelledby="ltv-title">
+<h2 id="ltv-title">Loan-to-value calculator</h2>
+<p class="note">Enter the financing and one book value yourself. This calculator is separate from the deal sheets and does not look up values.</p>
+<div class="fields">
+<label>Amount financed<input id="ltv-financed" inputmode="decimal" placeholder="e.g. $25,000" autocomplete="off"></label>
+<label>Book<select id="ltv-book"><option value="nada_trade">NADA trade</option><option value="nada_retail">NADA retail</option><option value="kbb_clean_trade">KBB clean trade</option><option value="kbb_retail">KBB retail</option></select></label>
+<label>Book value<input id="ltv-value" inputmode="decimal" placeholder="e.g. $20,000" autocomplete="off"></label>
+</div>
+<div class="actions"><button id="ltv-calculate" type="button" class="primary">Calculate LTV</button></div>
+<output id="ltv-result" class="calculated-value" aria-live="polite">Enter both amounts to calculate LTV.</output>
+</section>
 <div id="status" class="status" role="status" aria-live="polite">Enter the figures you have, or load a test case.</div>
 <div id="output"></div>
 <div class="output-actions" id="output-actions" hidden><div class="actions"><button id="copy-report" type="button">Copy report</button><button id="print-report" type="button">Print / save report</button></div><textarea id="copy-fallback" class="report-copy" aria-label="Report text for copying" readonly hidden></textarea></div>
-<section class="test-panel"><h2>Runs now, output pasted</h2><p class="note">These checks execute this file's own calculation code. The cases are constructed examples, not customer results.</p><button id="run-tests" type="button">Run all eight tests and paste output</button><div id="test-output" aria-live="polite"></div><h3>Designed only</h3><ul><li>Reading photos or PDFs automatically. This version uses the coach's typed fields.</li><li>Automatic state tax rules and outside trade-offer valuation. The Scorecard shows missing evidence instead.</li></ul></section>
+<section class="test-panel"><h2>Runs now, output pasted</h2><p class="note">These checks execute this file's own calculation code. The cases are constructed examples, not customer results.</p><button id="run-tests" type="button">Run all nine tests and paste output</button><div id="test-output" aria-live="polite"></div><h3>Designed only</h3><ul><li>Reading photos or PDFs automatically. This version uses the coach's typed fields.</li><li>Automatic state tax rules and outside trade-offer valuation. The Scorecard shows missing evidence instead.</li></ul></section>
 <details class="source-details"><summary>Definitions and calculation notes</summary><div class="source">
 <p>Scorecard bucket names: <em>Car Buyer Project Package</em>, September 11, 2026, §6, page 6. Deal Check labels and format: §5, pages 5–6. Add-on wording: §4 and Clip 7. The coach's current instructions supply the response mappings, the $5 reconciliation tolerance and the $2 payment tolerance. A separately titled “twelve lines” table was not located in the available package.</p>
 <p>OTD = selling price + dealer add-ons + service fee + tax + title/plate fees − rebates. Net trade = trade allowance − trade payoff. Expected amount financed = OTD − net trade − cash down + products. Do not enter an add-on twice: selling price must exclude the separately entered add-on list.</p>
-<p>Payment estimates use an equal monthly amortizing loan with APR as the model rate. Implied APR uses the entered principal, term and payment under that same assumption. A mismatch is a question, not proof of a lender buy rate or markup.</p>
-<p>Payment attribution uses this fixed order: selling price, add-ons, service fee, tax, title/plate fees, rebates, trade allowance, payoff, cash down, products, any accepted reconciliation difference, APR, then term. The allocation depends on this order. A final unexplained-payment line preserves a difference in the printed payments.</p>
+<p>Payment estimates use an equal monthly amortizing loan with APR as the model rate. A separate timing adjustment uses the entered days for both estimated payment and payment-implied APR. The original 30-day formula is unchanged. A mismatch is a question, not proof of a lender buy rate, markup or legal violation. Loan estimates are unavailable for leases.</p>
+<p>Days default to 30 independently on each sheet; whole days from 30 to 120 are accepted. For these estimates, divide days into whole 30-day monthly periods and a remaining fraction. With r = APR / 1200, t = whole periods and f = remaining days / 30, the timing factor is (1 + f × r) × (1 + r)^(t − 1). Estimated payment = original payment × timing factor; extra pre-amortization interest = principal × (timing factor − 1). Total projected interest = all adjusted payments − principal; the separately displayed deferral components are not added a second time. No dates, fees or irregular payments are invented. Exact contract APR needs actual calendar dates and the full schedule.</p>
+<p>Coach review starts above 45 days. This is not a legal cutoff: for a transaction of at least one year but less than ten years, Reg Z §1026.17(c)(4)(ii) permits disregarding up to 21 extra first-period days (up to 51 days using a 30-day regular period). Timing differences alone do not establish a violation. Authorities: <a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/17/">§1026.17(c)(4)</a> and <a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/j/">Appendix J(b)(5)–(6), (c)(1)</a>.</p>
+<p>Payment attribution uses this fixed order: selling price, add-ons, service fee, tax, title/plate fees, rebates, trade allowance, payoff, cash down, products, any accepted reconciliation difference, APR, term, then first-payment timing. Available timing room holds the New sheet's principal, rate and term fixed. A proposal is not added to achieved Scorecard savings. A final unexplained-payment line preserves a difference in the printed payments.</p>
 <p>Cash savings exclude extra cash down and changes in an old debt payoff. Fees corrected includes dealer service fee and title/plate fees. Entered tax and rebate changes reconcile the cash total separately, without creating new Scorecard buckets. The trade-after-tax-versus-cash-offer row is a separate benchmark, not an extra amount added to trade allowance. No state tax credit or product split is guessed.</p>
 <p>Net = cash transaction changes + projected interest changes − coaching fee paid. Cash net is also shown separately. Projections assume all scheduled payments with no early payoff or refinancing. When a payment does not reconcile, the interest projection stays labeled as the stated-APR model. A coach chooses the final verdict; the calculations do not establish that the documents are authentic or complete.</p>
 </div></details>
@@ -215,7 +229,192 @@ function analyze(input){
  const stateChanged=a.values.state!=null&&b.values.state!=null&&a.values.state!==b.values.state;
  return {version:'1.0',a,b,ra,rb,errors,blocked,d,productChanges,addonChanges,lines,termWarning,benchmark:benchmark.value,benchmarkGap,feePaid:fee.value,noLeverMoved,explanation,stateChanged,scorecard:{rows,cashSavings,interestSavings,cashNet,net,taxAdjustment:delta(b.values.tax,a.values.tax),rebateAdjustment:delta(a.values.rebates,b.values.rebates),extraDown:d.down,payoffChange:d.payoff},options};
 }
-function formatValue(key,value){if(value==null)return key==='payment'?'Unknown':'unknown';if(key==='apr')return percent(value);if(key==='term')return value+' mo';if(key==='state')return value;return amount(value);}
+function formatValue(key,value){if(value==null)return key==='payment'?'Unknown':'unknown';if(key==='apr')return percent(value);if(key==='term')return value+' mo';if(key==='daysToFirstPayment')return value+' days';if(key==='state')return value;if(key==='dealType')return value==='lease'?'Lease':'Loan';return amount(value);}
+// Additions below leave the original payment, APR, reconciliation and attribution engine intact.
+LABELS.daysToFirstPayment='Days to first payment';
+LABELS.licenseFees='License fees';LABELS.registrationFees='Registration fees';
+LABELS.titleFees='Title / license / registration total';
+LABELS.dealType='Deal type';
+const OPTIONAL_DEFAULTS={dealType:'loan',daysToFirstPayment:'30',licenseFees:'0',registrationFees:'0'};
+const SHEET_FIELDS=['dealType','price','serviceFee','tax','titleFees','licenseFees','registrationFees','rebates','trade','payoff','down','financed','apr','term','daysToFirstPayment','payment','state'];
+const TIMING_NOTE='Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.';
+const BOOKS={nada_trade:'NADA trade',nada_retail:'NADA retail',kbb_clean_trade:'KBB clean trade',kbb_retail:'KBB retail'};
+function firstPaymentDays(raw){
+ if(raw===undefined)return {value:30}; // Older saved cases use the normal start.
+ const text=String(raw==null?'':raw).trim(),value=Number(text);
+ if(!/^\d+$/.test(text)||!Number.isInteger(value)||value<30||value>120)return {value:null,error:'Enter whole days from 30 to 120.'};
+ return {value};
+}
+function validSavedSheet(sheet){
+ return !!(sheet&&typeof sheet==='object'&&!Array.isArray(sheet)&&(sheet.dealType===undefined||['loan','lease'].includes(sheet.dealType))&&SHEET_FIELDS.every(k=>(Object.hasOwn(OPTIONAL_DEFAULTS,k)&&sheet[k]===undefined)||typeof sheet[k]==='string')&&['addons','products'].every(k=>sheet[k]===null||(Array.isArray(sheet[k])&&sheet[k].every(item=>item&&typeof item.name==='string'&&typeof item.price==='string'))));
+}
+function prepareFeeInputs(raw,name){
+ raw=raw||{};const feeBreakdown={},errors=[];
+ ['titleFees','licenseFees','registrationFees'].forEach(key=>{
+  const p=parse(raw[key]===undefined&&Object.hasOwn(OPTIONAL_DEFAULTS,key)?OPTIONAL_DEFAULTS[key]:raw[key],'money');
+  feeBreakdown[key]=p.value;if(p.error)errors.push(name+' · '+(key==='titleFees'?'Title / plate fees':LABELS[key])+': '+p.error);
+ });
+ const values=Object.values(feeBreakdown),total=values.every(v=>v!=null)?values.reduce((a,b)=>a+b,0):null;
+ return {raw:{...raw,titleFees:total==null?'':(total/100).toFixed(2)},feeBreakdown,errors};
+}
+function normalizeWithFees(raw,name){
+ const prepared=prepareFeeInputs(raw,name),sheet=normalize(prepared.raw,name);
+ sheet.feeBreakdown=prepared.feeBreakdown;sheet.errors.push(...prepared.errors);
+ sheet.values.dealType=raw&&raw.dealType!==undefined?raw.dealType:'loan';
+ if(!['loan','lease'].includes(sheet.values.dealType))sheet.errors.push(name+' · Choose loan or lease.');
+ const days=sheet.values.dealType==='lease'?{value:null}:firstPaymentDays(raw&&raw.daysToFirstPayment);
+ sheet.values.daysToFirstPayment=days.value;
+ if(days.error)sheet.errors.push(name+' · Days to first payment: '+days.error);
+ return sheet;
+}
+// Additive timing adapter. Days alone use normalized monthly periods, not actual calendar dates.
+// Appendix J(b)(5)-(6), (c)(1): whole periods compound; the remaining fraction is simple.
+function timingFactor(apr,days){
+ if(apr==null||days==null||days<30||days>120||!Number.isInteger(days))return null;
+ if(apr===0||days===30)return 1;
+ const rate=apr/1200,whole=Math.floor(days/30),fraction=(days%30)/30;
+ return (1+fraction*rate)*Math.pow(1+rate,whole-1);
+}
+function timedPayment(principal,apr,term,days=30){
+ const base=payment(principal,apr,term),factor=timingFactor(apr,days);
+ return base==null||factor==null?null:factor===1?base:base*factor;
+}
+function impliedAPRWithTiming(principal,term,monthly,days=30){
+ if(days==null||!Number.isInteger(days)||days<30||days>120)return null;
+ if(days===30)return impliedAPR(principal,term,monthly);
+ if(principal==null||term==null||monthly==null||principal<=0||term<=0||monthly<=0)return null;
+ const target=monthly/100,min=principal/100/term;
+ if(target<min-.005)return null;
+ if(Math.abs(target-min)<=.005)return 0;
+ let lo=0,hi=10;
+ while(hi<1000&&timedPayment(principal,hi,term,days)<target)hi=Math.min(1000,hi*2);
+ if(timedPayment(principal,hi,term,days)<target)return null;
+ for(let i=0;i<100;i++){const mid=(lo+hi)/2;if(timedPayment(principal,mid,term,days)<target)lo=mid;else hi=mid;}
+ return (lo+hi)/2;
+}
+function timingProjection(principal,apr,term,days){
+ const base=payment(principal,apr,term),adjusted=timedPayment(principal,apr,term,days),factor=timingFactor(apr,days);
+ const baseInterest=base==null?null:cents(base*term-principal/100);
+ const interest=adjusted==null?null:cents(adjusted*term-principal/100);
+ const pre=principal==null||principal<0||factor==null?null:Math.round(principal*(factor-1));
+ const added=interest==null||baseInterest==null?null:interest-baseInterest;
+ return {basePayment:base,modeledPayment:adjusted,baseInterest,interest,preAmortizationInterest:pre,
+  deferralFinancingInterest:added==null||pre==null?null:added-pre,timingInterest:added};
+}
+function timingWarning(days,term){
+ if(days==null||days<=45)return null;
+ const months=term==null?null:term-1+days/30;
+ const outside=months!=null&&months>=12&&months<120&&days-30>21;
+ return 'First payment is '+days+' days away — review starts above 45 days. '+(outside?
+  'This is more than 21 days beyond the regular 30-day period; the first-period variation cannot be disregarded under Reg Z §1026.17(c)(4)(ii).':
+  'The 45-day review threshold is separate from Reg Z’s allowance of up to 21 extra days for terms of at least one year but less than ten years.')+' This flag alone does not establish a violation.';
+}
+function reconcileWithTiming(sheet){
+ const result=reconcile(sheet),v=sheet.values,lease=v.dealType==='lease';
+ const days=lease?null:v.daysToFirstPayment===undefined?30:v.daysToFirstPayment;
+ const implied=lease?null:impliedAPRWithTiming(v.financed,v.term,v.payment,days);
+ const rate=lease?null:v.apr!=null?v.apr:implied;
+ const projection=timingProjection(v.financed,rate,v.term,days);
+ Object.assign(result,projection,{isLease:lease,impliedAPR:implied,effectiveAPR:rate,aprInferred:!lease&&v.apr==null&&implied!=null,
+  missingRate:!lease&&rate==null,extraDays:days==null?null:days-30,timingWarning:lease?null:timingWarning(days,v.term)});
+ result.paymentGap=result.modeledPayment!=null&&v.payment!=null?v.payment-cents(result.modeledPayment):null;
+ result.paymentFlag=result.paymentGap!=null&&Math.abs(result.paymentGap)>200;
+ result.totalPaid=result.modeledPayment!=null&&v.down!=null?cents(result.modeledPayment*v.term)+v.down:null;
+ return result;
+}
+function calculateSheet(raw,name='Sheet'){
+ const sheet=normalizeWithFees(raw,name),result=reconcileWithTiming(sheet),v=sheet.values;
+ const projection=timingProjection(result.expected,result.isLease?null:v.apr,v.term,v.daysToFirstPayment);
+ const missing=result.questions.filter(q=>q.key!=='reconcile'&&(q.key!=='financed'||result.expected<0)).map(q=>q.line);
+ if(!result.isLease&&v.apr==null)missing.push('Enter the stated APR to calculate the payment and interest.');
+ if(!result.isLease&&v.term==null)missing.push('Enter the loan term in months.');
+ return {sheet,amountFinanced:result.expected,printedAmountFinanced:sheet.values.financed,difference:result.discrepancy,netTrade:result.netTrade,
+  ...projection,firstPayment:projection.modeledPayment,daysToFirstPayment:v.daysToFirstPayment,scheduledInterest:projection.baseInterest,interestPaid:projection.interest,
+  isLease:result.isLease,timingWarning:result.timingWarning,messages:sheet.errors.concat(missing)};
+}
+function timingEffect(principal,apr,term,from,to){
+ const before=timedPayment(principal,apr,term,from),after=timedPayment(principal,apr,term,to);
+ if(before==null||after==null)return null;
+ return {from,to,monthlySavings:before-after,interestSavings:cents(before*term)-cents(after*term),term};
+}
+function timingEffectText(effect,room=false){
+ if(!effect)return '';
+ const monthly=cents(Math.abs(effect.monthlySavings)),total=Math.abs(effect.interestSavings);
+ if(monthly===0&&total===0)return 'Moving first payment from '+effect.from+' to '+effect.to+' days changes the due date with no projected payment or interest saving.';
+ const saved=effect.monthlySavings>0;
+ return (room?'Pulling':'Moving')+' first payment from '+effect.from+' to '+effect.to+' days '+(saved?'lowers':'raises')+' the estimated payment by '+amount(monthly)+'/mo and '+(saved?'saves':'costs')+' '+amount(total)+' in projected interest over '+effect.term+' payments. Same New-sheet financing, APR and term.';
+}
+function explainWithTiming(a,b,ra,rb){
+ if(ra.isLease||rb.isLease)return {steps:[],reason:'Loan payment attribution is unavailable for leases.'};
+ const ad=a.values.daysToFirstPayment,bd=b.values.daysToFirstPayment;
+ if(ad===30&&bd===30)return explain(a,b,ra,rb);
+ if(ra.blocked||rb.blocked||ra.modeledPayment==null||rb.modeledPayment==null)return {steps:[],reason:'Payment attribution waits for reconciled financing, rate, term and valid first-payment timing.'};
+ let principal=a.values.financed,apr=ra.effectiveAPR,term=a.values.term,days=ad,current=ra.modeledPayment;
+ const steps=[];
+ function apply(label,p,r,n,d){const next=timedPayment(p,r,n,d);if(next==null)return false;steps.push({label,monthlyChange:next-current});principal=p;apr=r;term=n;days=d;current=next;return true;}
+ for(const [key,sign] of AMOUNT_LEVERS){const change=b.values[key]-a.values[key];if(change!==0&&!apply(LABELS[key],principal+sign*change,apr,term,days))return {steps:[],reason:'This comparison crosses a negative intermediate principal; no allocation is claimed.'};}
+ if(principal!==b.values.financed)apply('Reconciliation difference (within $5)',b.values.financed,apr,term,days);
+ if(apr!==rb.effectiveAPR)apply('APR'+(rb.aprInferred?' (implied)':''),principal,rb.effectiveAPR,term,days);
+ if(term!==b.values.term)apply('Term',principal,apr,b.values.term,days);
+ if(days!==bd)apply('Days to first payment',principal,apr,term,bd);
+ const first=a.values.payment==null?ra.modeledPayment:a.values.payment/100,next=b.values.payment==null?rb.modeledPayment:b.values.payment/100;
+ const observedChange=next-first,modelChange=rb.modeledPayment-ra.modeledPayment,residual=observedChange-modelChange;
+ if(Math.abs(residual)>=.005)steps.push({label:(ra.paymentFlag||rb.paymentFlag)?'Unexplained printed-payment difference':'Printed-payment rounding difference',monthlyChange:residual});
+ return {steps,observedChange,modelChange,reason:null};
+}
+function analyzeWithTiming(input){
+ const firstFees=prepareFeeInputs(input.first,'First'),newFees=prepareFeeInputs(input.new,'New');
+ const r=analyze({...input,first:firstFees.raw,new:newFees.raw});
+ r.a=normalizeWithFees(input.first,'First');r.b=normalizeWithFees(input.new,'New');
+ r.ra=reconcileWithTiming(r.a);r.rb=reconcileWithTiming(r.b);
+ const optionErrors=r.errors.filter(x=>x.startsWith('Pre-approval APR:')||x.startsWith('Coaching fee paid:'));
+ r.errors=r.a.errors.concat(r.b.errors,optionErrors);r.blocked=r.ra.blocked||r.rb.blocked||r.errors.length>0;
+ r.lines=r.lines.filter(x=>!['Correct input','Payment implies a different APR','APR versus pre-approval'].includes(x.finding));
+ r.errors.forEach(text=>r.lines.push({finding:'Correct input',text}));
+ [[r.a,r.ra],[r.b,r.rb]].forEach(([sheet,result])=>{
+  if(result.timingWarning)r.lines.push({finding:sheet.name+' · First-payment timing review',text:result.timingWarning});
+  if(result.isLease)r.lines.push({finding:sheet.name+' · Lease',text:'Loan payment, implied APR and interest estimates do not apply to this lease. First-payment days are disabled.'});
+ });
+ const rate=r.rb.impliedAPR!=null?r.rb.impliedAPR:r.rb.effectiveAPR;
+ r.d.apr=delta(r.ra.effectiveAPR,r.rb.effectiveAPR);
+ r.benchmarkGap=r.benchmark!=null&&rate!=null?rate-r.benchmark:null;
+ if(!r.rb.isLease&&(r.d.apr>0||r.rb.paymentFlag||(r.benchmarkGap!=null&&r.benchmarkGap>.005)))r.lines.push({finding:r.rb.paymentFlag?'Payment implies a different APR':'APR versus pre-approval',text:'I qualify for '+(r.benchmark==null?'[my pre-approval APR]':percent(r.benchmark))+'. Your payment is figured at '+(rate==null?'[implied rate not available]':percent(rate))+'.'});
+ r.d.daysToFirstPayment=delta(r.a.values.daysToFirstPayment,r.b.values.daysToFirstPayment);
+ r.d.dealType=r.a.values.dealType===r.b.values.dealType?0:null;
+ if(r.d.daysToFirstPayment!==0||r.d.dealType!==0||r.d.apr!==0){r.noLeverMoved=false;r.lines=r.lines.filter(x=>x.finding!=='No lever moved');}
+ r.explanation=explainWithTiming(r.a,r.b,r.ra,r.rb);
+ const loanPair=!r.ra.isLease&&!r.rb.isLease;
+ const v=r.b.values,canEstimate=!r.blocked&&loanPair;
+ r.timingChange=canEstimate&&r.d.daysToFirstPayment!==0?timingEffect(v.financed,r.rb.effectiveAPR,v.term,r.a.values.daysToFirstPayment,v.daysToFirstPayment):null;
+ r.timingRoom=canEstimate&&v.daysToFirstPayment>30?timingEffect(v.financed,r.rb.effectiveAPR,v.term,v.daysToFirstPayment,30):null;
+ if(r.timingChange)r.lines.push({finding:'First-payment change · isolated estimate',text:timingEffectText(r.timingChange)});
+ if(r.timingRoom)r.lines.push({finding:'Available room · first payment',text:timingEffectText(r.timingRoom,true)+' Ask for a revised quote; this available room is not added to Scorecard savings.'});
+ const firstPayment=r.a.values.payment!=null?r.a.values.payment:r.ra.modeledPayment==null?null:cents(r.ra.modeledPayment);
+ const newPayment=v.payment!=null?v.payment:r.rb.modeledPayment==null?null:cents(r.rb.modeledPayment);
+ r.termWarning=canEstimate&&r.d.term>0&&firstPayment!=null&&newPayment!=null&&newPayment<firstPayment&&r.ra.totalPaid!=null&&r.rb.totalPaid>r.ra.totalPaid;
+ const comparisonRow=(bucket,first,next,type,note)=>({bucket,first,next,change:first!=null&&next!=null?first-next:null,type,note});
+ const index=r.scorecard.rows.findIndex(x=>x.bucket===BUCKETS[11]);
+ r.scorecard.rows.find(x=>x.bucket===BUCKETS[2]).note='Dealer service fee + title, license and registration fees.';
+ r.scorecard.rows[r.scorecard.rows.findIndex(x=>x.bucket===BUCKETS[8])]=comparisonRow(BUCKETS[8],r.ra.effectiveAPR,r.rb.effectiveAPR,'APR','Stated or timing-adjusted implied APR; unavailable for leases.');
+ r.scorecard.rows[index]=comparisonRow(BUCKETS[11],r.blocked?null:r.ra.interest,r.blocked?null:r.rb.interest,'Projected','Includes both timing components below once, through the adjusted payments.');
+ r.scorecard.rows.splice(index,0,
+  comparisonRow('Days to first payment',r.a.values.daysToFirstPayment,r.b.values.daysToFirstPayment,'Days','Normal start: 30 days; allowed range: 30–120 days.'),
+  comparisonRow('Extra pre-amortization interest',r.ra.preAmortizationInterest,r.rb.preAmortizationInterest,'Projected','Extra interest before the normal repayment cycle; included in total interest.'),
+  comparisonRow('Interest from financing the deferral',r.ra.deferralFinancingInterest,r.rb.deferralFinancingInterest,'Projected','Remaining timing cost over the payment schedule; included in total interest.'));
+ r.scorecard.interestSavings=!r.blocked&&r.ra.interest!=null&&r.rb.interest!=null?r.ra.interest-r.rb.interest:null;
+ if(r.blocked){r.scorecard.cashSavings=null;r.scorecard.cashNet=null;}
+ r.scorecard.net=r.scorecard.cashSavings!=null&&r.scorecard.interestSavings!=null&&r.feePaid!=null?r.scorecard.cashSavings+r.scorecard.interestSavings-r.feePaid:null;
+ r.timingNote=TIMING_NOTE;
+ return r;
+}
+function calculateLTV(raw){
+ raw=raw||{};const financed=parse(raw.amountFinanced,'money'),book=parse(raw.bookValue,'money'),errors=[];
+ if(financed.error||financed.value==null)errors.push('Enter a valid nonnegative amount financed.');
+ if(book.error||book.value==null||book.value<=0)errors.push('Enter a book value greater than $0.');
+ if(!Object.hasOwn(BOOKS,raw.book))errors.push('Choose one of the four book values.');
+ return {amountFinanced:financed.value,bookValue:book.value,book:raw.book,bookLabel:BOOKS[raw.book]||null,
+  percentage:errors.length?null:financed.value/book.value*100,errors};
+}
 function paymentChangeLabel(first,next){return first==null||next==null?'Unknown':signed(next-first);}
 const ATTRIBUTION_TOLERANCE_DOLLARS=0.01;
 function attributionCheck(explanation){
@@ -236,14 +435,16 @@ function report(r,compact=false){
  keys.forEach(k=>{const av=r.a.values[k],bv=r.b.values[k],change=r.d[k];if(compact&&change===0)return;out.push(LABELS[k]+': '+formatValue(k,av)+' -> '+formatValue(k,bv)+(k==='state'?'':'; change '+(k==='payment'?paymentChangeLabel(av,bv):k==='apr'?(change==null?'unknown':ROUND(change).toFixed(2)+' pp'):k==='term'?(change==null?'unknown':change+' mo'):signed(change))));});
  r.addonChanges.concat(r.productChanges).filter(x=>x.change!==0).forEach(x=>out.push(x.name+': '+amount(x.first)+' -> '+amount(x.next)+'; '+signed(x.change)));
  [r.a,r.b].forEach((s,i)=>{const x=i?r.rb:r.ra;out.push(s.name+': OTD '+amount(x.otd)+'; net trade '+amount(x.netTrade)+'; expected financed '+amount(x.expected)+'; sheet difference '+signed(x.discrepancy)+'.');if(x.modeledPayment!=null)out.push(s.name+': modeled payment '+amount(cents(x.modeledPayment))+'; projected interest '+amount(x.interest)+'; total paid incl. down '+amount(x.totalPaid)+'.');if(x.paymentFlag)out.push('FLAG '+s.name+': payment differs by '+signed(x.paymentGap)+'; payment implies '+percent(x.impliedAPR)+' versus stated '+percent(s.values.apr)+'.');if(x.aprInferred)out.push(s.name+': APR missing; implied APR '+percent(x.impliedAPR)+'.');if(s.addons.unitemized||s.products.unitemized)out.push(s.name+': package not itemized.');});
+ [r.a,r.b].forEach((s,i)=>{const x=i?r.rb:r.ra;out.push(s.name+': printed amount financed '+amount(s.values.financed)+'; calculated amount financed '+amount(x.expected)+'; printed minus calculated '+signed(x.discrepancy)+'.');});
  if(r.blocked)out.push('STOP: reconcile missing or wrong fields before scoring totals.');
  if(r.termWarning)out.push('**the payment is lower because the term is longer.**');
  out.push('Extra cash down is never savings. Change in cash down: '+signed(r.d.down)+'.');
  if(r.benchmarkGap!=null)out.push('Pre-approval benchmark '+percent(r.benchmark)+'; new rate/payment-implied difference '+ROUND(r.benchmarkGap).toFixed(2)+' pp. No markup estimate.');
- if(r.explanation.reason)out.push(r.explanation.reason);else {out.push('Payment change by lever (amounts, then APR, then term):');if(!r.explanation.steps.length)out.push('No modeled payment change: $0.00/mo.');r.explanation.steps.forEach(x=>out.push('  '+x.label+': '+signed(cents(x.monthlyChange))+'/mo'));out.push('Total printed/model payment change: '+signed(cents(r.explanation.observedChange))+'/mo.');out.push(attributionStatus(r.explanation));}
+ if(r.explanation.reason)out.push(r.explanation.reason);else {out.push('Payment change by lever (amounts, then APR, term and first-payment timing):');if(!r.explanation.steps.length)out.push('No modeled payment change: $0.00/mo.');r.explanation.steps.forEach(x=>out.push('  '+x.label+': '+signed(cents(x.monthlyChange))+'/mo'));out.push('Total printed/model payment change: '+signed(cents(r.explanation.observedChange))+'/mo.');out.push(attributionStatus(r.explanation));}
  out.push('','BUYER\'S LINES');if(!r.lines.length)out.push('No mapped response triggered.');r.lines.forEach(x=>out.push(x.finding+': "'+x.text+'"'));
  out.push('','SCORECARD (positive change = reduction/benefit)');
- r.scorecard.rows.forEach(x=>{const fmt=v=>x.type==='APR'?percent(v):x.type==='Months'?(v==null?'unknown':v+' mo'):amount(v);out.push(x.bucket+': '+fmt(x.first)+' -> '+fmt(x.next)+'; change '+(x.type==='APR'?(x.change==null?'unknown':ROUND(x.change).toFixed(2)+' pp'):x.type==='Months'?(x.change==null?'unknown':x.change+' mo'):signed(x.change))+' ['+x.type+']'+(x.note?' — '+x.note:''));});
+ r.scorecard.rows.forEach(x=>{const unit=x.type==='Days'?' days':x.type==='Months'?' mo':null;const fmt=v=>x.type==='APR'?percent(v):unit?(v==null?'unknown':v+unit):amount(v);out.push(x.bucket+': '+fmt(x.first)+' -> '+fmt(x.next)+'; change '+(x.type==='APR'?(x.change==null?'unknown':ROUND(x.change).toFixed(2)+' pp'):unit?(x.change==null?'unknown':x.change+unit):signed(x.change))+' ['+x.type+']'+(x.note?' — '+x.note:''));});
+ if(r.timingNote)out.push(r.timingNote);
  out.push('Tax adjustment '+signed(r.scorecard.taxAdjustment)+'; rebate adjustment '+signed(r.scorecard.rebateAdjustment)+' (cash total only).');
  out.push('Transaction savings (cash): '+amount(r.scorecard.cashSavings));out.push('Projected interest savings: '+amount(r.scorecard.interestSavings));out.push('Fee paid: '+amount(r.feePaid));out.push('Net cash after fee: '+amount(r.scorecard.cashNet));out.push('Net (cash + projected − fee): '+amount(r.scorecard.net));
  if(r.d.payoff)out.push('Payoff changed '+signed(r.d.payoff)+': tracked separately from transaction savings.');
@@ -262,10 +463,11 @@ function tests(){
  add('6 · Extra $2,000 down lowers payment',(a,b)=>{b.down='4000';b.financed='23300';b.payment=payment(2330000,4.9,60).toFixed(2);});
  add('7 · Title fees increase $150',(a,b)=>{b.titleFees='450';b.financed='25450';b.payment=payment(2545000,4.9,60).toFixed(2);});
  add('8 · Every field uses messy formatting',(a,b)=>{const messy={price:' $30,000.00 ',addons:[{name:' Etch ',price:' $299.00 '}],serviceFee:' $500.00 ',tax:' $1,500.00 ',titleFees:' $300.00 ',rebates:' $250.00 ',trade:' $10,000.00 ',payoff:' $5,000.00 ',down:' $2,000.00 ',financed:' $26,199.00 ',apr:' 4.9% ',term:' 72 mo ',payment:' $'+payment(2619900,4.9,72).toFixed(2)+' ',products:[{name:' GAP ',price:' $850.00 '}],state:' wi '};Object.assign(a,clone(messy));Object.assign(b,clone(messy));},{preapprovalAPR:' 4.9% ',feePaid:' $50.00 '});
+ add('9 · Zero APR, first payment 30 → 120 days',(a,b)=>{a.apr=b.apr='0';a.payment=b.payment=payment(2530000,0,60).toFixed(2);a.daysToFirstPayment='30';b.daysToFirstPayment='120';},{preapprovalAPR:'0'});
  return out;
 }
 function runTests(){
- const results=tests().map((test,i)=>{const r=analyze(test.input),fails=[];const assert=(ok,label)=>{if(!ok)fails.push(label);};
+ const results=tests().map((test,i)=>{const r=analyzeWithTiming(test.input),fails=[];const assert=(ok,label)=>{if(!ok)fails.push(label);};
   if(i!==3)assert(!r.blocked,'reconciliation');
   if(i===0){assert(r.termWarning,'term warning');assert(r.scorecard.cashSavings===0,'zero cash savings');assert(r.scorecard.interestSavings<0,'higher projected interest');assert(r.lines.some(l=>l.text==='At what term? Show both at the same term and rate.'),'term line');}
   if(i===1){assert(r.ra.expected===r.rb.expected,'same principal');assert(r.scorecard.cashSavings===0,'trade-price offset');assert(r.lines.some(l=>l.text==='Show me the selling price and the trade allowance separately. Did the price change?'),'trade line');}
@@ -275,30 +477,51 @@ function runTests(){
   if(i===5){assert(r.scorecard.cashSavings===0,'cash down not savings');assert(r.d.down===200000,'cash down increase');assert(r.lines.some(l=>l.text==="I didn't add money down. Put it back."),'cash line');}
   if(i===6){assert(r.scorecard.cashSavings===-15000,'fee cost');assert(r.lines.some(l=>l.text==='Plate and title went up $150.00. Why?'),'fee line');}
   if(i===7){assert(r.rb.expected===2619900,'messy total');assert(r.b.values.term===72&&r.b.values.apr===4.9&&r.b.values.state==='WI','typed formats');assert(r.scorecard.cashSavings===0&&r.scorecard.interestSavings===0&&r.scorecard.net===-5000,'zero changes and fee');assert(r.lines.some(l=>l.text==='What changed? Nothing moved.'),'nothing moved line');}
+  if(i===8){assert(r.ra.modeledPayment===r.rb.modeledPayment&&r.rb.modeledPayment===payment(2530000,0,60),'zero APR payment unchanged');assert(r.rb.impliedAPR===0&&!r.rb.paymentFlag,'zero APR has no false mismatch');assert(r.ra.interest===0&&r.rb.interest===0&&r.rb.preAmortizationInterest===0,'zero APR has no timing interest');assert(r.scorecard.net===0,'zero APR no invented savings');assert(r.timingRoom&&r.timingRoom.monthlySavings===0,'zero APR no available monetary room');}
   if(!r.blocked&&!r.explanation.reason)assert(attributionCheck(r.explanation).pass,'payment attribution reconciles within $0.01');
   return {name:test.name,pass:!fails.length,failures:fails,result:r,input:test.input,output:report(r,true)};
  });return results;
 }
-root.DealCheck={MONEY_FIELDS,LABELS,BUCKETS,parse,payment,impliedAPR,normalize,reconcile,analyze,report,tests,runTests,amount,signed,percent,cents,formatValue,paymentChangeLabel,attributionCheck,attributionStatus};
+root.DealCheck={MONEY_FIELDS,LABELS,BUCKETS,SHEET_FIELDS,OPTIONAL_DEFAULTS,BOOKS,parse,payment,impliedAPR:impliedAPRWithTiming,timedPayment,timingProjection,timingWarning,timingEffect,timingEffectText,normalize:normalizeWithFees,reconcile:reconcileWithTiming,analyze:analyzeWithTiming,calculateSheet,calculateLTV,firstPaymentDays,validSavedSheet,report,tests,runTests,amount,signed,percent,cents,formatValue,paymentChangeLabel,attributionCheck,attributionStatus};
 })(typeof globalThis!=='undefined'?globalThis:this);
 </script>
 <script id="deal-ui">
 (function(){
 'use strict';const C=DealCheck;
 const $=id=>document.getElementById(id);let current=null;
-const fields=['price','serviceFee','tax','titleFees','rebates','trade','payoff','down','financed','apr','term','payment','state'];
+const fields=C.SHEET_FIELDS;
 function el(tag,text,cls){const x=document.createElement(tag);if(text!=null)x.textContent=text;if(cls)x.className=cls;return x;}
 function addItem(sheet,key,item){const rows=$(sheet+'-'+key+'-rows'),row=el('div',null,'item-row');const name=el('input'),price=el('input'),remove=el('button','×');name.placeholder='Name';name.setAttribute('aria-label',sheet+' '+key+' name');price.placeholder='Price';price.inputMode='decimal';price.setAttribute('aria-label',sheet+' '+key+' price');name.value=item?item.name:'';price.value=item?item.price:'';remove.type='button';remove.setAttribute('aria-label','Remove item');remove.addEventListener('click',()=>{row.remove();markChanged();});row.append(name,price,remove);rows.append(row);$(sheet+'-'+key+'-none').checked=false;rows.hidden=false;}
-function buildSheet(id,title){const panel=el('section',null,'panel'),head=el('div',null,'sheet-head');head.append(el('h2',title),el('span','All fields optional','sheet-tag'));panel.append(head);const grid=el('div',null,'fields');fields.forEach(key=>{const label=el('label',C.LABELS[key]),input=el('input');input.id=id+'-'+key;input.name=id+'-'+key;input.autocomplete='off';input.placeholder=key==='term'?'72 mo':key==='apr'?'4.9%':key==='state'?'WI':'Unknown';if(key!=='state')input.inputMode='decimal';label.append(input);grid.append(label);});panel.append(grid);
- ['addons','products'].forEach(key=>{const box=el('div',null,'list-box');box.append(el('h3',C.LABELS[key]));const label=el('label',null,'list-none'),none=el('input');none.type='checkbox';none.id=id+'-'+key+'-none';label.append(none,el('span','None shown — confirmed $0'));const rows=el('div');rows.id=id+'-'+key+'-rows';const button=el('button','Add '+(key==='addons'?'dealer add-on':'product'));button.type='button';button.addEventListener('click',()=>{addItem(id,key);markChanged();});none.addEventListener('change',()=>{rows.hidden=none.checked;markChanged();});box.append(label,rows,button);panel.append(box);});$('sheets').append(panel);}
+function buildSheet(id,title){const panel=el('section',null,'panel'),head=el('div',null,'sheet-head');head.append(el('h2',title),el('span','Unknown figures can stay blank','sheet-tag'));panel.append(head);const grid=el('div',null,'fields');fields.forEach(key=>{const label=el('label',key==='financed'?'Printed amount financed':key==='payment'?'Printed monthly payment':key==='titleFees'?'Title / plate fees':C.LABELS[key]),input=el(key==='dealType'?'select':'input');input.id=id+'-'+key;input.name=id+'-'+key;input.autocomplete='off';input.placeholder=key==='term'?'72 mo':key==='apr'?'4.9%':key==='state'?'WI':'Unknown';if(key!=='state')input.inputMode='decimal';
+ if(key==='dealType'){[['loan','Loan / retail installment'],['lease','Lease']].forEach(([value,text])=>{const option=el('option',text);option.value=value;input.append(option);});}
+ if(Object.hasOwn(C.OPTIONAL_DEFAULTS,key))input.value=C.OPTIONAL_DEFAULTS[key];
+ if(key==='daysToFirstPayment'){input.type='number';input.min='30';input.max='120';input.step='1';input.inputMode='numeric';input.value='30';input.placeholder='30';input.setAttribute('aria-describedby',id+'-timing-help');}
+ label.append(input);
+ if(key==='financed'){
+  const group=el('div',null,'fields full'),calculated=el('label','Calculated amount financed'),value=el('output','unknown','calculated-value'),difference=el('p','Printed minus calculated: unknown','note full');
+  value.id=id+'-calculated-financed';calculated.htmlFor=value.id;calculated.append(value);difference.id=id+'-financed-difference';difference.setAttribute('aria-live','polite');group.append(label,calculated,difference);grid.append(group);
+ }else{grid.append(label);}
+ if(key==='daysToFirstPayment'){const help=el('p','30–120 days. Used for the payment estimate, implied APR and timing savings.','note full');help.id=id+'-timing-help';const warning=el('p','','flag full');warning.id=id+'-timing-warning';warning.hidden=true;warning.setAttribute('aria-live','polite');grid.append(help,warning);}
+ if(key==='registrationFees')grid.append(el('p','Enter license and registration separately only when they are not already included in title / plate fees. Their starting values are $0 to avoid counting a combined fee twice.','note full'));
+ });panel.append(grid);
+ ['addons','products'].forEach(key=>{const box=el('div',null,'list-box');box.append(el('h3',C.LABELS[key]));const label=el('label',null,'list-none'),none=el('input');none.type='checkbox';none.id=id+'-'+key+'-none';label.append(none,el('span','None shown — confirmed $0'));const rows=el('div');rows.id=id+'-'+key+'-rows';const button=el('button','Add '+(key==='addons'?'dealer add-on':'product'));button.type='button';button.addEventListener('click',()=>{addItem(id,key);markChanged();});none.addEventListener('change',()=>{rows.hidden=none.checked;markChanged();});box.append(label,rows,button);panel.append(box);});
+ const calculator=el('section',null,'list-box'),calculate=el('button','Calculate','primary'),results=el('div'),status=el('p','Enter the itemized figures, APR and term, then Calculate. Printed financing and payment are optional comparisons.','note');
+ calculator.append(el('h3','Financial calculator'));calculate.id=id+'-calculate';calculate.type='button';calculate.setAttribute('aria-label','Calculate '+title.toLowerCase());results.id=id+'-calculator-results';results.hidden=true;results.setAttribute('aria-live','polite');status.id=id+'-calculator-status';
+ calculate.addEventListener('click',()=>{updateFinancing();renderCalculator(id,C.calculateSheet(readSheet(id),title));});calculator.append(calculate,status,results);panel.append(calculator);$('sheets').append(panel);}
 buildSheet('first','First sheet');buildSheet('new','New sheet');
 function readSheet(id){const result={};fields.forEach(k=>result[k]=$(id+'-'+k).value);['addons','products'].forEach(k=>{const rows=Array.from($(id+'-'+k+'-rows').children);result[k]=$(id+'-'+k+'-none').checked?[]:rows.length?rows.map(row=>({name:row.children[0].value,price:row.children[1].value})):null;});return result;}
-function writeSheet(id,data){fields.forEach(k=>$(id+'-'+k).value=data[k]==null?'':data[k]);['addons','products'].forEach(k=>{$(id+'-'+k+'-rows').replaceChildren();$(id+'-'+k+'-none').checked=Array.isArray(data[k])&&!data[k].length;$(id+'-'+k+'-rows').hidden=$(id+'-'+k+'-none').checked;(data[k]||[]).forEach(item=>addItem(id,k,item));});}
+function writeSheet(id,data){fields.forEach(k=>$(id+'-'+k).value=Object.hasOwn(C.OPTIONAL_DEFAULTS,k)&&data[k]===undefined?C.OPTIONAL_DEFAULTS[k]:data[k]==null?'':data[k]);['addons','products'].forEach(k=>{$(id+'-'+k+'-rows').replaceChildren();$(id+'-'+k+'-none').checked=Array.isArray(data[k])&&!data[k].length;$(id+'-'+k+'-rows').hidden=$(id+'-'+k+'-none').checked;(data[k]||[]).forEach(item=>addItem(id,k,item));});}
 function input(){return {first:readSheet('first'),new:readSheet('new'),options:{preapprovalAPR:$('benchmark').value,feePaid:$('coach-fee').value,caseName:$('case-name').value,vehicle:$('vehicle').value}};}
-function markChanged(){if(current){$('status').textContent='Inputs changed. Run Deal Check again to update the report.';$('output').hidden=true;$('output-actions').hidden=true;current=null;}$('persistence-status').textContent='Unsaved changes. Save case to keep them after reload.';$('stored-record-details').hidden=true;}
+function updateTiming(){['first','new'].forEach(id=>{const lease=$(id+'-dealType').value==='lease',days=$(id+'-daysToFirstPayment'),help=$(id+'-timing-help'),warning=$(id+'-timing-warning');days.disabled=lease;const parsed=lease?{value:null}:C.firstPaymentDays(days.value);days.setCustomValidity(parsed.error||'');days.setAttribute('aria-invalid',String(!!parsed.error));help.textContent=lease?'Not applicable to leases. Loan payment, APR and interest estimates are disabled.':'30–120 days. Used for payment estimates, implied APR and timing savings.';const message=lease?null:parsed.error||C.timingWarning(parsed.value,C.parse($(id+'-term').value,'term').value);warning.textContent=message||'';warning.hidden=!message;});}
+function updateFinancing(){updateTiming();['first','new'].forEach(id=>{const result=C.reconcile(C.normalize(readSheet(id),id)),difference=$(id+'-financed-difference');$(id+'-calculated-financed').textContent=C.amount(result.expected);difference.textContent='Printed minus calculated: '+C.signed(result.discrepancy)+(result.discrepancy!=null&&result.discrepancy!==0?' · Mismatch':'');difference.className=result.discrepancy!=null&&result.discrepancy!==0?'flag full':'note full';});}
+function markChanged(){updateFinancing();['first','new'].forEach(id=>{$(id+'-calculator-results').hidden=true;$(id+'-calculator-status').textContent='Inputs changed. Press Calculate for current results.';});if(current){$('status').textContent='Inputs changed. Run Deal Check again to update the report.';$('output').hidden=true;$('output-actions').hidden=true;current=null;}$('persistence-status').textContent='Unsaved changes. Save case to keep them after reload.';$('stored-record-details').hidden=true;}
 $('entry').addEventListener('input',markChanged);
+$('entry').addEventListener('change',event=>{if(event.target.tagName==='SELECT')markChanged();});
+$('ltv-calculator').addEventListener('input',()=>{$('ltv-result').textContent='Inputs changed. Press Calculate LTV.';});
+$('ltv-book').addEventListener('change',()=>{$('ltv-result').textContent='Book changed. Press Calculate LTV.';});
+$('ltv-calculate').addEventListener('click',()=>{const result=C.calculateLTV({amountFinanced:$('ltv-financed').value,bookValue:$('ltv-value').value,book:$('ltv-book').value});$('ltv-result').textContent=result.errors.length?result.errors.join(' '):C.percent(result.percentage)+' LTV — '+C.amount(result.amountFinanced)+' ÷ '+C.amount(result.bookValue)+' ('+result.bookLabel+').';});
 const STORAGE_PREFIX='dealcheck.case.';
-function validSavedSheet(sheet){return sheet&&typeof sheet==='object'&&!Array.isArray(sheet)&&fields.every(k=>typeof sheet[k]==='string')&&['addons','products'].every(k=>sheet[k]===null||(Array.isArray(sheet[k])&&sheet[k].every(item=>item&&typeof item.name==='string'&&typeof item.price==='string')));}
+const validSavedSheet=C.validSavedSheet;
 function showStoredRecord(raw,message){$('stored-record').textContent=raw;$('stored-record-details').hidden=false;$('stored-record-details').open=true;$('persistence-status').textContent=message;}
 function storageFailed(action,error){$('stored-record-details').hidden=true;$('persistence-status').textContent=action+' failed: '+error.message;}
 $('save-saved-case').addEventListener('click',()=>{
@@ -338,25 +561,44 @@ $('load-saved-case').addEventListener('click',()=>{
 });
 function table(headers,rows){const wrap=el('div',null,'table-wrap'),t=el('table'),head=el('thead'),tr=el('tr');headers.forEach((h,i)=>{const th=el('th',h,i?'num':'');th.scope='col';tr.append(th);});head.append(tr);t.append(head);const body=el('tbody');rows.forEach(row=>{const tr=el('tr');row.forEach((value,i)=>{const td=el('td',value,i?'num':'');tr.append(td);});body.append(tr);});t.append(body);wrap.append(t);return wrap;}
 function section(title){const x=el('section',null,'result-section');x.append(el('h2',title));return x;}
+function renderCalculator(id,result){
+ const output=$(id+'-calculator-results'),v=result.sheet.values,fees=result.sheet.feeBreakdown;output.replaceChildren();output.hidden=false;
+ const gross=[v.price,v.addons,v.serviceFee,v.tax,v.titleFees,v.products].every(x=>x!=null)?v.price+v.addons+v.serviceFee+v.tax+v.titleFees+v.products:null;
+ output.append(table(['Add / subtract','Amount'],[
+  ['Selling price',C.amount(v.price)],['+ Dealer add-ons',C.amount(v.addons)],['+ Products',C.amount(v.products)],['+ Dealer service fee',C.amount(v.serviceFee)],['+ Tax',C.amount(v.tax)],['+ Title / plate fees',C.amount(fees.titleFees)],['+ License fees',C.amount(fees.licenseFees)],['+ Registration fees',C.amount(fees.registrationFees)],
+  ['Total charges',C.amount(gross)],['− Rebates',C.amount(v.rebates)],['− Money down',C.amount(v.down)],['− Positive trade equity',C.amount(result.netTrade==null?null:Math.max(0,result.netTrade))],['+ Negative equity',C.amount(result.netTrade==null?null:Math.max(0,-result.netTrade))],['Calculated amount financed',C.amount(result.amountFinanced)]]));
+ const totals=el('div',null,'totals');[['Amount financed',result.amountFinanced],['Estimated monthly payment',result.firstPayment==null?null:C.cents(result.firstPayment)],['Projected total interest',result.interestPaid]].forEach(([label,value])=>{const tile=el('div',null,'total');tile.append(el('span',label),el('strong',result.isLease&&label!=='Amount financed'?'Not applicable':C.amount(value)));totals.append(tile);});output.append(totals);
+ if(result.isLease)output.append(el('p','Loan payment, APR and interest estimates do not apply to leases.','note'));
+ else{output.append(el('p','First payment due: '+(result.daysToFirstPayment==null?'unknown':result.daysToFirstPayment+' days')+'. Extra pre-amortization interest: '+C.amount(result.preAmortizationInterest)+'; interest from financing the deferral: '+C.amount(result.deferralFinancingInterest)+'. Both are already included in projected total interest.','note'));if(result.timingWarning)output.append(el('p',result.timingWarning,'flag'));}
+ output.append(table(['Financing comparison','Amount'],[['Printed amount financed',C.amount(result.printedAmountFinanced)],['Calculated amount financed',C.amount(result.amountFinanced)],['Printed minus calculated',C.signed(result.difference)]]));
+ if(result.difference!=null&&result.difference!==0)output.append(el('p','Financing mismatch: '+C.signed(result.difference)+'. The printed amount has been kept.','flag'));
+ result.messages.forEach(message=>output.append(el('p',message,'flag')));
+ output.append(el('p','Payment uses calculated financing, entered APR, term and first-payment days on a 30-day monthly basis. Projected total interest includes timing costs once through the adjusted payments. Actual dates, lender accrual and collection terms may differ.','note'));
+ $(id+'-calculator-status').textContent=result.messages.length?'Calculated available figures. Complete or correct the fields shown below.':'Calculated. Printed figures were kept for comparison.';
+}
 function render(r){$('output').replaceChildren();$('output').hidden=false;const one=section('1 · What changed');
  if(r.options.caseName||r.options.vehicle)one.append(el('p',[r.options.caseName,r.options.vehicle].filter(Boolean).join(' · '),'note'));
  const order=['price','addons','serviceFee','tax','titleFees','rebates','trade','payoff','down','apr','term','products','financed','payment','state'];
  one.append(table(['Lever','First','New','Change'],order.map(k=>{const x=r.d[k];const change=k==='payment'?C.paymentChangeLabel(r.a.values.payment,r.b.values.payment):k==='state'?(x===0?'Same':'Check'):k==='apr'?(x==null?'unknown':x.toFixed(2)+' pp'):k==='term'?(x==null?'unknown':x+' mo'):C.signed(x);return [C.LABELS[k],C.formatValue(k,r.a.values[k]),C.formatValue(k,r.b.values[k]),change];})));
  const itemChanges=r.addonChanges.concat(r.productChanges).filter(x=>x.change!==0);if(itemChanges.length){one.append(el('h3','Individual items'));one.append(table(['Item','First','New','Change'],itemChanges.map(x=>[x.name,C.amount(x.first),C.amount(x.next),C.signed(x.change)])));}
- one.append(el('h3','Reconcile the sheets'));one.append(table(['Check','First','New'],[['Out-the-door total',C.amount(r.ra.otd),C.amount(r.rb.otd)],['Net trade',C.amount(r.ra.netTrade),C.amount(r.rb.netTrade)],['Expected amount financed',C.amount(r.ra.expected),C.amount(r.rb.expected)],['Sheet minus expected',C.signed(r.ra.discrepancy),C.signed(r.rb.discrepancy)],['Recomputed payment',C.amount(r.ra.modeledPayment==null?null:C.cents(r.ra.modeledPayment)),C.amount(r.rb.modeledPayment==null?null:C.cents(r.rb.modeledPayment))],['Payment-implied APR',C.percent(r.ra.impliedAPR),C.percent(r.rb.impliedAPR)],['Cash + projected payments',C.amount(r.ra.totalPaid),C.amount(r.rb.totalPaid)]]));
+ one.append(el('h3','Reconcile the sheets'));one.append(table(['Check','First','New'],[['Out-the-door total',C.amount(r.ra.otd),C.amount(r.rb.otd)],['Net trade',C.amount(r.ra.netTrade),C.amount(r.rb.netTrade)],['Printed amount financed',C.amount(r.a.values.financed),C.amount(r.b.values.financed)],['Calculated amount financed',C.amount(r.ra.expected),C.amount(r.rb.expected)],['Printed minus calculated',C.signed(r.ra.discrepancy),C.signed(r.rb.discrepancy)],['Recomputed payment',C.amount(r.ra.modeledPayment==null?null:C.cents(r.ra.modeledPayment)),C.amount(r.rb.modeledPayment==null?null:C.cents(r.rb.modeledPayment))],['Payment-implied APR',C.percent(r.ra.impliedAPR),C.percent(r.rb.impliedAPR)],['Cash + projected payments (timing included)',C.amount(r.ra.totalPaid),C.amount(r.rb.totalPaid)]]));
  if(r.blocked){const x=el('div',null,'flag');x.append(el('strong','STOP — reconcile the missing or wrong fields.'));r.errors.concat(r.ra.questions.concat(r.rb.questions).map(q=>q.line)).forEach(s=>x.append(el('p',s)));one.append(x);}
  if(r.termWarning){const x=el('div',null,'flag');x.append(el('strong','the payment is lower because the term is longer.'));one.append(x);}
- [r.ra,r.rb].forEach((x,i)=>{if(x.paymentFlag)one.append(el('p',(i?'New':'First')+' payment differs by '+C.signed(x.paymentGap)+'. It implies '+C.percent(x.impliedAPR)+'; check the stated APR and payment.','flag'));if(x.aprInferred)one.append(el('p',(i?'New':'First')+' APR is missing. The payment implies '+C.percent(x.impliedAPR)+' under the monthly-loan model.','note'));});
+ [r.ra,r.rb].forEach((x,i)=>{if(x.paymentFlag)one.append(el('p',(i?'New':'First')+' payment differs by '+C.signed(x.paymentGap)+'. It implies '+C.percent(x.impliedAPR)+'; check the stated APR and payment.','flag'));if(x.aprInferred)one.append(el('p',(i?'New':'First')+' APR is missing. The payment implies '+C.percent(x.impliedAPR)+' using the entered first-payment days and monthly-loan model.','note'));});
  if(r.a.addons.unitemized||r.a.products.unitemized||r.b.addons.unitemized||r.b.products.unitemized)one.append(el('p','Package: not itemized. No split estimated.','flag'));
  one.append(el('p','Extra cash down is never savings. Cash down changed '+C.signed(r.d.down)+'.','flag'));
  if(r.benchmarkGap!=null)one.append(el('p','Pre-approval '+C.percent(r.benchmark)+'; new offered/payment-implied rate differs by '+r.benchmarkGap.toFixed(2)+' percentage points. This is a benchmark comparison, not a markup estimate.','note'));
  if(r.stateChanged)one.append(el('p','State changed. Verify the entered tax and title figures; no automatic state rules are applied.','note'));
+ if(r.timingChange){one.append(el('h3','Cost of the first-payment change'),el('p',C.timingEffectText(r.timingChange),'note'));}
+ if(r.timingRoom){const room=el('div',null,'flag');room.append(el('strong','Available room · first payment'),el('p',C.timingEffectText(r.timingRoom,true)),el('p','Ask for the revised quote. This proposal is not added to Scorecard savings.','note'));one.append(room);}
  one.append(el('h3','Explain the payment change'));
- if(r.explanation.reason)one.append(el('p',r.explanation.reason));else{one.append(table(['Lever','Monthly effect'],r.explanation.steps.length?r.explanation.steps.map(s=>[s.label,C.signed(C.cents(s.monthlyChange))]):[['Nothing moved','$0.00']]));one.append(el('p','Order: itemized amounts → APR → term. Total payment change: '+C.signed(C.cents(r.explanation.observedChange))+'/mo. Rounding may move a cent between displayed rows.','note'));one.append(el('p',C.attributionStatus(r.explanation),C.attributionCheck(r.explanation).pass?'note':'flag'));}
+ if(r.explanation.reason)one.append(el('p',r.explanation.reason));else{one.append(table(['Lever','Monthly effect'],r.explanation.steps.length?r.explanation.steps.map(s=>[s.label,C.signed(C.cents(s.monthlyChange))]):[['Nothing moved','$0.00']]));one.append(el('p','Order: itemized amounts → APR → term → first-payment timing. Total payment change: '+C.signed(C.cents(r.explanation.observedChange))+'/mo. Rounding may move a cent between displayed rows.','note'));one.append(el('p',C.attributionStatus(r.explanation),C.attributionCheck(r.explanation).pass?'note':'flag'));}
  $('output').append(one);
  const two=section("2 · The buyer's lines");if(!r.lines.length)two.append(el('p','No mapped response triggered.'));r.lines.forEach(l=>{const p=el('div',null,'buyer-line');p.append(el('span',l.finding,'finding'),el('span',l.text));two.append(p);});$('output').append(two);
  const three=section('3 · Scorecard');three.append(el('p','Package buckets. Positive change = reduction or benefit; zeros stay visible.','note'));
- three.append(table(['Bucket','First','New','Change'],r.scorecard.rows.map(x=>{const fmt=v=>x.type==='APR'?C.percent(v):x.type==='Months'?(v==null?'unknown':v+' mo'):C.amount(v);const change=x.type==='APR'?(x.change==null?'unknown':x.change.toFixed(2)+' pp'):x.type==='Months'?(x.change==null?'unknown':x.change+' mo'):C.signed(x.change);return [x.bucket+' · '+x.type,fmt(x.first),fmt(x.next),change];})));
+ three.append(table(['Bucket','First','New','Change'],r.scorecard.rows.map(x=>{const unit=x.type==='Days'?' days':x.type==='Months'?' mo':null;const fmt=v=>x.type==='APR'?C.percent(v):unit?(v==null?'unknown':v+unit):C.amount(v);const change=x.type==='APR'?(x.change==null?'unknown':x.change.toFixed(2)+' pp'):unit?(x.change==null?'unknown':x.change+unit):C.signed(x.change);return [x.bucket+' · '+x.type,fmt(x.first),fmt(x.next),change];})));
+ three.append(el('p','Both deferral components are already included in total interest through the adjusted payments; do not add them again.','note'));
+ three.append(el('p',r.timingNote,'note'));
  const totals=el('div',null,'totals');[['Transaction savings · cash',r.scorecard.cashSavings],['Interest savings · projected',r.scorecard.interestSavings],['Coaching fee paid',r.feePaid],['Net cash after fee',r.scorecard.cashNet],['Net · cash + projected − fee',r.scorecard.net]].forEach(([label,value])=>{const x=el('div',null,'total');x.append(el('span',label),el('strong',C.amount(value)));totals.append(x);});three.append(totals);
  three.append(el('p','Tax adjustment '+C.signed(r.scorecard.taxAdjustment)+' and rebate adjustment '+C.signed(r.scorecard.rebateAdjustment)+' reconcile the cash total. They are not added again to a trade tax-credit estimate.','note'));
  if(r.d.payoff)three.append(el('p','Payoff changed '+C.signed(r.d.payoff)+'. An old debt balance change is kept outside transaction savings.','note'));
@@ -368,12 +610,13 @@ function render(r){$('output').replaceChildren();$('output').hidden=false;const 
 }
 $('compare').addEventListener('click',()=>{current=C.analyze(input());render(current);$('output').scrollIntoView({behavior:'smooth',block:'start'});});
 $('copy-first').addEventListener('click',()=>{writeSheet('new',readSheet('first'));markChanged();$('status').textContent='First copied into New. Change the revised figures, then run the check.';});
+updateFinancing();
 const examples=C.tests();examples.forEach((t,i)=>{const o=el('option',t.name);o.value=String(i);$('case-select').append(o);});
 $('load-case').addEventListener('click',()=>{const t=examples[Number($('case-select').value)];writeSheet('first',t.input.first);writeSheet('new',t.input.new);$('benchmark').value=t.input.options.preapprovalAPR;$('coach-fee').value=t.input.options.feePaid;$('case-name').value=t.name;$('vehicle').value='Constructed example';$('case-id').value='';$('coach-notes').value='';markChanged();$('status').textContent='Test figures loaded. Tap Run Deal Check.';});
 $('clear-case').addEventListener('click',()=>{writeSheet('first',{});writeSheet('new',{});['benchmark','coach-fee','case-name','vehicle','case-id','coach-notes'].forEach(id=>$(id).value='');markChanged();$('status').textContent='Inputs cleared. Blank fields are unknown.';});
 $('copy-report').addEventListener('click',async()=>{if(!current)return;const text=C.report(current);try{if(!navigator.clipboard)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(text);$('status').textContent='Report copied.';}catch(e){$('copy-fallback').value=text;$('copy-fallback').hidden=false;$('copy-fallback').focus();$('copy-fallback').select();$('status').textContent='Select and copy the report text below.';}});
 $('print-report').addEventListener('click',()=>window.print());
-$('run-tests').addEventListener('click',()=>{const results=C.runTests();$('test-output').replaceChildren();const summary=el('pre',results.filter(x=>x.pass).length+'/8 required tests passed\n'+results.map(x=>(x.pass?'PASS ':'FAIL ')+x.name+(x.failures.length?': '+x.failures.join(', '):'')).join('\n'));$('test-output').append(summary);results.forEach(t=>{const d=el('details',null,'test-result');d.append(el('summary',(t.pass?'PASS · ':'FAIL · ')+t.name,t.pass?'test-pass':'test-fail'),el('pre',t.output));$('test-output').append(d);});});
+$('run-tests').addEventListener('click',()=>{const results=C.runTests();$('test-output').replaceChildren();const summary=el('pre',results.filter(x=>x.pass).length+'/'+results.length+' required tests passed\n'+results.map(x=>(x.pass?'PASS ':'FAIL ')+x.name+(x.failures.length?': '+x.failures.join(', '):'')).join('\n'));$('test-output').append(summary);results.forEach(t=>{const d=el('details',null,'test-result');d.append(el('summary',(t.pass?'PASS · ':'FAIL · ')+t.name,t.pass?'test-pass':'test-fail'),el('pre',t.output));$('test-output').append(d);});});
 })();
 </script>
 </body>

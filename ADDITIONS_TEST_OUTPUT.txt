@@ -1,0 +1,102 @@
+Node additions checks. Browser/UI execution and save/load persistence: NOT RUN.
+PASS Original eight scenarios and the ninth zero-APR case all pass
+PASS Legacy records default independently to loan / 30 days / zero separate fees
+PASS 30 days matches independent payment and interest reference
+PASS 31 days matches independent payment and interest reference
+PASS 45 days matches independent payment and interest reference
+PASS 46 days matches independent payment and interest reference
+PASS 51 days matches independent payment and interest reference
+PASS 52 days matches independent payment and interest reference
+PASS 60 days matches independent payment and interest reference
+PASS 90 days matches independent payment and interest reference
+PASS 120 days matches independent payment and interest reference
+PASS Deferred interest enters total payments, interest, savings and net exactly once
+PASS Normal and deferred published dollar example: $25,000 / 72 / 7.95%
+PASS Appendix J published odd-first-period example reproduces 11.82% APR
+PASS 90-day implied APR uses entered days; no false APR or benchmark accusation
+PASS An actual higher-rate deferred payment still triggers the existing $2 flag
+PASS Payment and APR round trips agree for every day 30–120
+PASS Zero APR keeps exactly the same payment and zero interest at every allowed delay
+PASS Invalid days never fall back to a 30-day implied rate or savings
+PASS Review begins at 46 days; the 21-extra-day provision begins beyond 51, not 45
+PASS 45-to-30 timing saving is isolated and surfaced in the buyer lines
+PASS Available room is proposed, holds New terms fixed and is not double-counted
+PASS Missing APR is inferred with entered timing; no circular extra-interest addition
+PASS Missing financing keeps deferred projections unknown
+PASS Leases bypass days validation and never run a loan APR, payment or timing projection
+PASS A mixed loan/lease comparison never offers timing savings or APR attribution
+PASS Itemized financing includes add-ons, products, fees, credits and negative equity
+PASS Printed amount remains beside calculated balance, with a non-mutating signed mismatch
+PASS Negative and one-cent mismatches remain visible; $5 reconciliation threshold unchanged
+PASS Missing itemized payoff stays unknown; missing printed value does not erase calculation
+PASS Separate license and registration charges feed calculator and Scorecard once
+PASS Calculator uses calculated financing even when printed balance differs
+PASS Positive trade equity subtracts; negative equity adds; negative financing cannot amortize
+PASS Legacy and updated record shapes, copy and JSON round trip retain separate timing/type fields
+PASS Unknown/invalid separate fees are not silently zeroed
+PASS Report exposes timing, separate interest, proposed room and the monthly-period assumption
+PASS All four manually selected books produce the same $25,000 / $20,000 = 125% result
+PASS LTV supports 0%, 100%, fractional and above-100% values without a cap
+PASS LTV rejects missing, zero/negative book value, negative financing and unknown book
+PASS LTV leaves input and deal calculations untouched and requires no network
+40/40 additions checks passed.
+
+ACTUAL CONSTRUCTED-CASE OUTPUT (First 30 / New 90 days):
+WHAT CHANGED
+Selling price: $30,000.00 -> $30,000.00; change $0.00
+Dealer add-ons: $0.00 -> $0.00; change $0.00
+Service fee: $500.00 -> $500.00; change $0.00
+Tax: $1,500.00 -> $1,500.00; change $0.00
+Title / license / registration total: $300.00 -> $300.00; change $0.00
+Rebates: $0.00 -> $0.00; change $0.00
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00
+Trade payoff: $5,000.00 -> $5,000.00; change $0.00
+Cash down: $2,000.00 -> $2,000.00; change $0.00
+APR: 4.90% -> 4.90%; change 0.00 pp
+Term: 60 mo -> 60 mo; change 0 mo
+Products: $0.00 -> $0.00; change $0.00
+Amount financed: $25,300.00 -> $25,300.00; change $0.00
+Payment: $476.28 -> $480.18; change +$3.90
+State: WI -> WI
+First: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+First: modeled payment $476.28; projected interest $3,277.04; total paid incl. down $30,577.04.
+New: OTD $32,300.00; net trade $5,000.00; expected financed $25,300.00; sheet difference $0.00.
+New: modeled payment $480.18; projected interest $3,510.89; total paid incl. down $30,810.89.
+First: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+New: printed amount financed $25,300.00; calculated amount financed $25,300.00; printed minus calculated $0.00.
+Extra cash down is never savings. Change in cash down: $0.00.
+Payment change by lever (amounts, then APR, term and first-payment timing):
+  Days to first payment: +$3.90/mo
+Total printed/model payment change: +$3.90/mo.
+Unallocated payment-attribution residual: +$0.00240617/mo; tolerance $0.01; within tolerance.
+
+BUYER'S LINES
+New · First-payment timing review: "First payment is 90 days away — review starts above 45 days. This is more than 21 days beyond the regular 30-day period; the first-period variation cannot be disregarded under Reg Z §1026.17(c)(4)(ii). This flag alone does not establish a violation."
+First-payment change · isolated estimate: "Moving first payment from 30 to 90 days raises the estimated payment by $3.90/mo and costs $233.85 in projected interest over 60 payments. Same New-sheet financing, APR and term."
+Available room · first payment: "Pulling first payment from 90 to 30 days lowers the estimated payment by $3.90/mo and saves $233.85 in projected interest over 60 payments. Same New-sheet financing, APR and term. Ask for a revised quote; this available room is not added to Scorecard savings."
+
+SCORECARD (positive change = reduction/benefit)
+Selling price: $30,000.00 -> $30,000.00; change $0.00 [Cash]
+Dealer add-ons removed: $0.00 -> $0.00; change $0.00 [Cash]
+Fees corrected: $800.00 -> $800.00; change $0.00 [Cash] — Dealer service fee + title, license and registration fees.
+Trade allowance: $10,000.00 -> $10,000.00; change $0.00 [Cash]
+Trade after tax credit (vs. cash offer): unknown -> unknown; change unknown [Cash] — Outside cash offer and trade tax-credit amounts not entered; not added twice.
+Service contract price: $0.00 -> $0.00; change $0.00 [Cash]
+GAP price: $0.00 -> $0.00; change $0.00 [Cash]
+Other products removed: $0.00 -> $0.00; change $0.00 [Cash]
+APR: 4.90% -> 4.90%; change 0.00 pp [APR] — Stated or timing-adjusted implied APR; unavailable for leases.
+Term: 60 mo -> 60 mo; change 0 mo [Months]
+Amount financed: $25,300.00 -> $25,300.00; change $0.00 [Balance]
+Days to first payment: 30 days -> 90 days; change -60 days [Days] — Normal start: 30 days; allowed range: 30–120 days.
+Extra pre-amortization interest: $0.00 -> $207.04; change −$207.04 [Projected] — Extra interest before the normal repayment cycle; included in total interest.
+Interest from financing the deferral: $0.00 -> $26.81; change −$26.81 [Projected] — Remaining timing cost over the payment schedule; included in total interest.
+Total interest over the term: $3,277.04 -> $3,510.89; change −$233.85 [Projected] — Includes both timing components below once, through the adjusted payments.
+Timing estimate: 30-day monthly periods, equal monthly payments and APR as the model rate. The original 30-day payment formula is unchanged. Extra interest before amortization and its financing cost are included once in the adjusted payments and total interest. Printed financing and payment are never changed. Exact contract APR requires actual dates, fee classification and the full schedule; this is not a legal compliance verdict.
+Tax adjustment $0.00; rebate adjustment $0.00 (cash total only).
+Transaction savings (cash): $0.00
+Projected interest savings: $-233.85
+Fee paid: $0.00
+Net cash after fee: $0.00
+Net (cash + projected − fee): $-233.85
+Projection: all scheduled payments, no early payoff or refinance.
+Verdict: coach decision; numbers alone do not establish SIGN.

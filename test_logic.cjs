@@ -33,7 +33,7 @@ for (const result of results) {
   if (result.failures.length) lines.push('  Failed: ' + result.failures.join(', '));
   lines.push('  ' + engine.attributionStatus(result.result.explanation));
 }
-lines.push(results.filter(result => result.pass).length + '/8 required cases passed', '');
+lines.push(results.filter(result => result.pass).length + '/' + results.length + ' required cases passed', '');
 
 let guardFailures = 0;
 for (const [label, residual, expected] of [
